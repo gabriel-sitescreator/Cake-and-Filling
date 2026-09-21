@@ -1,1072 +1,1525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Cake & Filling — AI Images for Bakeries & Dessert Brands</title>
-
-    <meta name="description" content="Discover AI-generated cake, dessert and bakery images ready for social media, Pinterest, websites, menus and marketing campaigns.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --cream: #fffaf4;
-            --cream-dark: #f7eee4;
-            --brown: #3c2720;
-            --brown-light: #76594d;
-            --orange: #c96b32;
-            --orange-dark: #a95324;
-            --white: #ffffff;
-            --border: #eadfd5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "DM Sans", sans-serif;
-            background: var(--cream);
-            color: var(--brown);
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1180px, calc(100% - 40px));
-            margin: 0 auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            border-bottom: 1px solid var(--border);
-            background: rgba(255, 250, 244, 0.96);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav {
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .logo {
-            font-family: "Playfair Display", serif;
-            font-size: 25px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--orange);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--brown-light);
-        }
-
-        .nav-links a:hover {
-            color: var(--orange);
-        }
-
-        .nav-button {
-            background: var(--brown);
-            color: white;
-            padding: 11px 18px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .nav-button:hover {
-            background: var(--orange);
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            padding: 80px 0 90px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 70px;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            background: #f3e3d4;
-            color: var(--orange-dark);
-            padding: 7px 13px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(46px, 5.5vw, 72px);
-            line-height: 1.04;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 span {
-            color: var(--orange);
-        }
-
-        .hero-text {
-            max-width: 570px;
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--brown-light);
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 22px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            transition: 0.2s ease;
-        }
-
-        .button-primary {
-            background: var(--orange);
-            color: white;
-        }
-
-        .button-primary:hover {
-            background: var(--orange-dark);
-            transform: translateY(-1px);
-        }
-
-        .button-secondary {
-            border: 1px solid var(--border);
-            background: white;
-        }
-
-        .button-secondary:hover {
-            border-color: var(--orange);
-            color: var(--orange);
-        }
-
-        /* HERO IMAGE COLLAGE */
-
-        .hero-gallery {
-            position: relative;
-            height: 570px;
-        }
-
-        .hero-image {
-            position: absolute;
-            overflow: hidden;
-            border-radius: 18px;
-            box-shadow: 0 20px 50px rgba(60, 39, 32, 0.13);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-image-main {
-            width: 65%;
-            height: 430px;
-            right: 0;
-            top: 40px;
-        }
-
-        .hero-image-small {
-            width: 43%;
-            height: 270px;
-            left: 0;
-            bottom: 0;
-            border: 8px solid var(--cream);
-        }
-
-        .hero-label {
-            position: absolute;
-            right: 4%;
-            bottom: 25px;
-            background: white;
-            padding: 14px 18px;
-            border-radius: 10px;
-            box-shadow: 0 12px 30px rgba(60, 39, 32, 0.12);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        /* =========================
-           CATEGORIES
-        ========================= */
-
-        .section {
-            padding: 90px 0;
-        }
-
-        .section-light {
-            background: white;
-        }
-
-        .section-heading {
-            text-align: center;
-            max-width: 680px;
-            margin: 0 auto 45px;
-        }
-
-        .section-heading h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 42px;
-            line-height: 1.15;
-            margin-bottom: 14px;
-        }
-
-        .section-heading p {
-            color: var(--brown-light);
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .category {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 14px;
-            background: var(--cream-dark);
-        }
-
-        .category img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .category:hover img {
-            transform: scale(1.04);
-        }
-
-        .category-overlay {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 50px 20px 20px;
-            background: linear-gradient(
-                transparent,
-                rgba(35, 21, 16, 0.85)
-            );
-            color: white;
-        }
-
-        .category-overlay h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 24px;
-        }
-
-        .category-overlay p {
-            font-size: 12px;
-            opacity: 0.85;
-        }
-
-        /* =========================
-           FEATURED IMAGES
-        ========================= */
-
-        .featured-grid {
-            columns: 4 220px;
-            column-gap: 18px;
-        }
-
-        .featured-card {
-            break-inside: avoid;
-            margin-bottom: 18px;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .featured-card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .featured-info {
-            padding: 15px;
-        }
-
-        .featured-info h3 {
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-
-        .featured-info p {
-            color: var(--brown-light);
-            font-size: 12px;
-        }
-
-        /* =========================
-           USE CASES
-        ========================= */
-
-        .use-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .use-card {
-            padding: 28px;
-            border: 1px solid var(--border);
-            background: var(--cream);
-            border-radius: 12px;
-        }
-
-        .use-icon {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f1dfd0;
-            color: var(--orange-dark);
-            border-radius: 9px;
-            margin-bottom: 18px;
-            font-size: 19px;
-        }
-
-        .use-card h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 21px;
-            margin-bottom: 8px;
-        }
-
-        .use-card p {
-            color: var(--brown-light);
-            font-size: 14px;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            padding: 90px 0;
-        }
-
-        .cta-box {
-            background: var(--brown);
-            color: white;
-            border-radius: 20px;
-            padding: 70px;
-            text-align: center;
-        }
-
-        .cta-box h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 44px;
-            line-height: 1.15;
-            max-width: 700px;
-            margin: 0 auto 18px;
-        }
-
-        .cta-box p {
-            color: #dfd0c8;
-            max-width: 600px;
-            margin: 0 auto 28px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 35px 0;
-            background: white;
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-copy {
-            color: var(--brown-light);
-            font-size: 12px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            font-size: 12px;
-            color: var(--brown-light);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .hero-gallery {
-                max-width: 650px;
-                width: 100%;
-                margin: auto;
-            }
-
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .use-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            .container {
-                width: min(100% - 28px, 1180px);
-            }
-
-            .nav {
-                height: 68px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 55px 0 60px;
-            }
-
-            .hero h1 {
-                font-size: 46px;
-            }
-
-            .hero-text {
-                font-size: 16px;
-            }
-
-            .hero-gallery {
-                height: 430px;
-            }
-
-            .hero-image-main {
-                height: 330px;
-            }
-
-            .hero-image-small {
-                height: 210px;
-            }
-
-            .section {
-                padding: 65px 0;
-            }
-
-            .section-heading h2 {
-                font-size: 34px;
-            }
-
-            .category-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-            }
-
-            .category {
-                height: 230px;
-            }
-
-            .use-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-box {
-                padding: 45px 25px;
-            }
-
-            .cta-box h2 {
-                font-size: 34px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cake & Filling — Bakery Images & Cake Inspiration</title>
+  <meta
+    name="description"
+    content="Discover beautiful cake, dessert and bakery images for inspiration, social media, Pinterest, menus and bakery marketing."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #fffdf9;
+      --surface: #ffffff;
+      --text: #24201d;
+      --muted: #77706a;
+      --border: #eee8e2;
+      --accent: #b85c48;
+      --accent-dark: #964634;
+      --soft: #f7f1eb;
+      --radius: 18px;
+      --max-width: 1440px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 253, 249, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      height: 76px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      color: #5e5752;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .header-search {
+      margin-left: auto;
+      position: relative;
+      width: min(330px, 30vw);
+    }
+
+    .header-search input {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #f5f1ed;
+      padding: 0 18px 0 44px;
+      outline: none;
+      color: var(--text);
+    }
+
+    .header-search input:focus {
+      border-color: #d7c8be;
+      background: white;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #817870;
+      font-size: 17px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 76px 28px 54px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #f5ebe5;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: auto;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 22px auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-search {
+      width: min(680px, 100%);
+      height: 58px;
+      margin: auto;
+      position: relative;
+    }
+
+    .hero-search input {
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 999px;
+      padding: 0 28px 0 55px;
+      outline: none;
+      font-size: 15px;
+      box-shadow: 0 8px 30px rgba(40, 25, 15, .05);
+    }
+
+    .hero-search .search-icon {
+      left: 23px;
+    }
+
+    /* =========================
+       CATEGORY PILLS
+    ========================= */
+
+    .category-bar {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0 28px 40px;
+    }
+
+    .category-scroll {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category-btn {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 999px;
+      padding: 10px 18px;
+      color: #615952;
+      cursor: pointer;
+      transition: .2s ease;
+      font-size: 14px;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 30px 28px 70px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 20px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 7px;
+    }
+
+    .result-count {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       PINTEREST-STYLE MASONRY
+    ========================= */
+
+    .masonry {
+      column-count: 5;
+      column-gap: 18px;
+    }
+
+    .card {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+
+    .image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 17px;
+      background: #eee;
+    }
+
+    .image-wrap img {
+      transition: transform .35s ease;
+    }
+
+    .card:hover .image-wrap img {
+      transform: scale(1.025);
+    }
+
+    .save-button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      border: none;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover .save-button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-info {
+      padding: 11px 3px 5px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .card-meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       CATEGORY SHOWCASE
+    ========================= */
+
+    .category-section {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 0;
+    }
+
+    .category-grid {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #ddd;
+    }
+
+    .category-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: end;
+      padding: 22px;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,0)
+      );
+      color: white;
+    }
+
+    .category-overlay h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    .category-overlay p {
+      font-size: 12px;
+      margin-top: 3px;
+      opacity: .85;
+    }
+
+    /* =========================
+       USE CASES
+    ========================= */
+
+    .uses {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 80px 28px;
+      text-align: center;
+    }
+
+    .uses h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+    }
+
+    .uses > p {
+      max-width: 620px;
+      margin: 12px auto 38px;
+      color: var(--muted);
+    }
+
+    .uses-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .use-card {
+      padding: 26px 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: white;
+    }
+
+    .use-card .icon {
+      font-size: 25px;
+      margin-bottom: 13px;
+    }
+
+    .use-card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .use-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 45px 28px;
+      background: #faf7f3;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      max-width: 350px;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 50px;
+    }
+
+    .footer-column h4 {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    /* =========================
+       EMPTY STATE
+    ========================= */
+
+    .empty {
+      display: none;
+      padding: 80px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1200px) {
+      .masonry {
+        column-count: 4;
+      }
+
+      .uses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+
+      .header-search {
+        width: 260px;
+      }
+
+      .masonry {
+        column-count: 3;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .header-inner {
+        padding: 0 16px;
+        height: 68px;
+      }
+
+      .header-search {
+        width: auto;
+        flex: 1;
+      }
+
+      .hero {
+        padding: 55px 18px 40px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .category-bar {
+        padding-left: 18px;
+        padding-right: 18px;
+        overflow-x: auto;
+      }
+
+      .category-scroll {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        width: max-content;
+      }
+
+      .section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .masonry {
+        column-count: 2;
+        column-gap: 12px;
+      }
+
+      .card {
+        margin-bottom: 12px;
+      }
+
+      .image-wrap {
+        border-radius: 13px;
+      }
+
+      .save-button {
+        display: none;
+      }
+
+      .category-grid {
+        padding: 0 18px;
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 250px;
+      }
+
+      .uses {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .uses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <header>
-        <div class="container nav">
-
-            <a href="#" class="logo">
-                Cake <span>&</span> Filling
-            </a>
-
-            <nav class="nav-links">
-                <a href="#categories">Categories</a>
-                <a href="#featured">Latest Images</a>
-                <a href="#uses">For Your Business</a>
-                <a href="#about">About</a>
-            </nav>
-
-            <a href="#featured" class="nav-button">
-                Browse Images
-            </a>
-
-        </div>
-    </header>
-
-
-    <main>
-
-        <!-- =========================
-             HERO
-        ========================== -->
-
-        <section class="hero">
-
-            <div class="container hero-grid">
-
-                <div>
-
-                    <div class="eyebrow">
-                        Visual content for bakeries
-                    </div>
-
-                    <h1>
-                        Beautiful bakery images,
-                        <span>ready to use.</span>
-                    </h1>
-
-                    <p class="hero-text">
-                        Discover AI-generated images of cakes, desserts,
-                        pastries and bakery creations made for social media,
-                        Pinterest, websites, menus and marketing campaigns.
-                    </p>
-
-                    <div class="hero-buttons">
-                        <a href="#featured" class="button button-primary">
-                            Explore the Library
-                        </a>
-
-                        <a href="#categories" class="button button-secondary">
-                            Browse Categories
-                        </a>
-                    </div>
-
-                </div>
-
-
-                <div class="hero-gallery">
-
-                    <div class="hero-image hero-image-main">
-                        <!-- Replace with your real image -->
-                        <img
-                            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
-                            alt="Decorated chocolate cake"
-                        >
-                    </div>
-
-                    <div class="hero-image hero-image-small">
-                        <!-- Replace with your real image -->
-                        <img
-                            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=85"
-                            alt="Cupcakes"
-                        >
-                    </div>
-
-                    <div class="hero-label">
-                        AI-generated · Ready for marketing
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CATEGORIES
-        ========================== -->
-
-        <section class="section section-light" id="categories">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2>
-                        Find the right image for your business
-                    </h2>
-
-                    <p>
-                        Explore visual content organized around the products
-                        and occasions your bakery customers already love.
-                    </p>
-
-                </div>
-
-
-                <div class="category-grid">
-
-                    <a href="/cakes/" class="category">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
-                            alt="Cakes"
-                        >
-
-                        <div class="category-overlay">
-                            <h3>Cakes</h3>
-                            <p>Chocolate, birthday, wedding & more</p>
-                        </div>
-
-                    </a>
-
-
-                    <a href="/desserts/" class="category">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=85"
-                            alt="Desserts"
-                        >
-
-                        <div class="category-overlay">
-                            <h3>Desserts</h3>
-                            <p>Sweet treats for every occasion</p>
-                        </div>
-
-                    </a>
-
-
-                    <a href="/cupcakes/" class="category">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=700&q=85"
-                            alt="Cupcakes"
-                        >
-
-                        <div class="category-overlay">
-                            <h3>Cupcakes</h3>
-                            <p>Colorful ideas for your bakery</p>
-                        </div>
-
-                    </a>
-
-
-                    <a href="/bakery/" class="category">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=85"
-                            alt="Bakery products"
-                        >
-
-                        <div class="category-overlay">
-                            <h3>Bakery</h3>
-                            <p>Breads, pastries & baked goods</p>
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             FEATURED IMAGES
-        ========================== -->
-
-        <section class="section" id="featured">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2>
-                        Fresh from the library
-                    </h2>
-
-                    <p>
-                        Browse some of the latest visual assets available
-                        for bakery marketing and content creation.
-                    </p>
-
-                </div>
-
-
-                <div class="featured-grid">
-
-                    <article class="featured-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
-                            alt="Chocolate cake"
-                        >
-
-                        <div class="featured-info">
-                            <h3>Chocolate Celebration Cake</h3>
-                            <p>Portrait · Cakes</p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="featured-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=85"
-                            alt="Strawberry dessert"
-                        >
-
-                        <div class="featured-info">
-                            <h3>Strawberry Dessert</h3>
-                            <p>Portrait · Desserts</p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="featured-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=700&q=85"
-                            alt="Cupcakes"
-                        >
-
-                        <div class="featured-info">
-                            <h3>Pastel Cupcakes</h3>
-                            <p>Portrait · Cupcakes</p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="featured-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=700&q=85"
-                            alt="Cookies"
-                        >
-
-                        <div class="featured-info">
-                            <h3>Fresh Bakery Cookies</h3>
-                            <p>Portrait · Bakery</p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="featured-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=700&q=85"
-                            alt="Birthday cake"
-                        >
-
-                        <div class="featured-info">
-                            <h3>Birthday Cake</h3>
-                            <p>Portrait · Cakes</p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="featured-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=700&q=85"
-                            alt="Layer cake"
-                        >
-
-                        <div class="featured-info">
-                            <h3>Layer Cake</h3>
-                            <p>Portrait · Cakes</p>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             USE CASES
-        ========================== -->
-
-        <section class="section section-light" id="uses">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2>
-                        Made for the way bakeries market today
-                    </h2>
-
-                    <p>
-                        Use the images wherever your bakery needs
-                        fresh visual content.
-                    </p>
-
-                </div>
-
-
-                <div class="use-grid">
-
-                    <div class="use-card">
-
-                        <div class="use-icon">◎</div>
-
-                        <h3>Social Media</h3>
-
-                        <p>
-                            Create Instagram posts, Stories, Facebook
-                            content, TikTok scenes and WhatsApp Status
-                            without starting every design from scratch.
-                        </p>
-
-                    </div>
-
-
-                    <div class="use-card">
-
-                        <div class="use-icon">◆</div>
-
-                        <h3>Pinterest</h3>
-
-                        <p>
-                            Discover vertical images designed to work
-                            naturally with Pinterest's visual-first
-                            browsing experience.
-                        </p>
-
-                    </div>
-
-
-                    <div class="use-card">
-
-                        <div class="use-icon">✦</div>
-
-                        <h3>Menus & Promotions</h3>
-
-                        <p>
-                            Add attractive visuals to digital menus,
-                            promotional graphics, flyers, PDFs and
-                            seasonal campaigns.
-                        </p>
-
-                    </div>
-
-
-                    <div class="use-card">
-
-                        <div class="use-icon">▣</div>
-
-                        <h3>Websites</h3>
-
-                        <p>
-                            Give bakery websites, landing pages and
-                            product pages better visual content.
-                        </p>
-
-                    </div>
-
-
-                    <div class="use-card">
-
-                        <div class="use-icon">♡</div>
-
-                        <h3>Seasonal Campaigns</h3>
-
-                        <p>
-                            Find visual ideas for Valentine's Day,
-                            Easter, Mother's Day, Christmas and more.
-                        </p>
-
-                    </div>
-
-
-                    <div class="use-card">
-
-                        <div class="use-icon">+</div>
-
-                        <h3>Marketing Ideas</h3>
-
-                        <p>
-                            Use images as starting points for promotions,
-                            product announcements and bakery campaigns.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section class="section" id="about">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <h2>
-                        A visual library for the baking industry
-                    </h2>
-
-                    <p>
-                        Cake & Filling is built around one simple idea:
-                        making it easier for bakeries, cake shops,
-                        pastry businesses and dessert brands to find
-                        beautiful visual content for their marketing.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CTA
-        ========================== -->
-
-        <section class="cta">
-
-            <div class="container">
-
-                <div class="cta-box">
-
-                    <h2>
-                        Your next bakery post starts here.
-                    </h2>
-
-                    <p>
-                        Browse cakes, desserts, pastries and bakery
-                        images created to give your marketing a fresh
-                        visual starting point.
-                    </p>
-
-                    <a href="#featured" class="button button-primary">
-                        Explore the Image Library
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+    <div class="header-inner">
+
+      <a href="#" class="logo">
+        Cake <span>&</span> Filling
+      </a>
+
+      <nav class="nav">
+        <a href="#explore">Explore</a>
+        <a href="#categories">Categories</a>
+        <a href="#uses">For Bakeries</a>
+      </nav>
+
+      <div class="header-search">
+        <span class="search-icon">⌕</span>
+        <input
+          type="search"
+          id="headerSearch"
+          placeholder="Search cakes, styles, desserts..."
+        />
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        Cake & Dessert Inspiration
+      </div>
+
+      <h1>
+        Beautiful cakes.<br>
+        <span>Endless inspiration.</span>
+      </h1>
+
+      <p>
+        Discover cake and dessert images for inspiration,
+        social media, Pinterest, menus and bakery marketing.
+      </p>
+
+      <div class="hero-search">
+        <span class="search-icon">⌕</span>
+        <input
+          type="search"
+          id="heroSearch"
+          placeholder="Search for chocolate cake, buttercream, vintage..."
+        />
+      </div>
+
+    </section>
 
 
     <!-- =========================
-         FOOTER
-    ========================== -->
+         CATEGORY FILTER
+    ========================= -->
 
-    <footer>
+    <div class="category-bar">
 
-        <div class="container footer-inner">
+      <div class="category-scroll">
 
-            <div class="footer-copy">
-                © 2026 Cake & Filling. All rights reserved.
-            </div>
+        <button class="category-btn active" data-category="all">
+          All Images
+        </button>
 
-            <div class="footer-links">
-                <a href="/about/">About</a>
-                <a href="/license/">License</a>
-                <a href="/contact/">Contact</a>
-            </div>
+        <button class="category-btn" data-category="artistic">
+          Artistic & Buttercream
+        </button>
 
+        <button class="category-btn" data-category="vintage">
+          Vintage & Lambeth
+        </button>
+
+        <button class="category-btn" data-category="modern">
+          Modern & Decorative
+        </button>
+
+        <button class="category-btn" data-category="structural">
+          Sculptural & Structural
+        </button>
+
+        <button class="category-btn" data-category="classic">
+          Classic & Flavor
+        </button>
+
+        <button class="category-btn" data-category="specialty">
+          Glazed & Specialty
+        </button>
+
+        <button class="category-btn" data-category="desserts">
+          Tarts & Desserts
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         IMAGE LIBRARY
+    ========================= -->
+
+    <section class="section" id="explore">
+
+      <div class="section-heading">
+
+        <div>
+          <h2>Explore the collection</h2>
+          <p>
+            Browse cakes, desserts and bakery inspiration.
+          </p>
         </div>
 
-    </footer>
+        <div class="result-count" id="resultCount">
+          47 images
+        </div>
+
+      </div>
+
+      <div class="masonry" id="imageGrid"></div>
+
+      <div class="empty" id="emptyState">
+        <h3>No images found</h3>
+        <p>Try another search or category.</p>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================= -->
+
+    <section class="category-section" id="categories">
+
+      <div class="section" style="padding-bottom:35px;">
+
+        <div class="section-heading">
+          <div>
+            <h2>Browse by style</h2>
+            <p>
+              Find the kind of cake you're looking for.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="category-grid">
+
+        <a href="#" class="category-card" data-category-link="artistic">
+          <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+            alt="Artistic buttercream cake"
+          >
+
+          <div class="category-overlay">
+            <div>
+              <h3>Artistic & Buttercream</h3>
+              <p>Painted cakes, palette knife and florals</p>
+            </div>
+          </div>
+        </a>
+
+
+        <a href="#" class="category-card" data-category-link="vintage">
+          <img
+            src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=900&q=85"
+            alt="Vintage cake"
+          >
+
+          <div class="category-overlay">
+            <div>
+              <h3>Vintage & Lambeth</h3>
+              <p>Classic piping, rosettes and decoration</p>
+            </div>
+          </div>
+        </a>
+
+
+        <a href="#" class="category-card" data-category-link="modern">
+          <img
+            src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=900&q=85"
+            alt="Modern decorative cake"
+          >
+
+          <div class="category-overlay">
+            <div>
+              <h3>Modern & Decorative</h3>
+              <p>Drip, fault line, stencil and more</p>
+            </div>
+          </div>
+        </a>
+
+
+        <a href="#" class="category-card" data-category-link="structural">
+          <img
+            src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=900&q=85"
+            alt="Sculptural cake"
+          >
+
+          <div class="category-overlay">
+            <div>
+              <h3>Sculptural & Structural</h3>
+              <p>Architectural and unusual cake designs</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         USE CASES
+    ========================= -->
+
+    <section class="uses" id="uses">
+
+      <h2>Made for bakery marketing</h2>
+
+      <p>
+        Use the images to create content for your bakery,
+        cake business or dessert brand.
+      </p>
+
+      <div class="uses-grid">
+
+        <div class="use-card">
+          <div class="icon">◉</div>
+          <h3>Instagram</h3>
+          <p>Posts, Stories and visual content.</p>
+        </div>
+
+        <div class="use-card">
+          <div class="icon">◌</div>
+          <h3>Pinterest</h3>
+          <p>Vertical images made for discovery.</p>
+        </div>
+
+        <div class="use-card">
+          <div class="icon">▣</div>
+          <h3>Menus</h3>
+          <p>Digital menus and promotional material.</p>
+        </div>
+
+        <div class="use-card">
+          <div class="icon">◇</div>
+          <h3>WhatsApp</h3>
+          <p>Status updates and product promotion.</p>
+        </div>
+
+        <div class="use-card">
+          <div class="icon">✦</div>
+          <h3>Website</h3>
+          <p>Visual content for bakery websites.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo">
+          Cake <span>&</span> Filling
+        </a>
+
+        <p>
+          A visual library of cake, dessert and bakery
+          images for inspiration and marketing.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#explore">All Images</a>
+          <a href="#categories">Categories</a>
+          <a href="#uses">For Bakeries</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Categories</h4>
+          <a href="#">Buttercream</a>
+          <a href="#">Vintage</a>
+          <a href="#">Modern</a>
+          <a href="#">Desserts</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /*
+      ============================================================
+      IMAGE LIBRARY
+
+      Quando você colocar as imagens no GitHub, basta substituir
+      o campo "image" pelo caminho real.
+
+      Exemplo:
+
+      image: "images/cakes/buttercream/monet-water-lily.jpg"
+
+      Não será necessário mudar o restante do site.
+      ============================================================
+    */
+
+    const images = [
+
+      {
+        title: "Impressionist Buttercream Cake",
+        category: "artistic",
+        tags: ["buttercream", "impressionist", "painted"],
+        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Palette Knife Floral Buttercream Cake",
+        category: "artistic",
+        tags: ["buttercream", "palette knife", "floral"],
+        image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Van Gogh-Inspired Buttercream Cake",
+        category: "artistic",
+        tags: ["buttercream", "van gogh", "artistic"],
+        image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Monet Water Lily Cake",
+        category: "artistic",
+        tags: ["monet", "water lily", "buttercream"],
+        image: "https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Monochromatic Buttercream Flowers",
+        category: "artistic",
+        tags: ["flowers", "buttercream", "monochrome"],
+        image: "https://images.unsplash.com/photo-1588195538326-c5b1e5b80b2d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Watercolor Buttercream Cake",
+        category: "artistic",
+        tags: ["watercolor", "buttercream", "artistic"],
+        image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Palette Knife Cake",
+        category: "artistic",
+        tags: ["palette knife", "buttercream"],
+        image: "https://images.unsplash.com/photo-1623428454614-abaf056c92f0?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Buttercream Cascade Cake",
+        category: "artistic",
+        tags: ["buttercream", "cascade"],
+        image: "https://images.unsplash.com/photo-1586788224331-947f68671cf1?auto=format&fit=crop&w=900&q=85"
+      },
+
+
+      {
+        title: "Modern Vintage Lambeth Cake",
+        category: "vintage",
+        tags: ["lambeth", "vintage", "piping"],
+        image: "https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Vintage Lambeth Cake",
+        category: "vintage",
+        tags: ["lambeth", "vintage"],
+        image: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Floral Ombre Cake",
+        category: "vintage",
+        tags: ["floral", "ombre", "rosettes"],
+        image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Rustic Rosette Cake",
+        category: "vintage",
+        tags: ["rustic", "rosettes", "buttercream"],
+        image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=85"
+      },
+
+
+      {
+        title: "Pink & Gold Drip Cake",
+        category: "modern",
+        tags: ["drip", "pink", "gold"],
+        image: "https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Gold Fault Line Cake",
+        category: "modern",
+        tags: ["fault line", "gold"],
+        image: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Gold Stencil Cake",
+        category: "modern",
+        tags: ["stencil", "gold", "decorative"],
+        image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Black & Gold Matte Cake",
+        category: "modern",
+        tags: ["black", "gold", "matte"],
+        image: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Modern Rice Paper Cake",
+        category: "modern",
+        tags: ["rice paper", "modern"],
+        image: "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Bubble Cake",
+        category: "modern",
+        tags: ["bubble", "chocolate"],
+        image: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Macramé Shag Cake",
+        category: "modern",
+        tags: ["shag", "macrame"],
+        image: "https://images.unsplash.com/photo-1588195538326-c5b1e5b80b2d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Bicolor Drip Cake",
+        category: "modern",
+        tags: ["drip", "bicolor"],
+        image: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Semi-Naked Cake",
+        category: "modern",
+        tags: ["semi naked", "rustic"],
+        image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Irregular Edge Cake",
+        category: "modern",
+        tags: ["irregular", "modern"],
+        image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Ombre Cake",
+        category: "modern",
+        tags: ["ombre", "gradient"],
+        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+      },
+
+
+      {
+        title: "Architectural Cake",
+        category: "structural",
+        tags: ["architectural", "sculptural"],
+        image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Suspended Acrylic Cake",
+        category: "structural",
+        tags: ["suspended", "acrylic"],
+        image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Top Forward Arch Cake",
+        category: "structural",
+        tags: ["top forward", "arch", "sculptural"],
+        image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Concrete Wedding Cake",
+        category: "structural",
+        tags: ["concrete", "wedding", "modern"],
+        image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=85"
+      },
+
+
+      {
+        title: "Chocolate Pool Cake",
+        category: "classic",
+        tags: ["chocolate", "pool", "cake"],
+        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Chocolate-Covered Carrot Cake",
+        category: "classic",
+        tags: ["carrot", "chocolate"],
+        image: "https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Cornmeal & Guava Cake",
+        category: "classic",
+        tags: ["cornmeal", "guava"],
+        image: "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Brigadeiro Volcano Cake",
+        category: "classic",
+        tags: ["brigadeiro", "chocolate"],
+        image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Creamy Corn Cake",
+        category: "classic",
+        tags: ["corn", "classic"],
+        image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Red Velvet Cake",
+        category: "classic",
+        tags: ["red velvet", "classic"],
+        image: "https://images.unsplash.com/photo-1586788224331-947f68671cf1?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Red Velvet Cake Slice",
+        category: "classic",
+        tags: ["red velvet", "slice"],
+        image: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Carrot Pool Cake",
+        category: "classic",
+        tags: ["carrot", "pool"],
+        image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=900&q=85"
+      },
+
+
+      {
+        title: "Mirror Glaze Cake",
+        category: "specialty",
+        tags: ["mirror glaze", "glaze"],
+        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Velvet Effect Cake",
+        category: "specialty",
+        tags: ["velvet", "texture"],
+        image: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Chocolate Tsunami Cake",
+        category: "specialty",
+        tags: ["tsunami", "chocolate"],
+        image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Torch-Finished Meringue Cake",
+        category: "specialty",
+        tags: ["meringue", "torch"],
+        image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85"
+      },
+
+
+      {
+        title: "Strawberry Mini Tart",
+        category: "desserts",
+        tags: ["strawberry", "tart"],
+        image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        title: "Banoffee Mini Tart",
+        category: "desserts",
+        tags: ["banoffee", "tart"],
+        image: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&w=900&q=85"
+      }
+
+    ];
+
+
+    /*
+      ============================================================
+      RENDER
+      ============================================================
+    */
+
+    const grid = document.getElementById("imageGrid");
+    const emptyState = document.getElementById("emptyState");
+    const resultCount = document.getElementById("resultCount");
+
+    function renderImages(list) {
+
+      grid.innerHTML = "";
+
+      if (!list.length) {
+
+        emptyState.style.display = "block";
+        resultCount.textContent = "0 images";
+
+        return;
+      }
+
+      emptyState.style.display = "none";
+
+      resultCount.textContent =
+        `${list.length} ${list.length === 1 ? "image" : "images"}`;
+
+      list.forEach(item => {
+
+        const card = document.createElement("article");
+
+        card.className = "card";
+
+        card.innerHTML = `
+          <div class="image-wrap">
+
+            <img
+              src="${item.image}"
+              alt="${item.title}"
+              loading="lazy"
+            >
+
+            <button
+              class="save-button"
+              type="button"
+              onclick="saveImage(event, '${item.title.replace(/'/g, "\\'")}')"
+            >
+              Save
+            </button>
+
+          </div>
+
+          <div class="card-info">
+
+            <div class="card-title">
+              ${item.title}
+            </div>
+
+            <div class="card-meta">
+              ${item.tags.slice(0, 2).join(" · ")}
+            </div>
+
+          </div>
+        `;
+
+        grid.appendChild(card);
+
+      });
+
+    }
+
+
+    /*
+      ============================================================
+      FILTER
+      ============================================================
+    */
+
+    let currentCategory = "all";
+    let currentSearch = "";
+
+    function updateResults() {
+
+      const query = currentSearch.toLowerCase().trim();
+
+      const filtered = images.filter(item => {
+
+        const categoryMatch =
+          currentCategory === "all" ||
+          item.category === currentCategory;
+
+        const searchMatch =
+          !query ||
+          item.title.toLowerCase().includes(query) ||
+          item.tags.some(tag =>
+            tag.toLowerCase().includes(query)
+          );
+
+        return categoryMatch && searchMatch;
+
+      });
+
+      renderImages(filtered);
+
+    }
+
+
+    document.querySelectorAll(".category-btn").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        document.querySelectorAll(".category-btn")
+          .forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        currentCategory =
+          button.dataset.category;
+
+        updateResults();
+
+        document
+          .getElementById("explore")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+      });
+
+    });
+
+
+    /*
+      ============================================================
+      SEARCH
+      ============================================================
+    */
+
+    function connectSearch(input) {
+
+      input.addEventListener("input", () => {
+
+        currentSearch = input.value;
+
+        const otherSearch =
+          input.id === "heroSearch"
+            ? document.getElementById("headerSearch")
+            : document.getElementById("heroSearch");
+
+        otherSearch.value = input.value;
+
+        updateResults();
+
+      });
+
+    }
+
+    connectSearch(
+      document.getElementById("heroSearch")
+    );
+
+    connectSearch(
+      document.getElementById("headerSearch")
+    );
+
+
+    /*
+      ============================================================
+      CATEGORY CARDS
+      ============================================================
+    */
+
+    document.querySelectorAll("[data-category-link]")
+      .forEach(card => {
+
+        card.addEventListener("click", event => {
+
+          event.preventDefault();
+
+          const category =
+            card.dataset.categoryLink;
+
+          currentCategory = category;
+
+          document.querySelectorAll(".category-btn")
+            .forEach(btn => {
+
+              btn.classList.toggle(
+                "active",
+                btn.dataset.category === category
+              );
+
+            });
+
+          updateResults();
+
+          document
+            .getElementById("explore")
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        });
+
+      });
+
+
+    /*
+      ============================================================
+      SAVE BUTTON
+      ============================================================
+    */
+
+    function saveImage(event, title) {
+
+      event.stopPropagation();
+
+      alert(
+        `"${title}" will be saved here later when the download system is connected.`
+      );
+
+    }
+
+
+    /*
+      ============================================================
+      INITIAL LOAD
+      ============================================================
+    */
+
+    renderImages(images);
+
+  </script>
 
 </body>
 </html>
