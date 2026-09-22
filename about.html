@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Cake & Filling</title>
+    <meta name="description" content="Learn more about Cake & Filling, a free visual library created for bakeries, cake shops, pastry businesses and dessert brands.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #faf9f7;
+            --white: #ffffff;
+            --text: #252321;
+            --muted: #77716b;
+            --border: #e8e3dd;
+            --accent: #8b5e3c;
+            --accent-dark: #68442b;
+            --soft: #f2ece5;
+            --like: #b34a4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, input {
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* 
+           CORREÇÃO DA SOBREPOSIÇÃO:
+           Fundo sólido sem transparência, z-index alto 
+           e aceleração de hardware (transform) para bugs no Safari/iOS.
+        */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background-color: #faf9f7;
+            border-bottom: 1px solid var(--border);
+            transform: translateZ(0); 
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 76px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        nav a, .nav-dropdown-trigger {
+            font-size: 14px;
+            color: #514c47;
+            transition: color .2s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown-trigger:focus {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            padding: 28px 0;
+        }
+
+        .nav-dropdown-trigger {
+            border: 0;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-dropdown-trigger::after {
+            content: "⌄";
+            font-size: 13px;
+            transform: translateY(-2px);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 7px);
+            left: -18px;
+            width: 430px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(50,35,25,.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(7px);
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            pointer-events: none;
+            z-index: 101;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-heading {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .dropdown-description {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 11px;
+        }
+
+        .dropdown-links {
+            display: grid;
+            gap: 2px;
+        }
+
+        .dropdown-links a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-left: -10px;
+            transition: all .15s ease;
+        }
+
+        .dropdown-links a:hover {
+            background: var(--soft);
+            color: var(--accent);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 18px 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .support-button {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all .2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .support-button:hover {
+            background: var(--soft);
+            border-color: #d9cfc5;
+        }
+
+        .primary-button {
+            border: 0;
+            background: var(--text);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .primary-button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(104, 68, 43, 0.2);
+        }
+
+        .about-container {
+            max-width: 760px;
+            margin: 80px auto 120px;
+            padding: 0 28px;
+        }
+
+        .about-header {
+            margin-bottom: 50px;
+        }
+
+        .about-title {
+            font-family: Georgia, serif;
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            color: var(--text);
+            position: relative; /* Evita herdar comportamentos estranhos */
+            z-index: 1;
+        }
+
+        .about-content h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            letter-spacing: -0.5px;
+            margin: 55px 0 20px;
+            color: var(--text);
+        }
+
+        .about-content p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #44403c;
+            margin-bottom: 24px;
+        }
+
+        .about-content .lead-text {
+            font-size: 24px;
+            line-height: 1.5;
+            color: var(--text);
+            margin-bottom: 35px;
+        }
+
+        .about-content .highlight-quote {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            line-height: 1.5;
+            color: var(--accent-dark);
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 17, 15, .7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 10000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.2s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal {
+            width: min(650px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 25px 70px rgba(0,0,0,.2);
+            transform: translateY(20px);
+            animation: slideUp 0.3s ease forwards;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            font-size: 22px;
+            line-height: 1;
+            transition: background 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-close:hover {
+            background: var(--soft);
+            transform: scale(1.05);
+        }
+
+        .modal h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            padding-right: 40px;
+            margin-bottom: 8px;
+        }
+
+        .support-intro {
+            color: var(--muted);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .support-option {
+            border: 1px solid var(--border);
+            background: white;
+            padding: 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .support-option:hover {
+            background: var(--soft);
+            border-color: var(--text);
+        }
+
+        .custom-amount {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            outline: none;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        
+        .custom-amount:focus {
+            border-color: var(--accent);
+        }
+
+        .support-note {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        #messageModal .modal {
+            width: min(400px, 100%);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        #messageText {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                padding: 0 20px;
+            }
+            .support-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            .about-container {
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 50px;
+            }
+            .about-title {
+                font-size: clamp(38px, 10vw, 48px);
+            }
+            .about-content h2 {
+                font-size: 28px;
+            }
+            .about-content p {
+                font-size: 17px;
+            }
+            .about-content .lead-text {
+                font-size: 21px;
+            }
+            .support-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <!-- Back to index link -->
+        <a href="index.html" class="logo">
+            Cake <span>&</span> Filling
+        </a>
+
+        <nav>
+            <a href="index.html#library">Browse Images</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Categories</button>
+                <div class="nav-dropdown-menu">
+                    <div>
+                        <div class="dropdown-heading">Product Images</div>
+                        <p class="dropdown-description">Standalone cake, dessert and pastry images.</p>
+                        <div class="dropdown-links">
+                            <!-- Categorias antigas removidas conforme seu pedido anterior -->
+                            <a href="index.html#library" data-menu-filter="all">All Product Images</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <div class="dropdown-heading">Marketing Images</div>
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+                        <div class="dropdown-links">
+                            <a href="index.html#library">Menus &amp; Catalogs</a>
+                            <a href="index.html#library">Website &amp; Banners</a>
+                            <a href="index.html#library">Social Media</a>
+                            <a href="index.html#library">Promotions &amp; Offers</a>
+                            <a href="index.html#library">Pinterest</a>
+                            <a href="index.html#library">Brand &amp; Lifestyle</a>
+                            <a href="index.html#library">Seasonal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#library">Latest</a>
+            <a href="about.html" style="color: var(--accent);">About</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="support-button" onclick="openSupport()">Support</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <article class="about-container">
+        <header class="about-header">
+            <h1 class="about-title">About Cake & Filling</h1>
+        </header>
+
+        <div class="about-content">
+            <p class="lead-text">
+                Cake & Filling is a free visual library created for bakeries, cake shops, pastry businesses and dessert brands.
+            </p>
+            <p>
+                The idea is simple: make it easier for small businesses to find beautiful bakery images they can use in their everyday marketing.
+            </p>
+            <p>
+                Creating content for a bakery can take time. Not every business has a photographer, a designer or a large collection of product photos. Cake & Filling was created to provide another option — a growing library of AI-generated cake, dessert and bakery images that are free to download and use.
+            </p>
+
+            <h2>Made for bakery marketing</h2>
+            <p>
+                The images can be used for many everyday business needs, including social media posts, Pinterest, websites, digital menus, promotions, WhatsApp, newsletters and other marketing materials.
+            </p>
+            <p>
+                Some images focus simply on the cake or dessert itself. Others will be created specifically for marketing situations, such as promotions, menus, website banners and seasonal campaigns.
+            </p>
+
+            <h2>A growing library</h2>
+            <p>
+                Cake & Filling is an ongoing project.
+            </p>
+            <p>
+                The library will continue to grow with new cakes, desserts, styles, formats and marketing visuals. The goal is to build a useful collection that makes finding the right image quick and simple.
+            </p>
+
+            <h2>Free to use</h2>
+            <p>
+                The images are available to download for free. You can crop, resize and edit them for your own projects, including commercial marketing.
+            </p>
+            <p>
+                Because the images are AI-generated, they should be treated as visual content rather than exact representations of real products. If you are promoting a specific cake or dessert, make sure the image accurately represents what you actually sell.
+            </p>
+
+            <p class="highlight-quote">
+                Cake & Filling exists to make visual content a little easier for the people who make, sell and share great food.
+            </p>
+        </div>
+    </article>
+</main>
+
+<!-- SUPPORT MODAL -->
+<div class="modal-overlay" id="supportModal" onclick="closeModalOutside(event, 'supportModal')">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal('supportModal')">×</button>
+        <h2>Support Cake & Filling</h2>
+        <p class="support-intro">
+            Every image on Cake & Filling is free.
+            <br><br>
+            If the library is useful to you and you would like to help keep the project growing, you can optionally support it with a small contribution.
+        </p>
+
+        <div class="support-options">
+            <button class="support-option" onclick="supportAmount(1)">$1</button>
+            <button class="support-option" onclick="supportAmount(3)">$3</button>
+            <button class="support-option" onclick="supportAmount(5)">$5</button>
+            <button class="support-option" onclick="supportAmount(10)">$10</button>
+        </div>
+
+        <input type="number" min="1" step="1" class="custom-amount" id="customAmount" placeholder="Custom amount">
+
+        <button class="primary-button" style="width:100%;" onclick="supportCustom()">
+            Continue
+        </button>
+
+        <p class="support-note">
+            Contributions are completely optional. Downloading and using the images does not require payment or an account.
+        </p>
+    </div>
+</div>
+
+<!-- CUSTOM MESSAGE MODAL -->
+<div class="modal-overlay" id="messageModal" onclick="closeModalOutside(event, 'messageModal')">
+    <div class="modal" style="width: min(400px, 100%); padding: 40px 30px; text-align: center;">
+        <button class="modal-close" onclick="closeModal('messageModal')">×</button>
+        <div id="messageText" style="margin-bottom: 25px; font-size: 16px; line-height: 1.5; color: var(--text);"></div>
+        <button class="primary-button" onclick="closeModal('messageModal')">OK</button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2026 Cake & Filling</div>
+        <div>Free bakery images for creative and commercial use.</div>
+    </div>
+</footer>
+
+<script>
+    function closeModal(id) {
+        document.getElementById(id).classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    function closeModalOutside(event, id) {
+        if (event.target.id === id) {
+            closeModal(id);
+        }
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeModal("supportModal");
+            closeModal("messageModal");
+        }
+    });
+
+    function openSupport() {
+        document.getElementById("supportModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function showCustomMessage(msg) {
+        document.getElementById('messageText').innerText = msg;
+        document.getElementById('messageModal').classList.add('active');
+        document.body.style.overflow = "hidden";
+    }
+
+    function supportAmount(amount) {
+        closeModal("supportModal");
+        showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
+    }
+
+    function supportCustom() {
+        const amount = document.getElementById("customAmount").value;
+        if (!amount || Number(amount) < 1) {
+            showCustomMessage("Please enter an amount of at least $1.");
+            return;
+        }
+        closeModal("supportModal");
+        showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
+    }
+</script>
+</body>
+</html>
