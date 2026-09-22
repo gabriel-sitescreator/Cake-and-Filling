@@ -960,9 +960,9 @@
         </div>
 
         <div class="hero-gallery">
-            <img src="https://placehold.co/400x600/eee9e4/a38b79?text=Watercolor+Cake" alt="Watercolor buttercream cake" onerror="this.src='https://placehold.co/400x600/eee/999?text=Image'">
-            <img src="https://placehold.co/400x300/eee9e4/a38b79?text=Lambeth+Cake" alt="Modern vintage Lambeth cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
-            <img src="https://placehold.co/400x300/eee9e4/a38b79?text=Monet+Cake" alt="Monet inspired water lily cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
+            <img src="images/Bolo Aquarela_ O Segredo da Colorimetria Perfeita no Buttercream.jpg" alt="Watercolor buttercream cake" onerror="this.src='https://placehold.co/400x600/eee/999?text=Image'">
+            <img src="images/Dark Elegance_ The Modern Vintage Lambeth Cake.jpg" alt="Modern vintage Lambeth cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
+            <img src="images/Monet Sunset Water Lily Cake_ Impressionist Buttercream Art.jpg" alt="Monet inspired water lily cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
         </div>
     </section>
 
@@ -1532,8 +1532,8 @@
             const card = document.createElement("article");
             card.className = "image-card";
             
-            // Using placeholder logic for preview stability if actual images are unavailable
-            const imagePath = `https://placehold.co/600x800/eee9e4/a38b79?text=${encodeURIComponent(image.title.split(' ').slice(0,2).join('+'))}`;
+            // Caminho correto apontando para a pasta "images/" do seu repositório
+            const imagePath = "images/" + encodeURIComponent(image.file).replace(/%2F/g, "/");
             const likeKey = "cake-filling-like-" + image.file;
             const isLiked = localStorage.getItem(likeKey) === "true";
 
@@ -1591,8 +1591,8 @@
 
     function downloadImage(index) {
         const image = images[index];
-        // Placeholder for demo
-        const imagePath = `https://placehold.co/600x800/eee9e4/a38b79?text=Download`;
+        // Caminho correto apontando para a pasta "images/" para efetuar o download
+        const imagePath = "images/" + encodeURIComponent(image.file).replace(/%2F/g, "/");
         
         const link = document.createElement("a");
         link.href = imagePath;
