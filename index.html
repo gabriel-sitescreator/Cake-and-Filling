@@ -743,6 +743,40 @@
             gap: 20px;
         }
 
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .use-case-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(50, 35, 25, 0.08);
+        }
+
+        .use-case-card h3 {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .use-case-card p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
         @media (max-width: 1100px) {
             .image-grid {
                 column-count: 3;
@@ -752,6 +786,10 @@
         @media (max-width: 900px) {
             nav {
                 display: none;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero {
@@ -789,6 +827,10 @@
         @media (max-width: 600px) {
             .header-inner {
                 padding: 0 20px;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
             }
 
             .support-button {
@@ -955,6 +997,48 @@
             <img src="images/Bolo Aquarela_ O Segredo da Colorimetria Perfeita no Buttercream.jpg" alt="Watercolor buttercream cake" onerror="this.src='https://placehold.co/400x600/eee/999?text=Image'">
             <img src="images/Dark Elegance_ The Modern Vintage Lambeth Cake.jpg" alt="Modern vintage Lambeth cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
             <img src="images/Monet Sunset Water Lily Cake_ Impressionist Buttercream Art.jpg" alt="Monet inspired water lily cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
+        </div>
+    </section>
+
+    <section class="section" id="use-cases">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Use These Images for Your Bakery</h2>
+                <p class="section-description" style="max-width: 750px;">
+                    The images in Cake & Filling can be used in many of the places where bakeries, cake shops and dessert businesses share their products and promote their work.
+                </p>
+            </div>
+        </div>
+
+        <div class="use-cases-grid">
+            <div class="use-case-card">
+                <h3>Social Media</h3>
+                <p>Use them for Instagram posts and Stories, Facebook, WhatsApp Status, TikTok and other social content.</p>
+            </div>
+            <div class="use-case-card">
+                <h3>Pinterest</h3>
+                <p>Create pins, inspiration boards and visual content to help showcase your bakery and products.</p>
+            </div>
+            <div class="use-case-card">
+                <h3>Menus & Catalogs</h3>
+                <p>Add images to digital menus, PDF menus, product catalogs, QR menus and WhatsApp catalogs.</p>
+            </div>
+            <div class="use-case-card">
+                <h3>Websites</h3>
+                <p>Use them on bakery websites, product pages, landing pages, blog posts and promotional sections.</p>
+            </div>
+            <div class="use-case-card">
+                <h3>Promotions</h3>
+                <p>Create visuals for special offers, seasonal products, new items, discounts, holidays and limited-time promotions.</p>
+            </div>
+            <div class="use-case-card">
+                <h3>Marketing Materials</h3>
+                <p>Use them in newsletters, flyers, promotional graphics, presentations and other materials created for your business.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 35px; padding: 22px; background: var(--soft); border-radius: 16px; text-align: center; color: var(--text); font-size: 16px;">
+            You can download the images for free and adapt them to fit your own content.
         </div>
     </section>
 
