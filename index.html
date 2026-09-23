@@ -406,8 +406,6 @@
             height: 100%;
             max-height: 650px;
             object-fit: cover;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
         }
 
         .card-body {
@@ -1617,7 +1615,7 @@
 
             card.innerHTML = `
                 <div class="image-wrapper" style="aspect-ratio: ${image.dimensions.split("×")[0].trim()} / ${image.dimensions.split("×")[1].replace("px", "").trim()};">
-                    <img src="${imagePath}" alt="${escapeHTML(image.title)}" width="${image.dimensions.split("×")[0].trim()}" height="${image.dimensions.split("×")[1].replace("px", "").trim()}" loading="${index < 4 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 2 ? "high" : "auto"}">
+                    <img src="${imagePath}" alt="${escapeHTML(image.title)}" width="${image.dimensions.split("×")[0].trim()}" height="${image.dimensions.split("×")[1].replace("px", "").trim()}" loading="${index < 8 ? "eager" : "lazy"}" decoding="async">
                 </div>
                 <div class="card-body">
                     <h3 class="image-title">${escapeHTML(image.title)}</h3>
