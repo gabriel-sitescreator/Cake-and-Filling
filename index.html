@@ -788,34 +788,6 @@
             line-height: 1.6;
         }
 
-        /* ----- ESTILOS DO QR CODE FLUTUANTE ----- */
-        .floating-qr {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 120px;
-            background: var(--white);
-            padding: 10px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 15px 35px rgba(50, 35, 25, 0.12);
-            z-index: 90;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block;
-        }
-
-        .floating-qr:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 45px rgba(50, 35, 25, 0.18);
-        }
-
-        .floating-qr img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-
         @media (max-width: 1100px) {
             .image-grid {
                 column-count: 3;
@@ -954,14 +926,6 @@
             
             .modal {
                 padding: 25px;
-            }
-
-            /* Diminui o tamanho do QR Code no celular */
-            .floating-qr {
-                width: 90px;
-                bottom: 20px;
-                right: 20px;
-                padding: 8px;
             }
         }
 
@@ -1214,12 +1178,6 @@
         <button class="primary-button" onclick="closeModal('messageModal')">OK</button>
     </div>
 </div>
-
-<!-- INÍCIO: QR CODE FLUTUANTE -->
-<a href="https://www.buymeacoffee.com/cakeandfilling" target="_blank" class="floating-qr" title="Support Cake & Filling on Buy Me a Coffee">
-    <img src="images/qr-code.png" alt="Buy Me a Coffee QR Code">
-</a>
-<!-- FIM: QR CODE FLUTUANTE -->
 
 <footer>
     <div class="footer-inner">
