@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cake & Filling — Free Cake & Bakery Images</title>
-    <link rel="preload" as="image" href="images/Bolo%20Aquarela_%20O%20Segredo%20da%20Colorimetria%20Perfeita%20no%20Buttercream.jpg">
-    <link rel="preload" as="image" href="images/Dark%20Elegance_%20The%20Modern%20Vintage%20Lambeth%20Cake.jpg">
-    <link rel="preload" as="image" href="images/Monet%20Sunset%20Water%20Lily%20Cake_%20Impressionist%20Buttercream%20Art.jpg">
     <meta name="description" content="Free AI-generated cake, dessert and bakery images for Pinterest, social media, websites, menus and bakery marketing.">
 
     <style>
@@ -1620,7 +1617,7 @@
 
             card.innerHTML = `
                 <div class="image-wrapper" style="aspect-ratio: ${image.dimensions.split("×")[0].trim()} / ${image.dimensions.split("×")[1].replace("px", "").trim()};">
-                    <img src="${imagePath}" alt="${escapeHTML(image.title)}" width="${image.dimensions.split("×")[0].trim()}" height="${image.dimensions.split("×")[1].replace("px", "").trim()}" loading="${index < 12 ? "eager" : "lazy"}" decoding="${index < 12 ? "sync" : "async"}" fetchpriority="${index < 4 ? "high" : "auto"}">
+                    <img src="${imagePath}" alt="${escapeHTML(image.title)}" width="${image.dimensions.split("×")[0].trim()}" height="${image.dimensions.split("×")[1].replace("px", "").trim()}" loading="${index < 4 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 2 ? "high" : "auto"}">
                 </div>
                 <div class="card-body">
                     <h3 class="image-title">${escapeHTML(image.title)}</h3>
