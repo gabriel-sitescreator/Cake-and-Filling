@@ -7,7 +7,7 @@
     <meta name="description" content="Learn more about Cake & Filling, a free visual library created for bakeries, cake shops, pastry businesses and dessert brands.">
 
     <style>
-        * {/*  */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -187,23 +187,10 @@
             gap: 10px;
         }
 
-        .support-button {
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--text);
-            padding: 10px 20px;
-            border-radius: 999px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all .2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .support-button:hover {
-            background: var(--soft);
-            border-color: #d9cfc5;
-        }
+        /* 
+           O .support-button antigo foi removido já que usaremos 
+           o script oficial do Buy Me a Coffee que injeta seu próprio estilo 
+        */
 
         .primary-button {
             border: 0;
@@ -446,10 +433,6 @@
             .header-inner {
                 padding: 0 20px;
             }
-            .support-button {
-                padding: 10px 16px;
-                font-size: 13px;
-            }
             .about-container {
                 padding-left: 20px;
                 padding-right: 20px;
@@ -496,7 +479,6 @@
                         <div class="dropdown-heading">Product Images</div>
                         <p class="dropdown-description">Standalone cake, dessert and pastry images.</p>
                         <div class="dropdown-links">
-                            <!-- Categorias antigas removidas conforme seu pedido anterior -->
                             <a href="index.html#library" data-menu-filter="all">All Product Images</a>
                         </div>
                     </div>
@@ -520,7 +502,8 @@
         </nav>
 
         <div class="header-actions">
-            <button class="support-button" onclick="openSupport()">Support</button>
+            <!-- SCRIPT DO BUY ME A COFFEE ADICIONADO AQUI -->
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cakeandfilling" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Support The Project" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
         </div>
     </div>
 </header>
@@ -573,7 +556,7 @@
     </article>
 </main>
 
-<!-- SUPPORT MODAL -->
+<!-- SUPPORT MODAL (Mantido caso queira usar em algum outro local do site) -->
 <div class="modal-overlay" id="supportModal" onclick="closeModalOutside(event, 'supportModal')">
     <div class="modal">
         <button class="modal-close" onclick="closeModal('supportModal')">×</button>
