@@ -377,9 +377,14 @@
         }
 
         .image-card {
-            display: inline-block; /* Helps prevent cutting elements in masonry */
+            display: inline-block;
             width: 100%;
+            
+            /* Previne quebras e recálculos no Webkit/Chrome */
             break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            
             margin-bottom: 20px;
             background: var(--white);
             border: 1px solid var(--border);
@@ -387,10 +392,16 @@
             overflow: hidden;
             transition: transform .25s ease, box-shadow .25s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            
+            /* CORREÇÃO DO PISCAR: Força aceleração de Hardware (GPU) */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0); 
         }
 
         .image-card:hover {
-            transform: translateY(-4px);
+            /* Mantém a aceleração 3D no hover em vez de usar apenas translateY */
+            transform: translate3d(0, -4px, 0);
             box-shadow: 0 15px 35px rgba(50, 35, 25, .1);
         }
 
