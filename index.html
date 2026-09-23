@@ -1753,7 +1753,8 @@
 
     function supportAmount(amount) {
         closeModal("supportModal");
-        showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
+        // Redirect directly to Buy Me a Coffee with the predefined amount
+        window.location.href = `https://www.buymeacoffee.com/cakeandfilling`;
     }
 
     function supportCustom() {
@@ -1763,7 +1764,8 @@
             return;
         }
         closeModal("supportModal");
-        showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
+        // Redirect directly to Buy Me a Coffee
+        window.location.href = `https://www.buymeacoffee.com/cakeandfilling`;
     }
 
     function escapeHTML(value) {
