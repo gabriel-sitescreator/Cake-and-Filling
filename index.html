@@ -9,8 +9,8 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
+    gtag('js', new Date());
     gtag('config', 'G-EGVV6YSNBW');
     </script>
 
@@ -48,6 +48,10 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+
         a {
             color: inherit;
             text-decoration: none;
@@ -57,6 +61,10 @@
             font-family: inherit;
             outline: none;
         }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
 
         header {
             position: sticky;
@@ -96,14 +104,17 @@
             flex: 1;
         }
 
-        nav a, .nav-dropdown-trigger {
+        nav a,
+        .nav-dropdown-trigger {
             font-size: 14px;
             color: #514c47;
             transition: color .2s ease;
             font-weight: 500;
         }
 
-        nav a:hover, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown-trigger:focus {
+        nav a:hover,
+        .nav-dropdown:hover .nav-dropdown-trigger,
+        .nav-dropdown-trigger:focus {
             color: var(--accent);
         }
 
@@ -141,12 +152,16 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(7px);
-            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            transition:
+                opacity .2s ease,
+                transform .2s ease,
+                visibility .2s ease;
             pointer-events: none;
             z-index: 101;
         }
 
-        .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu {
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -235,6 +250,54 @@
             box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.1);
         }
 
+        /* =========================================================
+           MOBILE MENU BUTTON
+        ========================================================= */
+
+        .mobile-menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 12px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
         .hero {
             max-width: 1400px;
             margin: 0 auto;
@@ -281,7 +344,10 @@
             cursor: pointer;
             font-size: 15px;
             font-weight: 600;
-            transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                box-shadow .2s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -304,7 +370,7 @@
             font-weight: 600;
             transition: all .2s ease;
         }
-        
+
         .secondary-button:hover {
             background: var(--soft);
             border-color: #d9cfc5;
@@ -328,6 +394,10 @@
             height: 420px;
             grid-row: span 2;
         }
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
 
         .section {
             max-width: 1400px;
@@ -382,6 +452,10 @@
             border-color: var(--text);
         }
 
+        /* =========================================================
+           IMAGE GRID
+        ========================================================= */
+
         .image-grid {
             column-count: 4;
             column-gap: 20px;
@@ -390,28 +464,27 @@
         .image-card {
             display: inline-block;
             width: 100%;
-            
-            /* Previne quebras e recálculos no Webkit/Chrome */
+
             break-inside: avoid;
             -webkit-column-break-inside: avoid;
             page-break-inside: avoid;
-            
+
             margin-bottom: 20px;
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 16px;
             overflow: hidden;
-            transition: transform .25s ease, box-shadow .25s ease;
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            
-            /* CORREÇÃO DO PISCAR: Força aceleração de Hardware (GPU) */
+
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            transform: translate3d(0, 0, 0); 
+            transform: translate3d(0, 0, 0);
         }
 
         .image-card:hover {
-            /* Mantém a aceleração 3D no hover em vez de usar apenas translateY */
             transform: translate3d(0, -4px, 0);
             box-shadow: 0 15px 35px rgba(50, 35, 25, .1);
         }
@@ -517,12 +590,16 @@
             padding: 80px 20px;
             color: var(--muted);
         }
-        
+
         .empty-state h3 {
             color: var(--text);
             margin-bottom: 10px;
             font-size: 20px;
         }
+
+        /* =========================================================
+           SUPPORT
+        ========================================================= */
 
         .support-section {
             max-width: 1400px;
@@ -552,6 +629,10 @@
             font-size: 17px;
         }
 
+        /* =========================================================
+           MODALS
+        ========================================================= */
+
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -569,10 +650,15 @@
             display: flex;
             animation: fadeIn 0.2s ease forwards;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .modal {
@@ -587,10 +673,17 @@
             transform: translateY(20px);
             animation: slideUp 0.3s ease forwards;
         }
-        
+
         @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .modal-close {
@@ -605,12 +698,14 @@
             cursor: pointer;
             font-size: 22px;
             line-height: 1;
-            transition: background 0.2s, transform 0.2s;
+            transition:
+                background 0.2s,
+                transform 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .modal-close:hover {
             background: var(--soft);
             transform: scale(1.05);
@@ -723,7 +818,7 @@
             font-size: 15px;
             transition: border-color 0.2s;
         }
-        
+
         .custom-amount:focus {
             border-color: var(--accent);
         }
@@ -735,20 +830,23 @@
             margin-top: 18px;
             text-align: center;
         }
-        
-        /* Message Alert Replacer Styles */
+
         #messageModal .modal {
             width: min(400px, 100%);
             padding: 30px;
             text-align: center;
         }
-        
+
         #messageText {
             margin-bottom: 25px;
             font-size: 16px;
             line-height: 1.5;
             color: var(--text);
         }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         footer {
             border-top: 1px solid var(--border);
@@ -765,6 +863,10 @@
             gap: 20px;
         }
 
+        /* =========================================================
+           USE CASES
+        ========================================================= */
+
         .use-cases-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -778,7 +880,9 @@
             border-radius: 16px;
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .use-case-card:hover {
@@ -799,15 +903,178 @@
             line-height: 1.6;
         }
 
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
         @media (max-width: 1100px) {
             .image-grid {
                 column-count: 3;
             }
+
+            .header-inner {
+                gap: 20px;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+            .search-box {
+                width: 180px;
+            }
         }
 
+        /* =========================================================
+           MOBILE / TABLET HEADER
+        ========================================================= */
+
         @media (max-width: 900px) {
+
+            /*
+             * CORREÇÃO PRINCIPAL:
+             * O menu desktop deixa de aparecer em telas pequenas,
+             * mas agora é substituído pelo botão + menu mobile.
+             */
+
             nav {
                 display: none;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+            }
+
+            .header-inner {
+                min-height: 70px;
+                padding: 0 20px;
+                gap: 12px;
+            }
+
+            .header-actions {
+                margin-left: auto;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .support-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: block;
+                background: rgba(250, 249, 247, 0.98);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 18px 40px rgba(50,35,25,.10);
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                pointer-events: none;
+
+                transition:
+                    opacity .2s ease,
+                    transform .2s ease,
+                    visibility .2s ease;
+            }
+
+            .mobile-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .mobile-menu-inner {
+                padding: 12px 20px 20px;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+
+            .mobile-menu-link {
+                display: block;
+                width: 100%;
+                padding: 14px 4px;
+                border-bottom: 1px solid var(--border);
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+            .mobile-menu-link:hover {
+                color: var(--accent);
+            }
+
+            .mobile-category-button {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid var(--border);
+                background: transparent;
+                padding: 14px 4px;
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+                text-align: left;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .mobile-category-button::after {
+                content: "⌄";
+                font-size: 16px;
+                transition: transform .2s ease;
+            }
+
+            .mobile-category-button.active::after {
+                transform: rotate(180deg);
+            }
+
+            .mobile-category-menu {
+                display: none;
+                padding: 8px 0 10px 12px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .mobile-category-menu.active {
+                display: block;
+            }
+
+            .mobile-category-heading {
+                padding: 10px 4px 5px;
+                color: var(--muted);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+            }
+
+            .mobile-category-description {
+                padding: 0 4px 7px;
+                color: var(--muted);
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .mobile-category-link {
+                display: block;
+                padding: 9px 4px;
+                color: #514c47;
+                font-size: 14px;
+            }
+
+            .mobile-category-link:hover {
+                color: var(--accent);
             }
 
             .use-cases-grid {
@@ -826,18 +1093,18 @@
             .hero-gallery img:first-child {
                 height: 350px;
             }
-
-            .search-box {
-                width: 180px;
-            }
         }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
 
         @media (max-width: 768px) {
             .image-grid {
                 column-count: 2;
                 column-gap: 16px;
             }
-            
+
             .support-box {
                 flex-direction: column;
                 align-items: flex-start;
@@ -847,21 +1114,31 @@
         }
 
         @media (max-width: 600px) {
+
+            .logo {
+                font-size: 22px;
+            }
+
             .header-inner {
-                padding: 0 20px;
+                padding: 0 16px;
+            }
+
+            .header-actions {
+                gap: 8px;
+            }
+
+            .support-button {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .mobile-menu-inner {
+                padding-left: 16px;
+                padding-right: 16px;
             }
 
             .use-cases-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .support-button {
-                padding: 10px 16px;
-                font-size: 13px;
-            }
-
-            .search-box {
-                display: none;
             }
 
             .hero,
@@ -920,7 +1197,7 @@
                 gap: 4px;
                 padding: 10px 0;
             }
-            
+
             .info-label {
                 font-size: 13px;
             }
@@ -934,7 +1211,7 @@
                 text-align: center;
                 gap: 10px;
             }
-            
+
             .modal {
                 padding: 25px;
             }
@@ -944,6 +1221,10 @@
             .image-grid {
                 column-count: 1;
             }
+
+            .support-button {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -952,26 +1233,48 @@
 
 <header>
     <div class="header-inner">
+
         <a href="#" class="logo">
             Cake <span>&</span> Filling
         </a>
 
+        <!-- DESKTOP NAVIGATION -->
         <nav>
             <a href="#library">Browse Images</a>
+
             <div class="nav-dropdown">
-                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Categories</button>
+                <button
+                    class="nav-dropdown-trigger"
+                    type="button"
+                    aria-haspopup="true">
+                    Categories
+                </button>
+
                 <div class="nav-dropdown-menu">
+
                     <div>
                         <div class="dropdown-heading">Product Images</div>
-                        <p class="dropdown-description">Standalone cake, dessert and pastry images.</p>
+
+                        <p class="dropdown-description">
+                            Standalone cake, dessert and pastry images.
+                        </p>
+
                         <div class="dropdown-links">
-                            <a href="#library" data-menu-filter="all">All Product Images</a>
+                            <a href="#library" data-menu-filter="all">
+                                All Product Images
+                            </a>
                         </div>
                     </div>
+
                     <div class="dropdown-divider"></div>
+
                     <div>
                         <div class="dropdown-heading">Marketing Images</div>
-                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+
+                        <p class="dropdown-description">
+                            Visuals for menus, websites, social media and bakery marketing.
+                        </p>
+
                         <div class="dropdown-links">
                             <a href="#library">Menus &amp; Catalogs</a>
                             <a href="#library">Website &amp; Banners</a>
@@ -982,229 +1285,896 @@
                             <a href="#library">Seasonal</a>
                         </div>
                     </div>
+
                 </div>
             </div>
+
             <a href="banners.html">Banners</a>
             <a href="about.html">About</a>
         </nav>
 
+        <!-- HEADER ACTIONS -->
         <div class="header-actions">
-            <input type="search" id="searchInput" class="search-box" placeholder="Search images...">
-            <button class="support-button" onclick="openSupport()">Support the Project</button>
+
+            <input
+                type="search"
+                id="searchInput"
+                class="search-box"
+                placeholder="Search images..."
+                aria-label="Search images">
+
+            <button
+                class="support-button"
+                onclick="openSupport()">
+                Support the Project
+            </button>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-inner">
+
+            <a
+                href="#library"
+                class="mobile-menu-link mobile-close-link">
+                Browse Images
+            </a>
+
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false">
+                Categories
+            </button>
+
+            <div
+                class="mobile-category-menu"
+                id="mobileCategoryMenu">
+
+                <div class="mobile-category-heading">
+                    Product Images
+                </div>
+
+                <p class="mobile-category-description">
+                    Standalone cake, dessert and pastry images.
+                </p>
+
+                <a
+                    href="#library"
+                    class="mobile-category-link mobile-close-link"
+                    data-menu-filter="all">
+                    All Product Images
+                </a>
+
+                <div class="mobile-category-heading">
+                    Marketing Images
+                </div>
+
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Menus &amp; Catalogs
+                </a>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Website &amp; Banners
+                </a>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Social Media
+                </a>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Promotions &amp; Offers
+                </a>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Pinterest
+                </a>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Brand &amp; Lifestyle
+                </a>
+
+                <a href="#library" class="mobile-category-link mobile-close-link">
+                    Seasonal
+                </a>
+
+            </div>
+
+            <a
+                href="banners.html"
+                class="mobile-menu-link mobile-close-link">
+                Banners
+            </a>
+
+            <a
+                href="about.html"
+                class="mobile-menu-link mobile-close-link">
+                About
+            </a>
+
+            <button
+                type="button"
+                class="mobile-menu-link"
+                style="border:0; background:transparent; text-align:left; cursor:pointer;"
+                onclick="closeMobileMenu(); openSupport();">
+                Support the Project
+            </button>
+
         </div>
     </div>
 </header>
 
 
 <main>
+
+    <!-- HERO -->
     <section class="hero">
+
         <div>
+
             <h1>
-                Beautiful bakery images, <span>ready to use.</span>
+                Beautiful bakery images,
+                <span>ready to use.</span>
             </h1>
+
             <p>
-                Free AI-generated cake, dessert and bakery images for Pinterest, social media, websites, menus and bakery marketing.
+                Free AI-generated cake, dessert and bakery images for Pinterest,
+                social media, websites, menus and bakery marketing.
             </p>
 
             <div class="hero-buttons">
-                <a href="#library" class="primary-button">
+
+                <a
+                    href="#library"
+                    class="primary-button">
                     Browse Images
                 </a>
-                <button class="secondary-button" onclick="openSupport()">
+
+                <button
+                    class="secondary-button"
+                    onclick="openSupport()">
                     Support the Project
                 </button>
+
             </div>
+
         </div>
 
         <div class="hero-gallery">
-            <img src="images/Bolo Aquarela_ O Segredo da Colorimetria Perfeita no Buttercream.jpg" alt="Watercolor buttercream cake" onerror="this.src='https://placehold.co/400x600/eee/999?text=Image'">
-            <img src="images/Dark Elegance_ The Modern Vintage Lambeth Cake.jpg" alt="Modern vintage Lambeth cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
-            <img src="images/Monet Sunset Water Lily Cake_ Impressionist Buttercream Art.jpg" alt="Monet inspired water lily cake" onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
+
+            <img
+                src="images/Bolo Aquarela_ O Segredo da Colorimetria Perfeita no Buttercream.jpg"
+                alt="Watercolor buttercream cake"
+                width="736"
+                height="1318"
+                loading="eager"
+                decoding="async"
+                onerror="this.src='https://placehold.co/400x600/eee/999?text=Image'">
+
+            <img
+                src="images/Dark Elegance_ The Modern Vintage Lambeth Cake.jpg"
+                alt="Modern vintage Lambeth cake"
+                width="736"
+                height="1097"
+                loading="eager"
+                decoding="async"
+                onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
+
+            <img
+                src="images/Monet Sunset Water Lily Cake_ Impressionist Buttercream Art.jpg"
+                alt="Monet inspired water lily cake"
+                width="736"
+                height="1318"
+                loading="eager"
+                decoding="async"
+                onerror="this.src='https://placehold.co/400x300/eee/999?text=Image'">
+
         </div>
+
     </section>
 
+
+    <!-- USE CASES -->
     <section class="section" id="use-cases">
+
         <div class="section-header">
+
             <div>
-                <h2 class="section-title">Use These Images for Your Bakery</h2>
-                <p class="section-description" style="max-width: 750px;">
-                    The images in Cake & Filling can be used in many of the places where bakeries, cake shops and dessert businesses share their products and promote their work.
+
+                <h2 class="section-title">
+                    Use These Images for Your Bakery
+                </h2>
+
+                <p
+                    class="section-description"
+                    style="max-width: 750px;">
+
+                    The images in Cake & Filling can be used in many of the
+                    places where bakeries, cake shops and dessert businesses
+                    share their products and promote their work.
+
                 </p>
+
             </div>
+
         </div>
+
 
         <div class="use-cases-grid">
+
             <div class="use-case-card">
                 <h3>Social Media</h3>
-                <p>Use them for Instagram posts and Stories, Facebook, WhatsApp Status, TikTok and other social content.</p>
+                <p>
+                    Use them for Instagram posts and Stories, Facebook,
+                    WhatsApp Status, TikTok and other social content.
+                </p>
             </div>
+
             <div class="use-case-card">
                 <h3>Pinterest</h3>
-                <p>Create pins, inspiration boards and visual content to help showcase your bakery and products.</p>
+                <p>
+                    Create pins, inspiration boards and visual content to
+                    help showcase your bakery and products.
+                </p>
             </div>
+
             <div class="use-case-card">
                 <h3>Menus & Catalogs</h3>
-                <p>Add images to digital menus, PDF menus, product catalogs, QR menus and WhatsApp catalogs.</p>
+                <p>
+                    Add images to digital menus, PDF menus, product catalogs,
+                    QR menus and WhatsApp catalogs.
+                </p>
             </div>
+
             <div class="use-case-card">
                 <h3>Websites</h3>
-                <p>Use them on bakery websites, product pages, landing pages, blog posts and promotional sections.</p>
+                <p>
+                    Use them on bakery websites, product pages, landing pages,
+                    blog posts and promotional sections.
+                </p>
             </div>
+
             <div class="use-case-card">
                 <h3>Promotions</h3>
-                <p>Create visuals for special offers, seasonal products, new items, discounts, holidays and limited-time promotions.</p>
+                <p>
+                    Create visuals for special offers, seasonal products,
+                    new items, discounts, holidays and limited-time promotions.
+                </p>
             </div>
+
             <div class="use-case-card">
                 <h3>Marketing Materials</h3>
-                <p>Use them in newsletters, flyers, promotional graphics, presentations and other materials created for your business.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 35px; padding: 22px; background: var(--soft); border-radius: 16px; text-align: center; color: var(--text); font-size: 16px;">
-            You can download the images for free and adapt them to fit your own content.
-        </div>
-    </section>
-
-    <section class="section" id="library">
-        <div class="section-header">
-            <div>
-                <h2 class="section-title">Explore the library</h2>
-                <p class="section-description">
-                    Browse free images created for cake shops, bakeries, pastry businesses and dessert brands.
+                <p>
+                    Use them in newsletters, flyers, promotional graphics,
+                    presentations and other materials created for your business.
                 </p>
             </div>
+
         </div>
+
+
+        <div
+            style="
+                margin-top: 35px;
+                padding: 22px;
+                background: var(--soft);
+                border-radius: 16px;
+                text-align: center;
+                color: var(--text);
+                font-size: 16px;
+            ">
+
+            You can download the images for free and adapt them to fit your own content.
+
+        </div>
+
+    </section>
+
+
+    <!-- IMAGE LIBRARY -->
+    <section class="section" id="library">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Explore the library
+                </h2>
+
+                <p class="section-description">
+                    Browse free images created for cake shops, bakeries,
+                    pastry businesses and dessert brands.
+                </p>
+
+            </div>
+
+        </div>
+
 
         <div class="filters">
-            <button class="filter-button active" data-filter="all">All Images</button>
-            <button class="filter-button" data-filter="artistic">Artistic & Buttercream</button>
-            <button class="filter-button" data-filter="vintage">Vintage & Lambeth</button>
-            <button class="filter-button" data-filter="modern">Modern & Decorative</button>
-            <button class="filter-button" data-filter="structural">Sculptural & Structural</button>
-            <button class="filter-button" data-filter="classic">Classic & Flavor</button>
-            <button class="filter-button" data-filter="specialty">Glazed & Specialty</button>
-            <button class="filter-button" data-filter="desserts">Tarts & Desserts</button>
+
+            <button
+                class="filter-button active"
+                data-filter="all">
+                All Images
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="artistic">
+                Artistic & Buttercream
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="vintage">
+                Vintage & Lambeth
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="modern">
+                Modern & Decorative
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="structural">
+                Sculptural & Structural
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="classic">
+                Classic & Flavor
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="specialty">
+                Glazed & Specialty
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="desserts">
+                Tarts & Desserts
+            </button>
+
         </div>
 
-        <div class="image-grid" id="imageGrid"></div>
 
-        <div class="empty-state" id="emptyState">
+        <div
+            class="image-grid"
+            id="imageGrid">
+        </div>
+
+
+        <div
+            class="empty-state"
+            id="emptyState">
+
             <h3>No images found.</h3>
             <p>Try another search or category.</p>
+
         </div>
+
     </section>
 
+
+    <!-- SUPPORT SECTION -->
     <section class="support-section" id="about">
+
         <div class="support-box">
+
             <div>
-                <h2>Help keep Cake & Filling free.</h2>
+
+                <h2>
+                    Help keep Cake & Filling free.
+                </h2>
+
                 <p>
-                    All images are free to download and use. If you find the library useful, you can optionally support the project and help keep new images coming.
+                    All images are free to download and use.
+                    If you find the library useful, you can optionally
+                    support the project and help keep new images coming.
                 </p>
+
             </div>
-            <button class="primary-button" onclick="openSupport()">
+
+            <button
+                class="primary-button"
+                onclick="openSupport()">
+
                 Support Cake & Filling
+
             </button>
+
         </div>
+
     </section>
+
 </main>
 
+
 <!-- IMAGE INFORMATION MODAL -->
-<div class="modal-overlay" id="infoModal" onclick="closeModalOutside(event, 'infoModal')">
+<div
+    class="modal-overlay"
+    id="infoModal"
+    onclick="closeModalOutside(event, 'infoModal')">
+
     <div class="modal">
-        <button class="modal-close" onclick="closeModal('infoModal')">×</button>
-        <h2 id="modalTitle">Image title</h2>
-        <p class="modal-subtitle" id="modalCategory">Category</p>
 
-        <div class="info-list">
-            <div class="info-row">
-                <div class="info-label">Format</div>
-                <div class="info-value" id="modalFormat">JPG</div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Dimensions</div>
-                <div class="info-value" id="modalDimensions">—</div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Orientation</div>
-                <div class="info-value" id="modalOrientation">Portrait</div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Image type</div>
-                <div class="info-value">AI-generated image</div>
-            </div>
-        </div>
-
-        <h3>Best for</h3>
-        <div class="use-tags" id="modalUses"></div>
-
-        <h3>License</h3>
-        <div class="license-box">
-            This image is free to download and use for personal and commercial projects.
-            <br><br>
-            You may use, crop, resize, edit and add text or logos to the image for your own marketing, social media, websites, menus, promotional materials and other projects.
-            <br><br>
-            You may not resell or redistribute the image itself as a standalone image or as part of another competing image library.
-            <br><br>
-            <strong>Important:</strong>
-            This is an AI-generated image and may not exactly represent a real cake, product or bakery item.
-        </div>
-    </div>
-</div>
-
-<!-- SUPPORT MODAL -->
-<div class="modal-overlay" id="supportModal" onclick="closeModalOutside(event, 'supportModal')">
-    <div class="modal">
-        <button class="modal-close" onclick="closeModal('supportModal')">×</button>
-        <h2>Support Cake & Filling</h2>
-        <p class="support-intro">
-            Every image on Cake & Filling is free.
-            <br><br>
-            If the library is useful to you and you would like to help keep the project growing, you can optionally support it with a small contribution.
-        </p>
-
-        <div class="support-options">
-            <button class="support-option" onclick="supportAmount(1)">$1</button>
-            <button class="support-option" onclick="supportAmount(3)">$3</button>
-            <button class="support-option" onclick="supportAmount(5)">$5</button>
-            <button class="support-option" onclick="supportAmount(10)">$10</button>
-        </div>
-
-        <input type="number" min="1" step="1" class="custom-amount" id="customAmount" placeholder="Custom amount">
-
-        <button class="primary-button" style="width:100%;" onclick="supportCustom()">
-            Continue
+        <button
+            class="modal-close"
+            onclick="closeModal('infoModal')">
+            ×
         </button>
 
-        <p class="support-note">
-            Contributions are completely optional. Downloading and using the images does not require payment or an account.
+        <h2 id="modalTitle">
+            Image title
+        </h2>
+
+        <p
+            class="modal-subtitle"
+            id="modalCategory">
+            Category
         </p>
+
+
+        <div class="info-list">
+
+            <div class="info-row">
+
+                <div class="info-label">
+                    Format
+                </div>
+
+                <div
+                    class="info-value"
+                    id="modalFormat">
+                    JPG
+                </div>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <div class="info-label">
+                    Dimensions
+                </div>
+
+                <div
+                    class="info-value"
+                    id="modalDimensions">
+                    —
+                </div>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <div class="info-label">
+                    Orientation
+                </div>
+
+                <div
+                    class="info-value"
+                    id="modalOrientation">
+                    Portrait
+                </div>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <div class="info-label">
+                    Image type
+                </div>
+
+                <div class="info-value">
+                    AI-generated image
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <h3>
+            Best for
+        </h3>
+
+        <div
+            class="use-tags"
+            id="modalUses">
+        </div>
+
+
+        <h3>
+            License
+        </h3>
+
+        <div class="license-box">
+
+            This image is free to download and use for personal and commercial projects.
+
+            <br><br>
+
+            You may use, crop, resize, edit and add text or logos to the image
+            for your own marketing, social media, websites, menus, promotional
+            materials and other projects.
+
+            <br><br>
+
+            You may not resell or redistribute the image itself as a standalone
+            image or as part of another competing image library.
+
+            <br><br>
+
+            <strong>Important:</strong>
+
+            This is an AI-generated image and may not exactly represent
+            a real cake, product or bakery item.
+
+        </div>
+
     </div>
+
 </div>
 
-<!-- CUSTOM MESSAGE MODAL (Replaces Alert) -->
-<div class="modal-overlay" id="messageModal" onclick="closeModalOutside(event, 'messageModal')">
-    <div class="modal" style="width: min(400px, 100%); padding: 40px 30px; text-align: center;">
-        <button class="modal-close" onclick="closeModal('messageModal')">×</button>
-        <div id="messageText" style="margin-bottom: 25px; font-size: 16px; line-height: 1.5; color: var(--text);"></div>
-        <button class="primary-button" onclick="closeModal('messageModal')">OK</button>
+
+<!-- SUPPORT MODAL -->
+<div
+    class="modal-overlay"
+    id="supportModal"
+    onclick="closeModalOutside(event, 'supportModal')">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            onclick="closeModal('supportModal')">
+            ×
+        </button>
+
+        <h2>
+            Support Cake & Filling
+        </h2>
+
+        <p class="support-intro">
+
+            Every image on Cake & Filling is free.
+
+            <br><br>
+
+            If the library is useful to you and you would like to help keep
+            the project growing, you can optionally support it with a small contribution.
+
+        </p>
+
+
+        <div class="support-options">
+
+            <button
+                class="support-option"
+                onclick="supportAmount(1)">
+                $1
+            </button>
+
+            <button
+                class="support-option"
+                onclick="supportAmount(3)">
+                $3
+            </button>
+
+            <button
+                class="support-option"
+                onclick="supportAmount(5)">
+                $5
+            </button>
+
+            <button
+                class="support-option"
+                onclick="supportAmount(10)">
+                $10
+            </button>
+
+        </div>
+
+
+        <input
+            type="number"
+            min="1"
+            step="1"
+            class="custom-amount"
+            id="customAmount"
+            placeholder="Custom amount">
+
+
+        <button
+            class="primary-button"
+            style="width:100%;"
+            onclick="supportCustom()">
+
+            Continue
+
+        </button>
+
+
+        <p class="support-note">
+
+            Contributions are completely optional.
+            Downloading and using the images does not require payment or an account.
+
+        </p>
+
     </div>
+
 </div>
 
+
+<!-- CUSTOM MESSAGE MODAL -->
+<div
+    class="modal-overlay"
+    id="messageModal"
+    onclick="closeModalOutside(event, 'messageModal')">
+
+    <div
+        class="modal"
+        style="
+            width: min(400px, 100%);
+            padding: 40px 30px;
+            text-align: center;
+        ">
+
+        <button
+            class="modal-close"
+            onclick="closeModal('messageModal')">
+            ×
+        </button>
+
+        <div
+            id="messageText"
+            style="
+                margin-bottom: 25px;
+                font-size: 16px;
+                line-height: 1.5;
+                color: var(--text);
+            ">
+        </div>
+
+        <button
+            class="primary-button"
+            onclick="closeModal('messageModal')">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
 <footer>
+
     <div class="footer-inner">
-        <div>© 2026 Cake & Filling</div>
-        <div>Free bakery images for creative and commercial use.</div>
+
+        <div>
+            © 2026 Cake & Filling
+        </div>
+
+        <div>
+            Free bakery images for creative and commercial use.
+        </div>
+
     </div>
+
 </footer>
 
+
 <script>
+
+    /*
+    ============================================================
+    MOBILE MENU
+    ============================================================
+    */
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const mobileCategoryButton =
+        document.getElementById("mobileCategoryButton");
+
+    const mobileCategoryMenu =
+        document.getElementById("mobileCategoryMenu");
+
+
+    function openMobileMenu() {
+
+        mobileMenu.classList.add("active");
+
+        mobileMenuButton.classList.add("active");
+
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        mobileMenuButton.setAttribute(
+            "aria-label",
+            "Close menu"
+        );
+
+        document.body.classList.add(
+            "mobile-menu-open"
+        );
+    }
+
+
+    function closeMobileMenu() {
+
+        mobileMenu.classList.remove("active");
+
+        mobileMenuButton.classList.remove("active");
+
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        mobileMenuButton.setAttribute(
+            "aria-label",
+            "Open menu"
+        );
+
+        mobileCategoryButton.classList.remove("active");
+
+        mobileCategoryButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        mobileCategoryMenu.classList.remove("active");
+
+        document.body.classList.remove(
+            "mobile-menu-open"
+        );
+    }
+
+
+    function toggleMobileMenu() {
+
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+
+    }
+
+
+    mobileMenuButton.addEventListener(
+        "click",
+        toggleMobileMenu
+    );
+
+
+    mobileCategoryButton.addEventListener(
+        "click",
+        function () {
+
+            const isOpen =
+                mobileCategoryMenu.classList.contains("active");
+
+            if (isOpen) {
+
+                mobileCategoryMenu.classList.remove("active");
+
+                mobileCategoryButton.classList.remove("active");
+
+                mobileCategoryButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            } else {
+
+                mobileCategoryMenu.classList.add("active");
+
+                mobileCategoryButton.classList.add("active");
+
+                mobileCategoryButton.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+        }
+    );
+
+
+    document.querySelectorAll(
+        ".mobile-close-link"
+    ).forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+                closeMobileMenu();
+            }
+        );
+
+    });
+
+
+    document.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                !mobileMenu.contains(event.target) &&
+                !mobileMenuButton.contains(event.target)
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    window.addEventListener(
+        "resize",
+        function() {
+
+            if (window.innerWidth > 900) {
+                closeMobileMenu();
+            }
+
+        }
+    );
+
+
     /*
     ============================================================
     IMAGE LIBRARY
     ============================================================
     */
+
     const images = [
+
         {
             title: "Watercolor Buttercream Cake",
             file: "Bolo Aquarela_ O Segredo da Colorimetria Perfeita no Buttercream.jpg",
@@ -1214,6 +2184,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Top Forward Arch Cake",
             file: "Bolo Arco (Top Forward)_ O Segredo da Estrutura que Desafia a Gravidade.jpg",
@@ -1223,6 +2194,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Bicolor Drip Cake",
             file: "Bolo Bicolor Drip Cake_ O Segredo do Alisamento e Calda Perfeitos.jpg",
@@ -1232,6 +2204,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Irregular Edge Cake",
             file: "Bolo com Borda Irregular_ O Segredo do Creme que Desafia a Gravidade.jpg",
@@ -1241,6 +2214,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Chocolate-Covered Carrot Cake",
             file: "Bolo de Cenoura Fofinho_ O Segredo da Cobertura de Chocolate Perfeita.jpg",
@@ -1250,6 +2224,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Chocolate Center Cake",
             file: "Bolo de Chocolate Furo Central com Calda Piscina Irresistível.jpg",
@@ -1259,6 +2234,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Cornmeal & Guava Cake",
             file: "Bolo de Fubá com Goiabada_ O Segredo da Massa Fofinha (Não Fica Seco!).jpg",
@@ -1268,6 +2244,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Torch-Finished Meringue Cake",
             file: "Bolo de Merengue Maçaricado_ O Segredo para Não Soltar Água.jpg",
@@ -1277,6 +2254,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Creamy Corn Cake",
             file: "Bolo de Milho Cremoso_ O Segredo para Não Ficar Seco.jpg",
@@ -1286,6 +2264,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Gold Stencil Cake",
             file: "Bolo Estêncil Perfeito_ O Segredo para um Relevo Dourado sem Borrar.jpg",
@@ -1295,6 +2274,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Gold Fault Line Cake",
             file: "Bolo Fault Line Dourado_ O Segredo da Linha de Falha Perfeita.jpg",
@@ -1304,6 +2284,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Floral Ombre Cake",
             file: "Bolo Floral Ombré_ O Segredo do Chantininho Perfeito para Rosetas.jpg",
@@ -1313,6 +2294,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Shag Macramé Cake",
             file: "Bolo Macramê (Shag Cake)_ O Segredo do Ponto Firme que Não Derrete.jpg",
@@ -1322,6 +2304,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Modern Rice Paper Cake",
             file: "Bolo Moderno com Papel de Arroz_ A Tendência Mais Lucrativa do Ano.jpg",
@@ -1331,6 +2314,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Palette Knife Floral Buttercream Cake",
             file: "Bolo Pintado com Espátula_ Domine a Arte Floral em Buttercream.jpg",
@@ -1340,6 +2324,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Carrot Pool Cake",
             file: "Bolo Piscina de Cenoura_ O Segredo para Desenformar Perfeito.jpg",
@@ -1349,6 +2334,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Black Cake",
             file: "Bolo Preto Perfeito_ O Segredo para Pigmentar sem Amargar.jpg",
@@ -1358,6 +2344,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Red Velvet Cake",
             file: "Bolo Red Velvet_ O Segredo do Vermelho Perfeito e Massa Úmida.jpg",
@@ -1367,6 +2354,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Elegant Rustic Rosette Cake",
             file: "Bolo Rústico Elegante_ Como Unir Rosetas e Textura Espatulada Perfeita.jpg",
@@ -1376,6 +2364,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Semi-Naked Rustic Cake",
             file: "Bolo Semi-Naked_ O Segredo do Espatulado Rústico Perfeito.jpg",
@@ -1385,6 +2374,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Suspended Acrylic Cake",
             file: "Bolo Suspenso com Acrílico_ O Segredo da Estrutura Perfeita.jpg",
@@ -1394,6 +2384,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Chocolate Tsunami Cake",
             file: "Bolo Tsunami_ O Segredo da Cachoeira de Chocolate Perfeita.jpg",
@@ -1403,6 +2394,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Vintage Lambeth Cake",
             file: "Bolo Vintage (Estilo Lambeth)_ O Ponto Perfeito para Babados que Não Derretem.jpg",
@@ -1412,6 +2404,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Brigadeiro Volcano Cake",
             file: "Bolo Vulcão de Brigadeiro_ O Segredo da Calda que Escorre Perfeito.jpg",
@@ -1421,6 +2414,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Bubble Cake",
             file: "Bubble Cake_ O Segredo das Esferas de Chocolate Perfeitas.jpg",
@@ -1430,6 +2424,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Van Gogh-Inspired Buttercream Cake",
             file: "Como Criar Pinturas de Buttercream Inspiradas em Van Gogh!.jpg",
@@ -1439,6 +2434,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Impressionist Buttercream Cake",
             file: "Como Criar Pinturas Impressionistas em Buttercream!.jpg",
@@ -1448,6 +2444,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Palette Knife Floral Technique",
             file: "Como Fazer Flores Espatuladas que Se Destacam_.jpg",
@@ -1457,6 +2454,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Modern Vintage Lambeth Cake",
             file: "Dark Elegance_ The Modern Vintage Lambeth Cake.jpg",
@@ -1466,6 +2464,7 @@
             dimensions: "736 × 1097 px",
             format: "JPG"
         },
+
         {
             title: "Pink & Gold Drip Cake",
             file: "Drip Cake Rosa e Ouro_ O Segredo do Brilho Metálico Perfeito 👉✨🍰.jpg",
@@ -1475,6 +2474,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Velvet Effect Cake",
             file: "Efeito Veludo Perfeito_ O Segredo da Textura Mais Luxuosa da Confeitaria.jpg",
@@ -1484,6 +2484,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Red Velvet Cake Slice",
             file: "Fatia Red Velvet Perfeita_ Massa Super Úmida e Camadas dos Sonhos.jpg",
@@ -1493,6 +2494,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Buttercream Flowers",
             file: "Flores de Buttercream_ A Técnica do Bolo Pintado.jpg",
@@ -1502,6 +2504,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Monochromatic Buttercream Flowers",
             file: "Flores Espatuladas Monocromáticas_ O Poder da Textura!.jpg",
@@ -1511,6 +2514,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Palette Knife Buttercream Wedding Cake",
             file: "High-End Wedding Cake Trends_ Textured Palette Knife Buttercream.jpg",
@@ -1520,6 +2524,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Mirror Glaze Cake",
             file: "Mastering the Perfect Mirror Glaze Shine.jpg",
@@ -1529,6 +2534,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Architectural Cake",
             file: "Master the Culinary Engineering Behind Architectural Cakes.jpg",
@@ -1538,6 +2544,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Black & Gold Matte Cake",
             file: "Master the Flawless Black & Gold Matte Cake.jpg",
@@ -1547,6 +2554,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Banoffee Mini Tart",
             file: "Mini Torta Banoffee_ O Segredo do Ponto do Doce de Leite.jpg",
@@ -1556,6 +2564,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Strawberry Mini Tart",
             file: "Mini Torta de Morango_ O Segredo do Brilho Perfeito da Geleia!.jpg",
@@ -1565,6 +2574,7 @@
             dimensions: "736 × 1097 px",
             format: "JPG"
         },
+
         {
             title: "Concrete Wedding Cake",
             file: "Modern Industrial Elegance_ The Ultimate Concrete Wedding Cake.jpg",
@@ -1574,6 +2584,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Monet Water Lily Cake",
             file: "Monet Sunset Water Lily Cake_ Impressionist Buttercream Art.jpg",
@@ -1583,6 +2594,7 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         },
+
         {
             title: "Buttercream Cascade Cake",
             file: "O Segredo da Cascata de Buttercream Perfeita.jpg",
@@ -1592,7 +2604,9 @@
             dimensions: "736 × 1318 px",
             format: "JPG"
         }
+
     ];
+
 
     const defaultUses = [
         "Pinterest",
@@ -1605,204 +2619,692 @@
         "Marketing materials"
     ];
 
-    const grid = document.getElementById("imageGrid");
-    const emptyState = document.getElementById("emptyState");
+
+    const grid =
+        document.getElementById("imageGrid");
+
+    const emptyState =
+        document.getElementById("emptyState");
+
 
     let currentFilter = "all";
     let currentSearch = "";
 
+
     function renderImages() {
+
         grid.innerHTML = "";
-        const filteredImages = images.filter(image => {
-            const matchesCategory = currentFilter === "all" || image.category === currentFilter;
-            const searchText = (image.title + " " + image.categoryName + " " + image.tags.join(" ")).toLowerCase();
-            const matchesSearch = searchText.includes(currentSearch.toLowerCase());
-            return matchesCategory && matchesSearch;
-        });
+
+        const filteredImages =
+            images.filter(image => {
+
+                const matchesCategory =
+                    currentFilter === "all" ||
+                    image.category === currentFilter;
+
+                const searchText =
+                    (
+                        image.title +
+                        " " +
+                        image.categoryName +
+                        " " +
+                        image.tags.join(" ")
+                    ).toLowerCase();
+
+                const matchesSearch =
+                    searchText.includes(
+                        currentSearch.toLowerCase()
+                    );
+
+                return matchesCategory && matchesSearch;
+
+            });
+
 
         if (filteredImages.length === 0) {
+
             emptyState.style.display = "block";
             return;
+
         }
+
 
         emptyState.style.display = "none";
 
-        filteredImages.forEach((image, index) => {
-            const card = document.createElement("article");
-            card.className = "image-card";
-            
-            // Caminho correto apontando para a pasta "images/" do seu repositório
-            const imagePath = "images/" + encodeURIComponent(image.file).replace(/%2F/g, "/");
-            const likeKey = "cake-filling-like-" + image.file;
-            const isLiked = localStorage.getItem(likeKey) === "true";
 
-            card.innerHTML = `
-                <div class="image-wrapper" style="aspect-ratio: ${image.dimensions.split("×")[0].trim()} / ${image.dimensions.split("×")[1].replace("px", "").trim()};">
-                    <img src="${imagePath}" alt="${escapeHTML(image.title)}" width="${image.dimensions.split("×")[0].trim()}" height="${image.dimensions.split("×")[1].replace("px", "").trim()}" loading="${index < 8 ? "eager" : "lazy"}" decoding="async">
-                </div>
-                <div class="card-body">
-                    <h3 class="image-title">${escapeHTML(image.title)}</h3>
-                    <div class="image-category">${escapeHTML(image.categoryName)}</div>
-                    <div class="card-actions">
-                        <button class="download-button" onclick="downloadImage(${images.indexOf(image)})">Download</button>
-                        <button class="like-button ${isLiked ? "liked" : ""}" onclick="toggleLike(this, ${images.indexOf(image)})">
-                            ${isLiked ? "♥ Liked" : "♡ Like"}
-                        </button>
+        filteredImages.forEach(
+            (image, index) => {
+
+                const card =
+                    document.createElement("article");
+
+                card.className =
+                    "image-card";
+
+
+                const imagePath =
+                    "images/" +
+                    encodeURIComponent(image.file)
+                    .replace(/%2F/g, "/");
+
+
+                const likeKey =
+                    "cake-filling-like-" +
+                    image.file;
+
+
+                const isLiked =
+                    localStorage.getItem(likeKey) === "true";
+
+
+                card.innerHTML = `
+
+                    <div
+                        class="image-wrapper"
+                        style="
+                            aspect-ratio:
+                            ${image.dimensions.split("×")[0].trim()}
+                            /
+                            ${image.dimensions.split("×")[1].replace("px", "").trim()};
+                        ">
+
+                        <img
+                            src="${imagePath}"
+                            alt="${escapeHTML(image.title)}"
+                            width="${image.dimensions.split("×")[0].trim()}"
+                            height="${image.dimensions.split("×")[1].replace("px", "").trim()}"
+                            loading="${index < 8 ? "eager" : "lazy"}"
+                            decoding="async">
+
                     </div>
-                    <button class="info-button" onclick="openInfo(${images.indexOf(image)})">More information</button>
-                </div>
-            `;
-            
-            const img = card.querySelector("img");
-            img.addEventListener("error", () => {
-                img.style.minHeight = "250px";
-                img.style.background = "#eee";
-                img.alt = "Image unavailable";
-            });
 
-            grid.appendChild(card);
-        });
+                    <div class="card-body">
+
+                        <h3 class="image-title">
+                            ${escapeHTML(image.title)}
+                        </h3>
+
+                        <div class="image-category">
+                            ${escapeHTML(image.categoryName)}
+                        </div>
+
+                        <div class="card-actions">
+
+                            <button
+                                class="download-button"
+                                onclick="downloadImage(${images.indexOf(image)})">
+                                Download
+                            </button>
+
+                            <button
+                                class="like-button ${isLiked ? "liked" : ""}"
+                                onclick="toggleLike(this, ${images.indexOf(image)})">
+
+                                ${isLiked ? "♥ Liked" : "♡ Like"}
+
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="info-button"
+                            onclick="openInfo(${images.indexOf(image)})">
+                            More information
+                        </button>
+
+                    </div>
+                `;
+
+
+                const img =
+                    card.querySelector("img");
+
+
+                img.addEventListener(
+                    "error",
+                    () => {
+
+                        img.style.minHeight =
+                            "250px";
+
+                        img.style.background =
+                            "#eee";
+
+                        img.alt =
+                            "Image unavailable";
+
+                    }
+                );
+
+
+                grid.appendChild(card);
+
+            }
+        );
+
     }
 
-    document.querySelectorAll("[data-menu-filter]").forEach(link => {
-        link.addEventListener("click", function (e) {
-            currentFilter = this.dataset.menuFilter;
-            document.querySelectorAll(".filter-button").forEach(button => {
-                button.classList.toggle("active", button.dataset.filter === currentFilter);
-            });
-            renderImages();
-        });
+
+    /*
+    ============================================================
+    DESKTOP CATEGORY MENU
+    ============================================================
+    */
+
+    document.querySelectorAll(
+        "[data-menu-filter]"
+    ).forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                currentFilter =
+                    this.dataset.menuFilter;
+
+
+                document.querySelectorAll(
+                    ".filter-button"
+                ).forEach(button => {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.filter ===
+                        currentFilter
+                    );
+
+                });
+
+
+                renderImages();
+
+            }
+        );
+
     });
 
-    document.getElementById("searchInput").addEventListener("input", function () {
-        currentSearch = this.value;
-        renderImages();
+
+    /*
+    ============================================================
+    MOBILE CATEGORY FILTER
+    ============================================================
+    */
+
+    document.querySelectorAll(
+        ".mobile-category-link[data-menu-filter]"
+    ).forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                currentFilter =
+                    this.dataset.menuFilter;
+
+
+                document.querySelectorAll(
+                    ".filter-button"
+                ).forEach(button => {
+
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.filter ===
+                        currentFilter
+                    );
+
+                });
+
+
+                renderImages();
+
+            }
+        );
+
     });
 
-    document.querySelectorAll(".filter-button").forEach(button => {
-        button.addEventListener("click", function () {
-            document.querySelectorAll(".filter-button").forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-            currentFilter = this.dataset.filter;
+
+    /*
+    ============================================================
+    SEARCH
+    ============================================================
+    */
+
+    document.getElementById(
+        "searchInput"
+    ).addEventListener(
+        "input",
+        function () {
+
+            currentSearch =
+                this.value;
+
             renderImages();
-        });
+
+        }
+    );
+
+
+    /*
+    ============================================================
+    FILTER BUTTONS
+    ============================================================
+    */
+
+    document.querySelectorAll(
+        ".filter-button"
+    ).forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document.querySelectorAll(
+                    ".filter-button"
+                ).forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+
+                this.classList.add("active");
+
+
+                currentFilter =
+                    this.dataset.filter;
+
+
+                renderImages();
+
+            }
+        );
+
     });
+
+
+    /*
+    ============================================================
+    DOWNLOAD
+    ============================================================
+    */
 
     function downloadImage(index) {
-        const image = images[index];
-        // Caminho correto apontando para a pasta "images/" para efetuar o download
-        const imagePath = "images/" + encodeURIComponent(image.file).replace(/%2F/g, "/");
-        
-        const link = document.createElement("a");
-        link.href = imagePath;
-        link.download = image.file;
+
+        const image =
+            images[index];
+
+
+        const imagePath =
+            "images/" +
+            encodeURIComponent(image.file)
+            .replace(/%2F/g, "/");
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.href =
+            imagePath;
+
+
+        link.download =
+            image.file;
+
+
         document.body.appendChild(link);
+
+
         link.click();
+
+
         document.body.removeChild(link);
 
-        setTimeout(() => { openSupport(); }, 700);
+
+        setTimeout(
+            () => {
+                openSupport();
+            },
+            700
+        );
+
     }
+
+
+    /*
+    ============================================================
+    LIKE
+    ============================================================
+    */
 
     function toggleLike(button, index) {
-        const image = images[index];
-        const likeKey = "cake-filling-like-" + image.file;
-        const currentlyLiked = localStorage.getItem(likeKey) === "true";
+
+        const image =
+            images[index];
+
+
+        const likeKey =
+            "cake-filling-like-" +
+            image.file;
+
+
+        const currentlyLiked =
+            localStorage.getItem(likeKey) === "true";
+
 
         if (currentlyLiked) {
-            localStorage.removeItem(likeKey);
-            button.classList.remove("liked");
-            button.innerHTML = "♡ Like";
+
+            localStorage.removeItem(
+                likeKey
+            );
+
+            button.classList.remove(
+                "liked"
+            );
+
+            button.innerHTML =
+                "♡ Like";
+
         } else {
-            localStorage.setItem(likeKey, "true");
-            button.classList.add("liked");
-            button.innerHTML = "♥ Liked";
+
+            localStorage.setItem(
+                likeKey,
+                "true"
+            );
+
+            button.classList.add(
+                "liked"
+            );
+
+            button.innerHTML =
+                "♥ Liked";
+
         }
+
     }
+
+
+    /*
+    ============================================================
+    IMAGE INFORMATION
+    ============================================================
+    */
 
     function openInfo(index) {
-        const image = images[index];
-        document.getElementById("modalTitle").textContent = image.title;
-        document.getElementById("modalCategory").textContent = image.categoryName;
-        document.getElementById("modalFormat").textContent = image.format;
-        document.getElementById("modalDimensions").textContent = image.dimensions;
 
-        const width = parseInt(image.dimensions.split("×")[0]);
-        const height = parseInt(image.dimensions.split("×")[1]);
-        document.getElementById("modalOrientation").textContent = height > width ? "Portrait" : "Landscape";
+        const image =
+            images[index];
 
-        const uses = document.getElementById("modalUses");
+
+        document.getElementById(
+            "modalTitle"
+        ).textContent =
+            image.title;
+
+
+        document.getElementById(
+            "modalCategory"
+        ).textContent =
+            image.categoryName;
+
+
+        document.getElementById(
+            "modalFormat"
+        ).textContent =
+            image.format;
+
+
+        document.getElementById(
+            "modalDimensions"
+        ).textContent =
+            image.dimensions;
+
+
+        const width =
+            parseInt(
+                image.dimensions.split("×")[0]
+            );
+
+
+        const height =
+            parseInt(
+                image.dimensions.split("×")[1]
+            );
+
+
+        document.getElementById(
+            "modalOrientation"
+        ).textContent =
+            height > width
+                ? "Portrait"
+                : "Landscape";
+
+
+        const uses =
+            document.getElementById(
+                "modalUses"
+            );
+
+
         uses.innerHTML = "";
-        defaultUses.forEach(use => {
-            const tag = document.createElement("span");
-            tag.className = "use-tag";
-            tag.textContent = use;
-            uses.appendChild(tag);
-        });
 
-        document.getElementById("infoModal").classList.add("active");
-        document.body.style.overflow = "hidden";
+
+        defaultUses.forEach(
+            use => {
+
+                const tag =
+                    document.createElement("span");
+
+
+                tag.className =
+                    "use-tag";
+
+
+                tag.textContent =
+                    use;
+
+
+                uses.appendChild(tag);
+
+            }
+        );
+
+
+        document.getElementById(
+            "infoModal"
+        ).classList.add("active");
+
+
+        document.body.style.overflow =
+            "hidden";
+
     }
+
+
+    /*
+    ============================================================
+    MODALS
+    ============================================================
+    */
 
     function closeModal(id) {
-        document.getElementById(id).classList.remove("active");
-        document.body.style.overflow = "";
+
+        document.getElementById(id)
+            .classList.remove("active");
+
+
+        document.body.style.overflow =
+            "";
+
     }
 
-    function closeModalOutside(event, id) {
-        if (event.target.id === id) {
+
+    function closeModalOutside(
+        event,
+        id
+    ) {
+
+        if (
+            event.target.id === id
+        ) {
+
             closeModal(id);
+
         }
+
     }
 
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            closeModal("infoModal");
-            closeModal("supportModal");
-            closeModal("messageModal");
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                closeModal("infoModal");
+                closeModal("supportModal");
+                closeModal("messageModal");
+
+                closeMobileMenu();
+
+            }
+
         }
-    });
+    );
+
+
+    /*
+    ============================================================
+    SUPPORT
+    ============================================================
+    */
 
     function openSupport() {
-        document.getElementById("supportModal").classList.add("active");
-        document.body.style.overflow = "hidden";
+
+        closeMobileMenu();
+
+
+        document.getElementById(
+            "supportModal"
+        ).classList.add("active");
+
+
+        document.body.style.overflow =
+            "hidden";
+
     }
+
 
     function showCustomMessage(msg) {
-        // Required workaround to avoid browser alerts
-        document.getElementById('messageText').innerText = msg;
-        document.getElementById('messageModal').classList.add('active');
-        document.body.style.overflow = "hidden";
+
+        document.getElementById(
+            "messageText"
+        ).innerText =
+            msg;
+
+
+        document.getElementById(
+            "messageModal"
+        ).classList.add("active");
+
+
+        document.body.style.overflow =
+            "hidden";
+
     }
+
 
     function supportAmount(amount) {
-        closeModal("supportModal");
-        // Redirect directly to Buy Me a Coffee with the predefined amount
-        window.location.href = `https://www.buymeacoffee.com/cakeandfilling`;
+
+        closeModal(
+            "supportModal"
+        );
+
+
+        window.location.href =
+            "https://www.buymeacoffee.com/cakeandfilling";
+
     }
+
 
     function supportCustom() {
-        const amount = document.getElementById("customAmount").value;
-        if (!amount || Number(amount) < 1) {
-            showCustomMessage("Please enter an amount of at least $1.");
+
+        const amount =
+            document.getElementById(
+                "customAmount"
+            ).value;
+
+
+        if (
+            !amount ||
+            Number(amount) < 1
+        ) {
+
+            showCustomMessage(
+                "Please enter an amount of at least $1."
+            );
+
             return;
+
         }
-        closeModal("supportModal");
-        // Redirect directly to Buy Me a Coffee
-        window.location.href = `https://www.buymeacoffee.com/cakeandfilling`;
+
+
+        closeModal(
+            "supportModal"
+        );
+
+
+        window.location.href =
+            "https://www.buymeacoffee.com/cakeandfilling";
+
     }
+
+
+    /*
+    ============================================================
+    SECURITY / TEXT ESCAPING
+    ============================================================
+    */
 
     function escapeHTML(value) {
+
         return String(value)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+
+            .replace(
+                /</g,
+                "&lt;"
+            )
+
+            .replace(
+                />/g,
+                "&gt;"
+            )
+
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
     }
 
-    // Initialize layout
+
+    /*
+    ============================================================
+    INITIALIZE
+    ============================================================
+    */
+
     renderImages();
 
 </script>
+
 </body>
 </html>
