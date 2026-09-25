@@ -645,6 +645,11 @@ gap:20px
 .mobile-dropdown-content a{padding:10px 12px;font-size:14px;color:var(--muted)}
 .mobile-dropdown-content a:hover{color:var(--accent)}
 
+/* Estilos para os títulos dentro do acordeão no mobile */
+.mobile-dropdown-content .dropdown-heading{margin-top:10px;padding:0 12px}
+.mobile-dropdown-content .dropdown-description{padding:0 12px;margin-bottom:6px}
+.mobile-dropdown-content .dropdown-divider{margin:10px 12px;opacity:0.5}
+
 @media(max-width:900px){
 nav{display:none}
 .search-box{width:180px}
@@ -793,14 +798,23 @@ Support the Project
 Categories
 </button>
 <div class="mobile-dropdown-content" id="mobileDropdownContent">
-<a href="index.html#library">All Product Images</a>
-<a href="index.html#library">Menus &amp; Catalogs</a>
-<a href="banners.html">Website &amp; Banners</a>
-<a href="index.html#library">Social Media</a>
-<a href="index.html#library">Promotions &amp; Offers</a>
-<a href="index.html#library">Pinterest</a>
-<a href="index.html#library">Brand &amp; Lifestyle</a>
-<a href="index.html#library">Seasonal</a>
+  
+    <div class="dropdown-heading">Product Images</div>
+    <p class="dropdown-description">Standalone cake, dessert and pastry images.</p>
+    <a href="index.html#library">All Product Images</a>
+    
+    <div class="dropdown-divider"></div>
+    
+    <div class="dropdown-heading">Marketing Images</div>
+    <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+    <a href="index.html#library">Menus &amp; Catalogs</a>
+    <a href="banners.html">Website &amp; Banners</a>
+    <a href="index.html#library">Social Media</a>
+    <a href="index.html#library">Promotions &amp; Offers</a>
+    <a href="index.html#library">Pinterest</a>
+    <a href="index.html#library">Brand &amp; Lifestyle</a>
+    <a href="index.html#library">Seasonal</a>
+    
 </div>
 
 <a href="banners.html">Banners</a>
