@@ -631,9 +631,20 @@ gap:20px
 .mobile-menu-button.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mobile-menu{display:none;max-width:1400px;margin:auto;padding:0 28px 18px;background:rgba(250,249,247,.98)}
 .mobile-menu.active{display:block}
-.mobile-menu a{display:block;padding:12px 14px;border-radius:10px;font-size:15px;font-weight:500;color:#514c47}
+.mobile-menu a{display:block;padding:12px 14px;border-radius:10px;font-size:15px;font-weight:500;color:#514c47;margin-left:0}
 .mobile-menu a:hover{background:var(--soft);color:var(--accent)}
-.mobile-menu-heading{padding:16px 14px 6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Acordeão de categorias no mobile */
+.mobile-dropdown-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:transparent;border:0;font-family:inherit;font-size:15px;font-weight:500;color:#514c47;cursor:pointer;text-align:left;border-radius:10px}
+.mobile-dropdown-toggle:hover{background:var(--soft);color:var(--accent)}
+.mobile-dropdown-toggle::after{content:"⌄";font-size:14px;transition:transform .2s}
+.mobile-dropdown-toggle.open::after{transform:rotate(180deg)}
+
+.mobile-dropdown-content{display:none;padding-left:14px;gap:2px;flex-direction:column}
+.mobile-dropdown-content.open{display:flex}
+.mobile-dropdown-content a{padding:10px 12px;font-size:14px;color:var(--muted)}
+.mobile-dropdown-content a:hover{color:var(--accent)}
+
 @media(max-width:900px){
 nav{display:none}
 .search-box{width:180px}
@@ -776,7 +787,12 @@ Support the Project
 
 <div class="mobile-menu" id="mobileMenu">
 <a href="index.html#library">Browse Images</a>
-<div class="mobile-menu-heading">Categories</div>
+
+<!-- Categorias em formato de acordeão retrátil no mobile -->
+<button class="mobile-dropdown-toggle" id="mobileDropdownToggle" type="button">
+Categories
+</button>
+<div class="mobile-dropdown-content" id="mobileDropdownContent">
 <a href="index.html#library">All Product Images</a>
 <a href="index.html#library">Menus &amp; Catalogs</a>
 <a href="banners.html">Website &amp; Banners</a>
@@ -785,6 +801,8 @@ Support the Project
 <a href="index.html#library">Pinterest</a>
 <a href="index.html#library">Brand &amp; Lifestyle</a>
 <a href="index.html#library">Seasonal</a>
+</div>
+
 <a href="banners.html">Banners</a>
 <a href="about.html">About</a>
 </div>
@@ -1540,6 +1558,17 @@ mobileMenuButton.classList.remove("open");
 mobileMenuButton.setAttribute("aria-expanded","false");
 mobileMenuButton.setAttribute("aria-label","Open menu");
 });
+});
+}
+
+// Script para controlar o acordeão de categorias no menu mobile
+const mobileDropdownToggle=document.getElementById("mobileDropdownToggle");
+const mobileDropdownContent=document.getElementById("mobileDropdownContent");
+
+if(mobileDropdownToggle && mobileDropdownContent){
+mobileDropdownToggle.addEventListener("click",()=>{
+const isContentOpen=mobileDropdownContent.classList.toggle("open");
+mobileDropdownToggle.classList.toggle("open",isContentOpen);
 });
 }
 
