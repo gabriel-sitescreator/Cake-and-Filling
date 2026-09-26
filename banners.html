@@ -277,7 +277,7 @@ max-width:760px;
 font-size:16px
 }
 
-/* Novos estilos para o menu de controle (Formato + Filtros) */
+/* Estilos para o menu de controle (Formato + Filtros) */
 .controls-wrapper{
 display:flex;
 flex-direction:column;
@@ -288,7 +288,8 @@ margin-bottom:38px
 .format-selector{
 display:flex;
 align-items:center;
-gap:12px
+gap:12px;
+flex-wrap:wrap;
 }
 
 .format-label{
@@ -374,9 +375,14 @@ overflow:hidden;
 transition: aspect-ratio .3s ease;
 }
 
-/* Regra CSS que transforma os bolos em quadrados quando ativada */
+/* Regra CSS que transforma os bolos para 1:1 */
 .image-grid.format-1x1 .image-wrapper {
 aspect-ratio: 1/1;
+}
+
+/* Regra CSS que transforma os bolos para 9:16 */
+.image-grid.format-9x16 .image-wrapper {
+aspect-ratio: 9/16;
 }
 
 .image-wrapper img{
@@ -708,7 +714,6 @@ flex-direction:column;
 align-items:flex-start;
 padding:35px 25px
 }
-
 .image-grid{column-count:2}
 }
 
@@ -904,6 +909,7 @@ Browse website banners created for different bakery, cake and dessert brand styl
         <span class="format-label">Format:</span>
         <button class="format-button active" data-format="16x9">16:9 (Desktop)</button>
         <button class="format-button" data-format="1x1">1:1 (Mobile)</button>
+        <button class="format-button" data-format="9x16">9:16 (Mobile Full)</button>
     </div>
 
     <div class="filters">
@@ -1151,7 +1157,8 @@ Free bakery images and website banners for creative and commercial use.
 
 <script>
 
-/* O 5º elemento de cada lista é o nome exato do arquivo para celular (1:1) */
+/* A array agora possui 6 elementos: 
+[Título, Arquivo 16:9, Categoria ID, Nome da Categoria, Arquivo 1:1, Arquivo 9:16] */
 const images=[
 
 [
@@ -1159,7 +1166,8 @@ const images=[
 "minimalist-bakery-banner-01.png",
 "minimalist",
 "Minimalist Bakery Banner",
-"Minimalist Fresh Berry Cake.jpg"
+"Minimalist Fresh Berry Cake.jpg",
+"minimalist-bakery-banner-01.png"
 ],
 
 [
@@ -1167,7 +1175,8 @@ const images=[
 "minimalist-bakery-banner-02.jpg",
 "minimalist",
 "Minimalist Bakery Banner",
-"Minimalist Gold & Floral Cake.jpg"
+"Minimalist Gold & Floral Cake.jpg",
+"minimalist-bakery-banner-02.jpg"
 ],
 
 [
@@ -1175,7 +1184,8 @@ const images=[
 "minimalist-bakery-banner-03.jpg",
 "minimalist",
 "Minimalist Bakery Banner",
-"Minimalist Three-Tier Wedding Cake.jpg"
+"Minimalist Three-Tier Wedding Cake.jpg",
+"minimalist-bakery-banner-03.jpg"
 ],
 
 [
@@ -1183,7 +1193,8 @@ const images=[
 "minimalist-bakery-banner-04.jpg",
 "minimalist",
 "Minimalist Bakery Banner",
-"Minimalist Gold Leaf Floral Cake.jpg"
+"Minimalist Gold Leaf Floral Cake.jpg",
+"minimalist-bakery-banner-04.jpg"
 ],
 
 [
@@ -1191,7 +1202,8 @@ const images=[
 "minimalist-bakery-banner-05.png",
 "minimalist",
 "Minimalist Bakery Banner",
-"Minimalist Chocolate Drip Cake.jpg"
+"Minimalist Chocolate Drip Cake.jpg",
+"minimalist-bakery-banner-05.jpg"
 ],
 
 [
@@ -1199,7 +1211,8 @@ const images=[
 "minimalist-bakery-banner-06.jpg",
 "minimalist",
 "Minimalist Bakery Banner",
-"Minimalist Chamomile Cake.jpg"
+"Minimalist Chamomile Cake.jpg",
+"minimalist-bakery-banner-06.jpg"
 ],
 
 [
@@ -1207,7 +1220,8 @@ const images=[
 "luxury-elegant-cake-banner-01.jpg",
 "luxury",
 "Luxury / Elegant Cake Banner",
-"Luxury Sculpted Floral Cake.jpg"
+"Luxury Sculpted Floral Cake.jpg",
+"luxury-elegant-cake-banner-01.jpg"
 ],
 
 [
@@ -1215,7 +1229,8 @@ const images=[
 "luxury-elegant-cake-banner-02.png",
 "luxury",
 "Luxury / Elegant Cake Banner",
-"Elegant Gold-Edged Textured Cake.jpg"
+"Elegant Gold-Edged Textured Cake.jpg",
+"luxury-elegant-cake-banner-02.jpg"
 ],
 
 [
@@ -1223,7 +1238,8 @@ const images=[
 "luxury-elegant-cake-banner-03.jpg",
 "luxury",
 "Luxury / Elegant Cake Banner",
-"Elegant Gold Leaf Floral Cake.jpg"
+"Elegant Gold Leaf Floral Cake.jpg",
+"luxury-elegant-cake-banner-03.jpg"
 ],
 
 [
@@ -1231,7 +1247,8 @@ const images=[
 "luxury-elegant-cake-banner-04.jpg",
 "luxury",
 "Luxury / Elegant Cake Banner",
-"Luxury Textured Floral Wedding Cake.jpg"
+"Luxury Textured Floral Wedding Cake.jpg",
+"luxury-elegant-cake-banner-04.jpg"
 ],
 
 [
@@ -1239,7 +1256,8 @@ const images=[
 "luxury-elegant-cake-banner-05.jpg",
 "luxury",
 "Luxury / Elegant Cake Banner",
-"Luxury Ivory & Gold Floral Cake.jpg"
+"Luxury Ivory & Gold Floral Cake.jpg",
+"luxury-elegant-cake-banner-05.jpg"
 ],
 
 [
@@ -1247,6 +1265,7 @@ const images=[
 "modern-contemporary-cake-banner-01.jpg",
 "modern",
 "Modern / Contemporary Cake Banner",
+"Modern Abstract Arch Cake.jpg",
 "Modern Abstract Arch Cake.jpg"
 ],
 
@@ -1255,7 +1274,8 @@ const images=[
 "modern-contemporary-cake-banner-02.jpg",
 "modern",
 "Modern / Contemporary Cake Banner",
-"Modern Geometric Sculptural Cake.jpg"
+"Modern Geometric Sculptural Cake.jpg",
+"modern-contemporary-cake-banner-02.jpg"
 ],
 
 [
@@ -1263,6 +1283,7 @@ const images=[
 "modern-contemporary-cake-banner-03.jpg",
 "modern",
 "Modern / Contemporary Cake Banner",
+"Modern Abstract Geometric Cake.jpg",
 "Modern Abstract Geometric Cake.jpg"
 ],
 
@@ -1271,7 +1292,8 @@ const images=[
 "modern-contemporary-cake-banner-05.jpg",
 "modern",
 "Modern / Contemporary Cake Banner",
-"Modern Geometric Sail Cake.jpg"
+"Modern Geometric Sail Cake.jpg",
+"modern-contemporary-cake-banner-05.jpg"
 ]
 
 ];
@@ -1289,7 +1311,7 @@ const uses=[
 
 let currentFilter="all";
 let currentSearch="";
-let currentFormat="16x9"; // Variável que guarda o formato atual escolhido
+let currentFormat="16x9"; // Formato padrão: 16:9, 1:1, ou 9:16
 
 const grid=document.getElementById("imageGrid");
 const empty=document.getElementById("emptyState");
@@ -1327,18 +1349,34 @@ title,
 file16x9,
 cat,
 catName,
-file1x1
+file1x1,
+file9x16
 ]=o.x;
 
 const card=document.createElement("article");
 
-// A chave do like sempre usa o nome original para o usuário não perder os likes se trocar de formato
+// A chave do like sempre usa o nome original (16:9) para manter os likes entre abas
 const key= "cake-filling-banner-like-"+file16x9;
 const liked= localStorage.getItem(key)==="true";
 
-// Aqui definimos qual arquivo e qual pasta será carregada dependendo do formato escolhido
-const activeFile = currentFormat === "1x1" ? file1x1 : file16x9;
-const activeFolder = currentFormat === "1x1" ? "banners-1x1/" : "banners/";
+// Lógica de seleção de arquivo e pasta baseada no formato
+let activeFile = file16x9;
+let activeFolder = "banners/";
+let imgWidth = "1920";
+let imgHeight = "1080";
+
+if(currentFormat === "1x1") {
+    activeFile = file1x1;
+    activeFolder = "banners-1x1/";
+    imgWidth = "2048";
+    imgHeight = "2048";
+} else if (currentFormat === "9x16") {
+    activeFile = file9x16;
+    activeFolder = "banners-09x16/";
+    imgWidth = "1080";
+    imgHeight = "1920";
+}
+
 const path = activeFolder + encodeURIComponent(activeFile);
 
 card.className="image-card";
@@ -1350,8 +1388,8 @@ card.innerHTML=`
 <img
 src="${path}"
 alt="${esc(title)}"
-width="${currentFormat === '1x1' ? '2048' : '1920'}"
-height="${currentFormat === '1x1' ? '2048' : '1080'}"
+width="${imgWidth}"
+height="${imgHeight}"
 loading="${n<6?"eager":"lazy"}"
 decoding="async"
 >
@@ -1433,7 +1471,7 @@ renderImages();
 
 );
 
-// Evento para clicar na troca de formato (16:9 / 1:1)
+// Evento para clicar na troca de formato (16:9 / 1:1 / 9:16)
 document
 .querySelectorAll(".format-button")
 .forEach(b=>
@@ -1449,10 +1487,13 @@ x.classList.remove("active")
 b.classList.add("active");
 currentFormat=b.dataset.format;
 
+// Reseta e adiciona a classe visual correta na grade
+grid.classList.remove("format-1x1", "format-9x16");
+
 if(currentFormat === "1x1") {
     grid.classList.add("format-1x1");
-} else {
-    grid.classList.remove("format-1x1");
+} else if (currentFormat === "9x16") {
+    grid.classList.add("format-9x16");
 }
 
 renderImages();
@@ -1464,8 +1505,16 @@ renderImages();
 function downloadImage(i){
 
 const x = images[i];
-const activeFile = currentFormat === "1x1" ? x[4] : x[1];
-const activeFolder = currentFormat === "1x1" ? "banners-1x1/" : "banners/";
+let activeFile = x[1];
+let activeFolder = "banners/";
+
+if(currentFormat === "1x1") {
+    activeFile = x[4];
+    activeFolder = "banners-1x1/";
+} else if (currentFormat === "9x16") {
+    activeFile = x[5];
+    activeFolder = "banners-09x16/";
+}
 
 const a=document.createElement("a");
 
@@ -1484,24 +1533,17 @@ setTimeout(openSupport,700);
 function toggleLike(b,i){
 
 // O like fica sempre atrelado à imagem original (16:9) para não sumir ao mudar o formato
-const key=
-"cake-filling-banner-like-"+images[i][1];
-
-const liked=
-localStorage.getItem(key)==="true";
+const key= "cake-filling-banner-like-"+images[i][1];
+const liked= localStorage.getItem(key)==="true";
 
 if(liked){
-
-localStorage.removeItem(key);
-b.classList.remove("liked");
-b.innerHTML="♡ Like";
-
+    localStorage.removeItem(key);
+    b.classList.remove("liked");
+    b.innerHTML="♡ Like";
 }else{
-
-localStorage.setItem(key,"true");
-b.classList.add("liked");
-b.innerHTML="♥ Liked";
-
+    localStorage.setItem(key,"true");
+    b.classList.add("liked");
+    b.innerHTML="♥ Liked";
 }
 
 }
@@ -1509,7 +1551,10 @@ b.innerHTML="♥ Liked";
 function openInfo(i){
 
 const x=images[i];
-const activeFile = currentFormat === "1x1" ? x[4] : x[1];
+let activeFile = x[1];
+
+if(currentFormat === "1x1") activeFile = x[4];
+else if(currentFormat === "9x16") activeFile = x[5];
 
 document.getElementById("modalTitle").textContent=x[0];
 document.getElementById("modalCategory").textContent=x[3];
@@ -1519,132 +1564,85 @@ document.getElementById("modalFormat").textContent= activeFile.toLowerCase().end
 if(currentFormat === "1x1") {
     document.getElementById("modalDimensions").textContent = "1:1 (2048 x 2048 px)";
     document.getElementById("modalOrientation").textContent = "Square";
+} else if (currentFormat === "9x16") {
+    document.getElementById("modalDimensions").textContent = "9:16 (1080 x 1920 px)";
+    document.getElementById("modalOrientation").textContent = "Portrait";
 } else {
     document.getElementById("modalDimensions").textContent = "16:9 (1920 x 1080 px)";
     document.getElementById("modalOrientation").textContent = "Landscape";
 }
 
-const u=
-document.getElementById("modalUses");
-
+const u= document.getElementById("modalUses");
 u.innerHTML="";
 
 uses.forEach(v=>{
-
-const s=document.createElement("span");
-
-s.className="use-tag";
-s.textContent=v;
-
-u.appendChild(s);
-
+    const s=document.createElement("span");
+    s.className="use-tag";
+    s.textContent=v;
+    u.appendChild(s);
 });
 
-document
-.getElementById("infoModal")
-.classList.add("active");
-
+document.getElementById("infoModal").classList.add("active");
 document.body.style.overflow="hidden";
 
 }
 
 function closeModal(id){
-
-document
-.getElementById(id)
-.classList.remove("active");
-
-document.body.style.overflow="";
-
+    document.getElementById(id).classList.remove("active");
+    document.body.style.overflow="";
 }
 
 function closeModalOutside(e,id){
-
-if(e.target.id===id)
-closeModal(id);
-
+    if(e.target.id===id) closeModal(id);
 }
 
 document.addEventListener("keydown",e=>{
-
-if(e.key==="Escape"){
-
-[
-"infoModal",
-"supportModal",
-"messageModal"
-].forEach(closeModal);
-
-}
-
+    if(e.key==="Escape"){
+        ["infoModal","supportModal","messageModal"].forEach(closeModal);
+    }
 });
 
 function openSupport(){
-
-document
-.getElementById("supportModal")
-.classList.add("active");
-
-document.body.style.overflow="hidden";
-
+    document.getElementById("supportModal").classList.add("active");
+    document.body.style.overflow="hidden";
 }
 
 function supportAmount(){
-
-closeModal("supportModal");
-
-location.href=
-"https://www.buymeacoffee.com/cakeandfilling";
-
+    closeModal("supportModal");
+    location.href="https://www.buymeacoffee.com/cakeandfilling";
 }
 
 function supportCustom(){
-
-const a=
-document.getElementById("customAmount").value;
-
-if(!a||Number(a)<1){
-
-document.getElementById("messageText")
-.textContent=
-"Please enter an amount of at least $1.";
-
-document
-.getElementById("messageModal")
-.classList.add("active");
-
-document.body.style.overflow="hidden";
-
-return;
-
-}
-
-closeModal("supportModal");
-
-location.href=
-"https://www.buymeacoffee.com/cakeandfilling";
-
+    const a=document.getElementById("customAmount").value;
+    if(!a||Number(a)<1){
+        document.getElementById("messageText").textContent="Please enter an amount of at least $1.";
+        document.getElementById("messageModal").classList.add("active");
+        document.body.style.overflow="hidden";
+        return;
+    }
+    closeModal("supportModal");
+    location.href="https://www.buymeacoffee.com/cakeandfilling";
 }
 
 const mobileMenuButton=document.getElementById("mobileMenuButton");
 const mobileMenu=document.getElementById("mobileMenu");
 
 if(mobileMenuButton&&mobileMenu){
-mobileMenuButton.addEventListener("click",()=>{
-const isOpen=mobileMenu.classList.toggle("active");
-mobileMenuButton.classList.toggle("open",isOpen);
-mobileMenuButton.setAttribute("aria-expanded",String(isOpen));
-mobileMenuButton.setAttribute("aria-label",isOpen?"Close menu":"Open menu");
-});
+    mobileMenuButton.addEventListener("click",()=>{
+        const isOpen=mobileMenu.classList.toggle("active");
+        mobileMenuButton.classList.toggle("open",isOpen);
+        mobileMenuButton.setAttribute("aria-expanded",String(isOpen));
+        mobileMenuButton.setAttribute("aria-label",isOpen?"Close menu":"Open menu");
+    });
 
-document.querySelectorAll("#mobileMenu a").forEach(link=>{
-link.addEventListener("click",()=>{
-mobileMenu.classList.remove("active");
-mobileMenuButton.classList.remove("open");
-mobileMenuButton.setAttribute("aria-expanded","false");
-mobileMenuButton.setAttribute("aria-label","Open menu");
-});
-});
+    document.querySelectorAll("#mobileMenu a").forEach(link=>{
+        link.addEventListener("click",()=>{
+            mobileMenu.classList.remove("active");
+            mobileMenuButton.classList.remove("open");
+            mobileMenuButton.setAttribute("aria-expanded","false");
+            mobileMenuButton.setAttribute("aria-label","Open menu");
+        });
+    });
 }
 
 // Script para controlar o acordeão de categorias no menu mobile
@@ -1652,10 +1650,10 @@ const mobileDropdownToggle=document.getElementById("mobileDropdownToggle");
 const mobileDropdownContent=document.getElementById("mobileDropdownContent");
 
 if(mobileDropdownToggle && mobileDropdownContent){
-mobileDropdownToggle.addEventListener("click",()=>{
-const isContentOpen=mobileDropdownContent.classList.toggle("open");
-mobileDropdownToggle.classList.toggle("open",isContentOpen);
-});
+    mobileDropdownToggle.addEventListener("click",()=>{
+        const isContentOpen=mobileDropdownContent.classList.toggle("open");
+        mobileDropdownToggle.classList.toggle("open",isContentOpen);
+    });
 }
 
 renderImages();
