@@ -277,11 +277,49 @@ max-width:760px;
 font-size:16px
 }
 
+/* Novos estilos para o menu de controle (Formato + Filtros) */
+.controls-wrapper{
+display:flex;
+flex-direction:column;
+gap:20px;
+margin-bottom:38px
+}
+
+.format-selector{
+display:flex;
+align-items:center;
+gap:12px
+}
+
+.format-label{
+font-size:14px;
+font-weight:600;
+color:var(--muted)
+}
+
+.format-button{
+border:1px solid var(--border);
+background:#fff;
+padding:8px 16px;
+border-radius:8px;
+cursor:pointer;
+font-size:13px;
+font-weight:600;
+color:#5f5953;
+transition:.2s
+}
+
+.format-button:hover,
+.format-button.active{
+background:var(--text);
+color:#fff;
+border-color:var(--text)
+}
+
 .filters{
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-margin-bottom:38px
 }
 
 .filter-button{
@@ -332,7 +370,13 @@ box-shadow:0 15px 35px rgba(50,35,25,.1)
 background:#eee9e4;
 width:100%;
 aspect-ratio:16/9;
-overflow:hidden
+overflow:hidden;
+transition: aspect-ratio .3s ease;
+}
+
+/* Regra CSS que transforma os bolos em quadrados quando ativada */
+.image-grid.format-1x1 .image-wrapper {
+aspect-ratio: 1/1;
 }
 
 .image-wrapper img{
@@ -709,6 +753,7 @@ text-align:center
 }
 
 .modal{padding:25px}
+.format-selector{flex-direction:column; align-items:flex-start; gap:8px}
 }
 </style>
 </head>
@@ -793,7 +838,6 @@ Support the Project
 <div class="mobile-menu" id="mobileMenu">
 <a href="index.html#library">Browse Images</a>
 
-<!-- Categorias em formato de acordeão retrátil no mobile -->
 <button class="mobile-dropdown-toggle" id="mobileDropdownToggle" type="button">
 Categories
 </button>
@@ -846,41 +890,29 @@ Image only — designed for your own text overlay
 <section class="section" id="library">
 
 <div class="section-header">
-
 <div>
-
-<h2 class="section-title">
-Explore the banner library
-</h2>
-
+<h2 class="section-title">Explore the banner library</h2>
 <p class="section-description">
-Browse horizontal website banners created for different bakery,
-cake and dessert brand styles. All banners are image-only, so you
-can add your own headline, subtitle, button or offer.
+Browse website banners created for different bakery, cake and dessert brand styles. All banners are image-only, so you can add your own headline, subtitle, button or offer.
 </p>
-
+</div>
 </div>
 
-</div>
+<div class="controls-wrapper">
+  
+    <div class="format-selector">
+        <span class="format-label">Format:</span>
+        <button class="format-button active" data-format="16x9">16:9 (Desktop)</button>
+        <button class="format-button" data-format="1x1">1:1 (Mobile)</button>
+    </div>
 
-<div class="filters">
-
-<button class="filter-button active" data-filter="all">
-All Banners
-</button>
-
-<button class="filter-button" data-filter="minimalist">
-Minimalist Bakery
-</button>
-
-<button class="filter-button" data-filter="luxury">
-Luxury / Elegant
-</button>
-
-<button class="filter-button" data-filter="modern">
-Modern / Contemporary
-</button>
-
+    <div class="filters">
+        <button class="filter-button active" data-filter="all">All Banners</button>
+        <button class="filter-button" data-filter="minimalist">Minimalist Bakery</button>
+        <button class="filter-button" data-filter="luxury">Luxury / Elegant</button>
+        <button class="filter-button" data-filter="modern">Modern / Contemporary</button>
+    </div>
+    
 </div>
 
 <div class="image-grid" id="imageGrid"></div>
@@ -957,12 +989,12 @@ Category
 
 <div class="info-row">
 <div class="info-label">Dimensions</div>
-<div class="info-value">16:9</div>
+<div class="info-value" id="modalDimensions">16:9 (1920x1080)</div>
 </div>
 
 <div class="info-row">
 <div class="info-label">Orientation</div>
-<div class="info-value">Landscape</div>
+<div class="info-value" id="modalOrientation">Landscape</div>
 </div>
 
 <div class="info-row">
@@ -1119,111 +1151,127 @@ Free bakery images and website banners for creative and commercial use.
 
 <script>
 
+/* O 5º elemento de cada lista é o nome exato do arquivo para celular (1:1) */
 const images=[
 
 [
 "Minimalist Fresh Berry Cake",
 "minimalist-bakery-banner-01.png",
 "minimalist",
-"Minimalist Bakery Banner"
+"Minimalist Bakery Banner",
+"Minimalist Fresh Berry Cake.jpg"
 ],
 
 [
 "Minimalist Gold & Floral Cake",
 "minimalist-bakery-banner-02.jpg",
 "minimalist",
-"Minimalist Bakery Banner"
+"Minimalist Bakery Banner",
+"Minimalist Gold & Floral Cake.jpg"
 ],
 
 [
 "Minimalist Three-Tier Wedding Cake",
 "minimalist-bakery-banner-03.jpg",
 "minimalist",
-"Minimalist Bakery Banner"
+"Minimalist Bakery Banner",
+"Minimalist Three-Tier Wedding Cake.jpg"
 ],
 
 [
 "Minimalist Gold Leaf Floral Cake",
 "minimalist-bakery-banner-04.jpg",
 "minimalist",
-"Minimalist Bakery Banner"
+"Minimalist Bakery Banner",
+"Minimalist Gold Leaf Floral Cake.jpg"
 ],
 
 [
 "Minimalist Chocolate Drip Cake",
 "minimalist-bakery-banner-05.png",
 "minimalist",
-"Minimalist Bakery Banner"
+"Minimalist Bakery Banner",
+"Minimalist Chocolate Drip Cake.jpg"
 ],
 
 [
 "Minimalist Chamomile Cake",
 "minimalist-bakery-banner-06.jpg",
 "minimalist",
-"Minimalist Bakery Banner"
+"Minimalist Bakery Banner",
+"Minimalist Chamomile Cake.jpg"
 ],
 
 [
 "Luxury Sculpted Floral Cake",
 "luxury-elegant-cake-banner-01.jpg",
 "luxury",
-"Luxury / Elegant Cake Banner"
+"Luxury / Elegant Cake Banner",
+"Luxury Sculpted Floral Cake.jpg"
 ],
 
 [
 "Elegant Gold-Edged Textured Cake",
 "luxury-elegant-cake-banner-02.png",
 "luxury",
-"Luxury / Elegant Cake Banner"
+"Luxury / Elegant Cake Banner",
+"Elegant Gold-Edged Textured Cake.jpg"
 ],
 
 [
 "Elegant Gold Leaf Floral Cake",
 "luxury-elegant-cake-banner-03.jpg",
 "luxury",
-"Luxury / Elegant Cake Banner"
+"Luxury / Elegant Cake Banner",
+"Elegant Gold Leaf Floral Cake.jpg"
 ],
 
 [
 "Luxury Textured Floral Wedding Cake",
 "luxury-elegant-cake-banner-04.jpg",
 "luxury",
-"Luxury / Elegant Cake Banner"
+"Luxury / Elegant Cake Banner",
+"Luxury Textured Floral Wedding Cake.jpg"
 ],
 
 [
 "Luxury Ivory & Gold Floral Cake",
 "luxury-elegant-cake-banner-05.jpg",
 "luxury",
-"Luxury / Elegant Cake Banner"
+"Luxury / Elegant Cake Banner",
+"Luxury Ivory & Gold Floral Cake.jpg"
 ],
 
 [
 "Modern Abstract Arch Cake",
 "modern-contemporary-cake-banner-01.jpg",
 "modern",
-"Modern / Contemporary Cake Banner"
+"Modern / Contemporary Cake Banner",
+"Modern Abstract Arch Cake.jpg"
 ],
 
 [
 "Modern Geometric Sculptural Cake",
 "modern-contemporary-cake-banner-02.jpg",
 "modern",
-"Modern / Contemporary Cake Banner"
+"Modern / Contemporary Cake Banner",
+"Modern Geometric Sculptural Cake.jpg"
 ],
 
 [
 "Modern Abstract Geometric Cake",
 "modern-contemporary-cake-banner-03.jpg",
 "modern",
-"Modern / Contemporary Cake Banner"
+"Modern / Contemporary Cake Banner",
+"Modern Abstract Geometric Cake.jpg"
 ],
 
 [
 "Modern Geometric Sail Cake",
 "modern-contemporary-cake-banner-05.jpg",
 "modern",
-"Modern / Contemporary Cake Banner"
+"Modern / Contemporary Cake Banner",
+"Modern Geometric Sail Cake.jpg"
 ]
 
 ];
@@ -1241,6 +1289,7 @@ const uses=[
 
 let currentFilter="all";
 let currentSearch="";
+let currentFormat="16x9"; // Variável que guarda o formato atual escolhido
 
 const grid=document.getElementById("imageGrid");
 const empty=document.getElementById("emptyState");
@@ -1275,25 +1324,22 @@ list.forEach((o,n)=>{
 
 const [
 title,
-file,
+file16x9,
 cat,
-catName
+catName,
+file1x1
 ]=o.x;
 
 const card=document.createElement("article");
 
-const key=
-"cake-filling-banner-like-"+file;
+// A chave do like sempre usa o nome original para o usuário não perder os likes se trocar de formato
+const key= "cake-filling-banner-like-"+file16x9;
+const liked= localStorage.getItem(key)==="true";
 
-const liked=
-localStorage.getItem(key)==="true";
-
-/* IMPORTANT:
-   Banner images are stored directly inside /banners/
-*/
-
-const path=
-"banners/"+encodeURIComponent(file);
+// Aqui definimos qual arquivo e qual pasta será carregada dependendo do formato escolhido
+const activeFile = currentFormat === "1x1" ? file1x1 : file16x9;
+const activeFolder = currentFormat === "1x1" ? "banners-1x1/" : "banners/";
+const path = activeFolder + encodeURIComponent(activeFile);
 
 card.className="image-card";
 
@@ -1304,8 +1350,8 @@ card.innerHTML=`
 <img
 src="${path}"
 alt="${esc(title)}"
-width="1920"
-height="1080"
+width="${currentFormat === '1x1' ? '2048' : '1920'}"
+height="${currentFormat === '1x1' ? '2048' : '1080'}"
 loading="${n<6?"eager":"lazy"}"
 decoding="async"
 >
@@ -1365,6 +1411,7 @@ renderImages();
 
 });
 
+// Evento para clicar nas categorias
 document
 .querySelectorAll(".filter-button")
 .forEach(b=>
@@ -1378,8 +1425,35 @@ x.classList.remove("active")
 );
 
 b.classList.add("active");
-
 currentFilter=b.dataset.filter;
+
+renderImages();
+
+})
+
+);
+
+// Evento para clicar na troca de formato (16:9 / 1:1)
+document
+.querySelectorAll(".format-button")
+.forEach(b=>
+
+b.addEventListener("click",()=>{
+
+document
+.querySelectorAll(".format-button")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+b.classList.add("active");
+currentFormat=b.dataset.format;
+
+if(currentFormat === "1x1") {
+    grid.classList.add("format-1x1");
+} else {
+    grid.classList.remove("format-1x1");
+}
 
 renderImages();
 
@@ -1389,23 +1463,18 @@ renderImages();
 
 function downloadImage(i){
 
-const file=images[i][1];
+const x = images[i];
+const activeFile = currentFormat === "1x1" ? x[4] : x[1];
+const activeFolder = currentFormat === "1x1" ? "banners-1x1/" : "banners/";
 
 const a=document.createElement("a");
 
-/* IMPORTANT:
-   Banner images are stored directly inside /banners/
-*/
-
-a.href=
-"banners/"+encodeURIComponent(file);
-
-a.download=file;
+a.href= activeFolder + encodeURIComponent(activeFile);
+a.download=activeFile;
 
 document.body.appendChild(a);
 
 a.click();
-
 a.remove();
 
 setTimeout(openSupport,700);
@@ -1414,6 +1483,7 @@ setTimeout(openSupport,700);
 
 function toggleLike(b,i){
 
+// O like fica sempre atrelado à imagem original (16:9) para não sumir ao mudar o formato
 const key=
 "cake-filling-banner-like-"+images[i][1];
 
@@ -1423,17 +1493,13 @@ localStorage.getItem(key)==="true";
 if(liked){
 
 localStorage.removeItem(key);
-
 b.classList.remove("liked");
-
 b.innerHTML="♡ Like";
 
 }else{
 
 localStorage.setItem(key,"true");
-
 b.classList.add("liked");
-
 b.innerHTML="♥ Liked";
 
 }
@@ -1443,13 +1509,20 @@ b.innerHTML="♥ Liked";
 function openInfo(i){
 
 const x=images[i];
+const activeFile = currentFormat === "1x1" ? x[4] : x[1];
 
 document.getElementById("modalTitle").textContent=x[0];
-
 document.getElementById("modalCategory").textContent=x[3];
+document.getElementById("modalFormat").textContent= activeFile.toLowerCase().endsWith(".png")?"PNG":"JPEG";
 
-document.getElementById("modalFormat").textContent=
-x[1].endsWith(".png")?"PNG":"JPEG";
+// Atualiza a dimensão mostrada no popup de informações de acordo com a aba selecionada
+if(currentFormat === "1x1") {
+    document.getElementById("modalDimensions").textContent = "1:1 (2048 x 2048 px)";
+    document.getElementById("modalOrientation").textContent = "Square";
+} else {
+    document.getElementById("modalDimensions").textContent = "16:9 (1920 x 1080 px)";
+    document.getElementById("modalOrientation").textContent = "Landscape";
+}
 
 const u=
 document.getElementById("modalUses");
@@ -1461,7 +1534,6 @@ uses.forEach(v=>{
 const s=document.createElement("span");
 
 s.className="use-tag";
-
 s.textContent=v;
 
 u.appendChild(s);
