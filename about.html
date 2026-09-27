@@ -201,6 +201,24 @@
             gap: 10px;
         }
 
+        .support-button {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all .2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .support-button:hover {
+            background: var(--soft);
+            border-color: #d9cfc5;
+        }
+
         /* MOBILE MENU BUTTON */
         .mobile-menu-button {
             display: none;
@@ -497,7 +515,7 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                display: block;
+                display: none; /* Mantém oculto até clicar */
                 background: rgba(250, 249, 247, 0.98);
                 backdrop-filter: blur(14px);
                 -webkit-backdrop-filter: blur(14px);
@@ -511,6 +529,7 @@
             }
 
             .mobile-menu.active {
+                display: block;
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
@@ -666,8 +685,10 @@
         </nav>
 
         <div class="header-actions">
-            <!-- SCRIPT DO BUY ME A COFFEE ADICIONADO AQUI -->
-            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cakeandfilling" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Support The Project" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+            <!-- Botão original mantido para não quebrar o layout -->
+            <button class="support-button" onclick="openSupport()">
+                Support the Project
+            </button>
         
             <!-- MOBILE MENU BUTTON -->
             <button
@@ -686,12 +707,8 @@
 
     <!-- MOBILE NAVIGATION -->
     <div class="mobile-menu" id="mobileMenu">
-
         <div class="mobile-menu-inner">
-
-            <a
-                href="index.html#library"
-                class="mobile-menu-link mobile-close-link">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
                 Browse Images
             </a>
 
@@ -703,55 +720,31 @@
                 Explore
             </button>
 
-            <div
-                class="mobile-category-menu"
-                id="mobileCategoryMenu">
-
-                <div class="mobile-category-heading">
-                    Marketing Images
-                </div>
-
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
                 <p class="mobile-category-description">
                     Visuals for menus, websites, social media and bakery marketing.
                 </p>
-
-                <a href="index.html#library" class="mobile-category-link mobile-close-link">
-                    Menus &amp; Catalogs
-                </a>
-
-                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">
-                    Banners
-                </a>
-
-                <a href="index.html#library" class="mobile-category-link mobile-close-link">
-                    Social Media
-                </a>
-
-                <a href="index.html#library" class="mobile-category-link mobile-close-link">
-                    Promotions &amp; Offers
-                </a>
-
-                <a href="index.html#library" class="mobile-category-link mobile-close-link">
-                    Pinterest
-                </a>
-
-                <a href="index.html#library" class="mobile-category-link mobile-close-link">
-                    Brand &amp; Lifestyle
-                </a>
-
-                <a href="index.html#library" class="mobile-category-link mobile-close-link">
-                    Seasonal
-                </a>
-
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Social Media</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
             </div>
 
-            <a
-                href="about.html"
-                class="mobile-menu-link mobile-close-link"
-                style="color: var(--accent);">
+            <a href="about.html" class="mobile-menu-link mobile-close-link" style="color: var(--accent);">
                 About
             </a>
 
+            <button
+                type="button"
+                class="mobile-menu-link"
+                style="border:0; background:transparent; text-align:left; cursor:pointer;"
+                onclick="closeMobileMenu(); openSupport();">
+                Support the Project
+            </button>
         </div>
     </div>
 </header>
@@ -802,9 +795,14 @@
             </p>
         </div>
     </article>
+
+    <!-- Buy Me A Coffee (Script Hidden, used via Modal) -->
+    <div style="display:none;">
+         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cakeandfilling" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Support The Project" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+    </div>
 </main>
 
-<!-- SUPPORT MODAL (Mantido caso queira usar em algum outro local do site) -->
+<!-- SUPPORT MODAL -->
 <div class="modal-overlay" id="supportModal" onclick="closeModalOutside(event, 'supportModal')">
     <div class="modal">
         <button class="modal-close" onclick="closeModal('supportModal')">×</button>
@@ -882,7 +880,7 @@
 
     function supportAmount(amount) {
         closeModal("supportModal");
-        showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
+        window.location.href = "https://www.buymeacoffee.com/cakeandfilling";
     }
 
     function supportCustom() {
@@ -892,7 +890,7 @@
             return;
         }
         closeModal("supportModal");
-        showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
+        window.location.href = "https://www.buymeacoffee.com/cakeandfilling";
     }
 
     /*
