@@ -489,14 +489,6 @@
                 <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
                 <div class="nav-dropdown-menu">
                     <div>
-                        <div class="dropdown-heading">Product Images</div>
-                        <p class="dropdown-description">Standalone cake, dessert and pastry images.</p>
-                        <div class="dropdown-links">
-                            <a href="index.html#library" data-menu-filter="all">All Product Images</a>
-                        </div>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div>
                         <div class="dropdown-heading">Marketing Images</div>
                         <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
                         <div class="dropdown-links">
@@ -517,6 +509,85 @@
         <div class="header-actions">
             <!-- SCRIPT DO BUY ME A COFFEE ADICIONADO AQUI -->
             <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cakeandfilling" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Support The Project" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+        </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-inner">
+
+            <a
+                href="#library"
+                class="mobile-menu-link mobile-close-link">
+                Browse Images
+            </a>
+
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false">
+                Explore
+            </button>
+
+            <div
+                class="mobile-category-menu"
+                id="mobileCategoryMenu">
+
+                <div class="mobile-category-heading">
+                    Marketing Images
+                </div>
+
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">
+                    Menus &amp; Catalogs
+                </a>
+
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">
+                    Banners
+                </a>
+
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">
+                    Social Media
+                </a>
+
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">
+                    Promotions &amp; Offers
+                </a>
+
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">
+                    Pinterest
+                </a>
+
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">
+                    Brand &amp; Lifestyle
+                </a>
+
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">
+                    Seasonal
+                </a>
+
+            </div>
+
+            <a
+                href="about.html"
+                class="mobile-menu-link mobile-close-link"
+                style="color: var(--accent);">
+                About
+            </a>
+
+            <button
+                type="button"
+                class="mobile-menu-link"
+                style="border:0; background:transparent; text-align:left; cursor:pointer;"
+                onclick="closeMobileMenu(); openSupport();">
+                Support the Project
+            </button>
+
         </div>
     </div>
 </header>
@@ -659,6 +730,86 @@
         closeModal("supportModal");
         showCustomMessage("Support selected: $" + amount + "\n\n(Add your payment integration link here)");
     }
+
+    /*
+    ============================================================
+    MOBILE MENU
+    ============================================================
+    */
+
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
+
+    function openMobileMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenuButton.classList.add("active");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenuButton.classList.remove("active");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
+        mobileCategoryButton.classList.remove("active");
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
+        mobileCategoryMenu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    // Se o botão do menu mobile existir (ele não estava no HTML que você enviou, mas eu ajustei a lógica)
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+    }
+
+    if (mobileCategoryButton) {
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+        }
+    });
+
 </script>
 </body>
 </html>
