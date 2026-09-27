@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGVV6YSNBW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EGVV6YSNBW');
+    </script>
+
+    <title>Blog — Cake & Filling</title>
+    <meta name="description" content="Articles, guides, and inspiration for bakery marketing, web design, and visual identity.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #faf9f7;
+            --white: #ffffff;
+            --text: #252321;
+            --muted: #77716b;
+            --border: #e8e3dd;
+            --accent: #8b5e3c;
+            --accent-dark: #68442b;
+            --soft: #f2ece5;
+            --like: #b34a4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 76px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        nav a,
+        .nav-dropdown-trigger {
+            font-size: 14px;
+            color: #514c47;
+            transition: color .2s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        .nav-dropdown:hover .nav-dropdown-trigger,
+        .nav-dropdown-trigger:focus {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            padding: 28px 0;
+        }
+
+        .nav-dropdown-trigger {
+            border: 0;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-dropdown-trigger::after {
+            content: "⌄";
+            font-size: 13px;
+            transform: translateY(-2px);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 7px);
+            left: -18px;
+            width: 430px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(50,35,25,.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(7px);
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            pointer-events: none;
+            z-index: 101;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-heading {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .dropdown-description {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 11px;
+        }
+
+        .dropdown-links {
+            display: grid;
+            gap: 2px;
+        }
+
+        .dropdown-links a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-left: -10px;
+            transition: all .15s ease;
+        }
+
+        .dropdown-links a:hover {
+            background: var(--soft);
+            color: var(--accent);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 18px 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* MOBILE MENU BUTTON */
+        .mobile-menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 12px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* =========================================================
+           BLOG HERO
+        ========================================================= */
+
+        .blog-hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 28px 40px;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .blog-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           BLOG GRID & CARDS
+        ========================================================= */
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 28px 80px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(50, 35, 25, 0.08);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: #eee9e4;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-card-body {
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-category {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .blog-title {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: var(--text);
+            line-height: 1.3;
+            margin-bottom: 12px;
+            transition: color 0.2s ease;
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--accent);
+        }
+
+        .blog-excerpt {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .read-more {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: auto;
+        }
+
+        .read-more::after {
+            content: "→";
+            transition: transform 0.2s ease;
+        }
+
+        .blog-card:hover .read-more::after {
+            transform: translateX(4px);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            .header-inner {
+                gap: 20px;
+            }
+            nav {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu-button {
+                display: flex;
+            }
+            .header-inner {
+                min-height: 70px;
+                padding: 0 20px;
+                gap: 12px;
+            }
+            .header-actions {
+                margin-left: auto;
+            }
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                background: rgba(250, 249, 247, 0.98);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 18px 40px rgba(50,35,25,.10);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                pointer-events: none;
+                transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            }
+            .mobile-menu.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .mobile-menu-inner {
+                padding: 12px 20px 20px;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            .mobile-menu-link {
+                display: block;
+                width: 100%;
+                padding: 14px 4px;
+                border-bottom: 1px solid var(--border);
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .mobile-menu-link:hover {
+                color: var(--accent);
+            }
+            .mobile-category-button {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid var(--border);
+                background: transparent;
+                padding: 14px 4px;
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+                text-align: left;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mobile-category-button::after {
+                content: "⌄";
+                font-size: 16px;
+                transition: transform .2s ease;
+            }
+            .mobile-category-button.active::after {
+                transform: rotate(180deg);
+            }
+            .mobile-category-menu {
+                display: none;
+                padding: 8px 0 10px 12px;
+                border-bottom: 1px solid var(--border);
+            }
+            .mobile-category-menu.active {
+                display: block;
+            }
+            .mobile-category-heading {
+                padding: 10px 4px 5px;
+                color: var(--muted);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+            }
+            .mobile-category-link {
+                display: block;
+                padding: 9px 4px;
+                color: #514c47;
+                font-size: 14px;
+            }
+            .mobile-category-link:hover {
+                color: var(--accent);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .header-inner {
+                padding: 0 16px;
+            }
+            .blog-hero {
+                padding-top: 50px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <!-- Back to index link -->
+        <a href="index.html" class="logo">
+            Cake <span>&</span> Filling
+        </a>
+
+        <nav>
+            <a href="index.html#library">Browse Images</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
+                <div class="nav-dropdown-menu">
+                    <div>
+                        <div class="dropdown-heading">Marketing Images</div>
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+                        <div class="dropdown-links">
+                            <a href="index.html#library">Menus &amp; Catalogs</a>
+                            <a href="https://cakeandfilling.pro/banners.html">Banners</a>
+                            <a href="index.html#library">Social Media</a>
+                            <a href="index.html#library">Promotions &amp; Offers</a>
+                            <a href="index.html#library">Pinterest</a>
+                            <a href="index.html#library">Brand &amp; Lifestyle</a>
+                            <a href="index.html#library">Seasonal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- SCRIPT DO BUY ME A COFFEE ADICIONADO AQUI -->
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cakeandfilling" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Support The Project" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+        
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
+                Browse Images
+            </a>
+
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false">
+                Explore
+            </button>
+
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Social Media</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
+            </div>
+
+            <a href="about.html" class="mobile-menu-link mobile-close-link">
+                About
+            </a>
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="blog-hero">
+        <h1>Articles & Inspiration</h1>
+        <p>Guides, ideas, and free visual resources to help you market your bakery, design your website, and grow your cake business.</p>
+    </section>
+
+    <section class="section">
+        <div class="blog-grid">
+
+            <!-- Card 1 -->
+            <a href="#" class="blog-card">
+                <img 
+                    src="images/Dark Elegance_ The Modern Vintage Lambeth Cake.jpg" 
+                    alt="Article image placeholder" 
+                    class="blog-card-image"
+                    onerror="this.src='https://placehold.co/800x500/eee/999?text=Image'">
+                <div class="blog-card-body">
+                    <div class="blog-category">Web Design</div>
+                    <h3 class="blog-title">Bakery Website Design: The Ultimate Guide (Ideas & Examples)</h3>
+                    <p class="blog-excerpt">Everything you need to know about building a beautiful bakery website, from hero images to landing page inspiration.</p>
+                    <span class="read-more">Read Article</span>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" class="blog-card">
+                <img 
+                    src="images/Monet Sunset Water Lily Cake_ Impressionist Buttercream Art.jpg" 
+                    alt="Article image placeholder" 
+                    class="blog-card-image"
+                    onerror="this.src='https://placehold.co/800x500/eee/999?text=Image'">
+                <div class="blog-card-body">
+                    <div class="blog-category">Branding</div>
+                    <h3 class="blog-title">Finding the Perfect Color Palette for Your Cake Business</h3>
+                    <p class="blog-excerpt">Explore color theory and visual identity moodboards to make your pastry brand stand out in a crowded market.</p>
+                    <span class="read-more">Read Article</span>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#" class="blog-card">
+                <img 
+                    src="images/Bolo Aquarela_ O Segredo da Colorimetria Perfeita no Buttercream.jpg" 
+                    alt="Article image placeholder" 
+                    class="blog-card-image"
+                    onerror="this.src='https://placehold.co/800x500/eee/999?text=Image'">
+                <div class="blog-card-body">
+                    <div class="blog-category">Marketing</div>
+                    <h3 class="blog-title">Promotional Banner Ideas to Boost Your Bakery Sales</h3>
+                    <p class="blog-excerpt">Learn how to create engaging e-commerce banners and use free assets to promote your seasonal offers.</p>
+                    <span class="read-more">Read Article</span>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="#" class="blog-card">
+                <img 
+                    src="images/Bolo Estêncil Perfeito_ O Segredo para um Relevo Dourado sem Borrar.jpg" 
+                    alt="Article image placeholder" 
+                    class="blog-card-image"
+                    onerror="this.src='https://placehold.co/800x500/eee/999?text=Image'">
+                <div class="blog-card-body">
+                    <div class="blog-category">Social Media</div>
+                    <h3 class="blog-title">Aesthetic Instagram Photos and Social Media Templates</h3>
+                    <p class="blog-excerpt">How to format and present your cakes on social media using free layouts and high-resolution images.</p>
+                    <span class="read-more">Read Article</span>
+                </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="#" class="blog-card">
+                <img 
+                    src="images/Bolo de Milho Cremoso_ O Segredo para Não Ficar Seco.jpg" 
+                    alt="Article image placeholder" 
+                    class="blog-card-image"
+                    onerror="this.src='https://placehold.co/800x500/eee/999?text=Image'">
+                <div class="blog-card-body">
+                    <div class="blog-category">Menu Design</div>
+                    <h3 class="blog-title">How to Design a Digital Bakery Menu That Sells</h3>
+                    <p class="blog-excerpt">Discover how to use vertical background images and whitespace to create irresistible PDF catalogs and WhatsApp menus.</p>
+                    <span class="read-more">Read Article</span>
+                </div>
+            </a>
+
+            <!-- Card 6 -->
+            <a href="#" class="blog-card">
+                <img 
+                    src="images/Bolo Rústico Elegante_ Como Unir Rosetas e Textura Espatulada Perfeita.jpg" 
+                    alt="Article image placeholder" 
+                    class="blog-card-image"
+                    onerror="this.src='https://placehold.co/800x500/eee/999?text=Image'">
+                <div class="blog-card-body">
+                    <div class="blog-category">Inspiration</div>
+                    <h3 class="blog-title">Minimalist Bakery Aesthetic: Web Design Inspiration</h3>
+                    <p class="blog-excerpt">Why less is more when selling high-end cakes. View beautiful examples of minimalist templates and layouts.</p>
+                    <span class="read-more">Read Article</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2026 Cake & Filling</div>
+        <div>Free bakery images for creative and commercial use.</div>
+    </div>
+</footer>
+
+<script>
+    /*
+    ============================================================
+    MOBILE MENU
+    ============================================================
+    */
+
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
+
+    function openMobileMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenuButton.classList.add("active");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenuButton.classList.remove("active");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
+        mobileCategoryButton.classList.remove("active");
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
+        mobileCategoryMenu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+    }
+
+    if (mobileCategoryButton) {
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+        }
+    });
+
+</script>
+</body>
+</html>
