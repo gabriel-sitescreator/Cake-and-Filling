@@ -783,19 +783,6 @@ Explore
 <div class="nav-dropdown-menu">
 
 <div>
-<div class="dropdown-heading">Product Images</div>
-<p class="dropdown-description">
-Standalone cake, dessert and pastry images.
-</p>
-
-<div class="dropdown-links">
-<a href="index.html#library">All Product Images</a>
-</div>
-</div>
-
-<div class="dropdown-divider"></div>
-
-<div>
 <div class="dropdown-heading">Marketing Images</div>
 <p class="dropdown-description">
 Visuals for menus, websites, social media and bakery marketing.
@@ -846,10 +833,6 @@ Support the Project
 Explore
 </button>
 <div class="mobile-dropdown-content" id="mobileDropdownContent">
-    <div class="dropdown-heading">Product Images</div>
-    <p class="dropdown-description">Standalone cake, dessert and pastry images.</p>
-    <a href="index.html#library">All Product Images</a>
-    <div class="dropdown-divider"></div>
     <div class="dropdown-heading">Marketing Images</div>
     <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
     <a href="index.html#library">Menus &amp; Catalogs</a>
@@ -1332,7 +1315,7 @@ function renderImages(){
             imgHeight = "2048";
         } else if (currentFormat === "9x16") {
             activeFile = file9x16;
-            activeFolder = "banners-9x16/";
+            activeFolder = "banners-09x16/";
             imgWidth = "1080";
             imgHeight = "1920";
         }
@@ -1407,7 +1390,7 @@ function downloadImage(i){
         activeFolder = "banners-1x1/";
     } else if (currentFormat === "9x16") {
         activeFile = x[5];
-        activeFolder = "banners-9x16/";
+        activeFolder = "banners-09x16/";
     }
 
     const a=document.createElement("a");
