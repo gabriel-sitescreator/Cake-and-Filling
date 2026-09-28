@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGVV6YSNBW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EGVV6YSNBW');
+    </script>
+
+    <title>Bakery Menu Backgrounds & 9:16 Assets - Cake & Filling</title>
+    <meta name="description" content="A comprehensive market and UX analysis on bakery menu backgrounds, vertical catalogs, and 9:16 visual assets for WhatsApp and Stories.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #faf9f7;
+            --white: #ffffff;
+            --text: #252321;
+            --muted: #77716b;
+            --border: #e8e3dd;
+            --accent: #8b5e3c;
+            --accent-dark: #68442b;
+            --soft: #f2ece5;
+            --like: #b34a4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, input {
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        body > header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 76px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        nav a,
+        .nav-dropdown-trigger {
+            font-size: 14px;
+            color: #514c47;
+            transition: color .2s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        .nav-dropdown:hover .nav-dropdown-trigger,
+        .nav-dropdown-trigger:focus {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            padding: 28px 0;
+        }
+
+        .nav-dropdown-trigger {
+            border: 0;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-dropdown-trigger::after {
+            content: "⌄";
+            font-size: 13px;
+            transform: translateY(-2px);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 7px);
+            left: -18px;
+            width: 430px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(50,35,25,.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(7px);
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            pointer-events: none;
+            z-index: 101;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-heading {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .dropdown-description {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 11px;
+        }
+
+        .dropdown-links {
+            display: grid;
+            gap: 2px;
+        }
+
+        .dropdown-links a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-left: -10px;
+            transition: all .15s ease;
+        }
+
+        .dropdown-links a:hover {
+            background: var(--soft);
+            color: var(--accent);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 18px 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .support-button {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all .2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .support-button:hover {
+            background: var(--soft);
+            border-color: #d9cfc5;
+        }
+
+        /* MOBILE MENU BUTTON */
+        .mobile-menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 12px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* =========================================================
+           ARTICLE SPECIFIC STYLES
+        ========================================================= */
+
+        .article-container {
+            max-width: 840px;
+            margin: 60px auto 100px;
+            padding: 0 28px;
+        }
+
+        .article-header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        .article-category {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .article-title {
+            font-family: Georgia, serif;
+            font-size: clamp(36px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .article-meta {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .article-content {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #3b3734;
+        }
+
+        .article-content h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            color: var(--text);
+            margin: 50px 0 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-content h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: var(--text);
+            margin: 40px 0 16px;
+        }
+        
+        .article-content h4 {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: var(--text);
+            margin: 30px 0 12px;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Tabela Responsiva Elegante para o Artigo */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 16px;
+            background: var(--white);
+        }
+
+        .article-content th, .article-content td {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .article-content th {
+            background: var(--soft);
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .article-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu-button {
+                display: flex;
+            }
+            .header-inner {
+                min-height: 70px;
+                padding: 0 20px;
+                gap: 12px;
+            }
+            .header-actions {
+                margin-left: auto;
+            }
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 18px 40px rgba(50,35,25,.10);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                pointer-events: none;
+                transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            }
+            .mobile-menu.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .mobile-menu-inner {
+                padding: 12px 20px 20px;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            .mobile-menu-link {
+                display: block;
+                width: 100%;
+                padding: 14px 4px;
+                border-bottom: 1px solid var(--border);
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .mobile-menu-link:hover {
+                color: var(--accent);
+            }
+            .mobile-category-button {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid var(--border);
+                background: transparent;
+                padding: 14px 4px;
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+                text-align: left;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mobile-category-button::after {
+                content: "⌄";
+                font-size: 16px;
+                transition: transform .2s ease;
+            }
+            .mobile-category-button.active::after {
+                transform: rotate(180deg);
+            }
+            .mobile-category-menu {
+                display: none;
+                padding: 8px 0 10px 12px;
+                border-bottom: 1px solid var(--border);
+            }
+            .mobile-category-menu.active {
+                display: block;
+            }
+            .mobile-category-heading {
+                padding: 10px 4px 5px;
+                color: var(--muted);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+            }
+            .mobile-category-link {
+                display: block;
+                padding: 9px 4px;
+                color: #514c47;
+                font-size: 14px;
+            }
+            .mobile-category-link:hover {
+                color: var(--accent);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 0 20px;
+                margin-top: 40px;
+            }
+            .article-content {
+                font-size: 17px;
+            }
+            .article-content th, .article-content td {
+                padding: 14px;
+                font-size: 14px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <!-- Back to index link -->
+        <a href="index.html" class="logo">
+            Cake <span>&</span> Filling
+        </a>
+
+        <nav>
+            <a href="index.html#library">Browse Images</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
+                <div class="nav-dropdown-menu">
+                    <div>
+                        <div class="dropdown-heading">Marketing Images</div>
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+                        <div class="dropdown-links">
+                            <a href="index.html#library">Menus &amp; Catalogs</a>
+                            <a href="https://cakeandfilling.pro/banners.html">Banners</a>
+                            <a href="index.html#library">Social Media</a>
+                            <a href="index.html#library">Promotions &amp; Offers</a>
+                            <a href="index.html#library">Pinterest</a>
+                            <a href="index.html#library">Brand &amp; Lifestyle</a>
+                            <a href="index.html#library">Seasonal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://cakeandfilling.pro/blog.html">Blog</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- SCRIPT DO BUY ME A COFFEE ADICIONADO AQUI -->
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cakeandfilling" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Support The Project" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+        
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
+                Browse Images
+            </a>
+
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false">
+                Explore
+            </button>
+
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Social Media</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
+            </div>
+
+            <a href="https://cakeandfilling.pro/blog.html" class="mobile-menu-link mobile-close-link">
+                Blog
+            </a>
+
+            <a href="about.html" class="mobile-menu-link mobile-close-link">
+                About
+            </a>
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <article class="article-container">
+        
+        <header class="article-header">
+            <span class="article-category">Research &amp; Strategy</span>
+            <h1 class="article-title">Global Search Landscape and Strategic Analysis: Bakery Branding, Visual Identity, Moodboards, and Color Palettes</h1>
+            <div class="article-meta">Published for Web Designers &amp; Bakery Entrepreneurs</div>
+        </header>
+
+        <div class="article-content">
+            <h1>Global Search Landscape and Strategic Analysis: Bakery Branding, Visual Identity, Moodboards, and Color Palettes</h1>
+            <h2>A. Executive Summary</h2>
+            <p>The digital search landscape surrounding bakery branding, visual identity, and color selection represents a highly fragmented ecosystem serving two distinct user bases: independent bakery business owners seeking immediate, intuitive DIY solutions, and professional web/graphic designers requiring robust, scalable, and technically compliant design systems. An exhaustive analysis of search behavior, search engine results pages (SERPs), and available digital assets reveals a critical gap in the market. While platforms like Pinterest and Canva oversaturate the market with purely aesthetic, trend-driven inspiration, there is a profound lack of scientifically grounded, technically rigorous resources that bridge the gap between visual inspiration and cross-platform execution.</p>
+            <p>Building an effective bakery brand extends far beyond selecting aesthetically pleasing colors. The research indicates that it requires a nuanced understanding of crossmodal sensory psychology, where specific visual cues—such as color hues, luminance, and geometric shapes—directly manipulate human flavor expectations and appetite responses. Furthermore, translating these aesthetic choices into functional digital and physical assets introduces severe technical challenges. Designers face strict Web Content Accessibility Guidelines (WCAG) for digital color contrast, complex typography performance metrics for Core Web Vitals, and unpredictable color shifts when transitioning from digital RGB displays to physical CMYK printing on highly absorbent substrates like unbleached kraft paper.</p>
+            <p>This comprehensive report provides a strategic roadmap for developing a dominant visual resource platform tailored to these audiences. By classifying primary keywords according to user intent, grouping them into logical semantic clusters, and evaluating the current content gaps, the analysis outlines a content and product architecture designed to serve both the commercial investigation of the bakery owner and the technical execution of the professional designer. The ultimate objective is to synthesize psychological research, technical web standards, and high-fidelity design templates into a singular, authoritative resource ecosystem that solves the complex branding needs of the modern culinary industry.</p>
+            <h2>B. Keyword-by-Keyword Intent Analysis</h2>
+            <p>Understanding the precise search intent behind primary keywords is essential for delivering the correct content format, whether that is a long-form educational article, a downloadable asset, or a curated visual gallery. The search landscape for bakery branding spans informational, navigational, commercial, and highly transactional intents.</p>
+            <div class="table-responsive">
+            <table>
+            <thead>
+            <tr>
+            <th><strong>Keyword / Search Term</strong></th>
+            <th><strong>Primary Search Intent</strong></th>
+            <th><strong>Target User Profile</strong></th>
+            <th><strong>Expected Content &amp; Delivery Format</strong></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>bakery brand identity moodboard examples</strong></td>
+            <td>Inspirational / Informational</td>
+            <td>Hybrid (Owners &amp; Designers)</td>
+            <td>High-resolution visual galleries, case studies, and annotated moodboard layouts displaying texture, typography, and color.</td>
+            </tr>
+            <tr>
+            <td><strong>bakery brand identity moodboard design</strong></td>
+            <td>Educational / Informational</td>
+            <td>Junior Designers &amp; DIY Owners</td>
+            <td>Step-by-step guides on composition, visual hierarchy, and balancing physical textures with digital typography.</td>
+            </tr>
+            <tr>
+            <td><strong>bakery brand identity moodboard template free</strong></td>
+            <td>Resource / Download</td>
+            <td>Designers &amp; DIY Owners</td>
+            <td>Direct access to downloadable assets (e.g., .PSD, .FIG, Canva links) featuring blank grid structures and placeholder elements.</td>
+            </tr>
+            <tr>
+            <td><strong>bakery visual identity presentation template</strong></td>
+            <td>Commercial Investigation / Template</td>
+            <td>Professional Brand Strategists</td>
+            <td>Multi-slide pitch deck templates focusing on brand guidelines, logo application, packaging mockups, and developer handoff.</td>
+            </tr>
+            <tr>
+            <td><strong>cake business color palette ideas pinterest</strong></td>
+            <td>Platform-Specific / Inspirational</td>
+            <td>DIY Bakery Owners</td>
+            <td>Curated, highly aesthetic image boards focusing on trending palettes, requiring zero technical implementation knowledge.</td>
+            </tr>
+            <tr>
+            <td><strong>cake business color palette ideas for website</strong></td>
+            <td>Technical / Educational</td>
+            <td>Web &amp; UI Designers</td>
+            <td>Hex codes, WCAG contrast compliance rules, and UI color distribution models (e.g., the 60-30-10 rule).</td>
+            </tr>
+            <tr>
+            <td><strong>cake business color palette ideas canva</strong></td>
+            <td>Platform-Specific / Template</td>
+            <td>DIY Bakery Owners</td>
+            <td>Ready-to-use Canva Brand Kits, requiring no advanced design software knowledge and optimized for social media marketing.</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p>The analysis reveals a sharp dichotomy in user intent driven by platform modifiers. A search string containing &quot;Pinterest&quot; or &quot;Canva&quot; signals a user seeking low-friction, immediate visual gratification or drag-and-drop utility, typically a business owner without formal design training. These users prioritize speed, templates, and an all-in-one toolkit for everyday content creation. Conversely, queries specifying &quot;for website&quot; or &quot;presentation template&quot; indicate a professional designer seeking structural frameworks, CSS variables, typography web performance data, and client-facing pitch materials that require technical compliance and scalability.</p>
+            <h2>C. Keyword Clusters</h2>
+            <p>To build a cohesive content architecture, the primary and semantic keywords must be grouped based on search intent and topical relevance. The analysis indicates that segregating concepts based on the required output format provides the highest user satisfaction and prevents cognitive overload.</p>
+            <p><strong>Cluster 1: The Strategic Presentation &amp; Handoff (Designer-Focused)</strong>
+            This cluster revolves around the B2B relationship between a professional designer and their client (the bakery owner). The content must focus on structure, layout, typography rules, logo variations, and developer handoff. Users interacting with these terms require downloadable files (Figma, InDesign, PowerPoint) rather than basic education.
+            <em>Primary Terms:</em> bakery visual identity presentation template, visual identity pitch deck for bakery, pastry shop brand guidelines, dessert brand style guide.</p>
+            <p><strong>Cluster 2: Visual Composition &amp; Moodboarding (Hybrid Audience)</strong>
+            Focusing on the synthesis of early-stage branding, this cluster requires a mix of educational content and visual inspiration. It serves as the top-of-funnel entry point for users conceptualizing a brand, teaching them how to balance photography, texture, and typography into a cohesive grid.
+            <em>Primary Terms:</em> bakery brand identity moodboard examples, bakery brand identity moodboard design, bakery branding board, bakery moodboard grid, cake business aesthetic board.</p>
+            <p><strong>Cluster 3: Digital Application &amp; Web Compliance (Technical Design)</strong>
+            This is a highly technical cluster that bridges the gap between aesthetic choice and digital execution. Content must address WCAG 2.2 accessibility, RGB color spaces, typography performance (WOFF2 files), and user interface hierarchy.
+            <em>Primary Terms:</em> cake business color palette ideas for website, bakery hex codes, modern bakery brand identity, bakery typography pairings.</p>
+            <p><strong>Cluster 4: DIY &amp; Social Media Aesthetics (Owner-Focused)</strong>
+            Targeting the small business owner utilizing platform-specific tools, the focus here should be on trendy, high-conversion visual palettes, Canva Brand Kits, and social media grid cohesion. This cluster must actively avoid overly technical CSS or pre-press printing jargon.
+            <em>Primary Terms:</em> cake business color palette ideas pinterest, cake business color palette ideas canva, pastel color palette for bakery, cake shop color schemes.</p>
+            <h2>D. Synonyms and Semantic Variations</h2>
+            <p>Through a manual evaluation of semantic variants, it is necessary to separate genuinely relevant terminology from superficially similar phrases that carry misaligned search intent. The vocabulary used by a professional designer differs vastly from that of a home baker scaling into a commercial enterprise.</p>
+            <p><strong>Verified Relevant Variations (High Priority):</strong></p>
+            <ul>
+            <li><em>Bakery branding board:</em> Directly synonymous with &quot;moodboard.&quot; This term is widely used by independent brand identity designers and should be targeted alongside moodboard queries.</li>
+            <li><em>Pastry shop brand guidelines:</em> Represents the finalized output of a visual identity presentation. It is highly relevant for template seekers and indicates a mature stage of the branding process.</li>
+            <li><em>Bakery hex codes:</em> Represents strong technical intent. Users want exact digital color values, indicating web design execution rather than mere print inspiration.</li>
+            <li><em>Visual identity pitch deck for bakery:</em> A highly specific, commercial-intent query from agencies pitching bakery clients. This demands a premium, multi-slide downloadable asset.</li>
+            <li><em>Sweet shop color theory:</em> Indicates an educational search intent seeking the psychological backing of color choices, specifically regarding appetite stimulation and flavor perception.</li>
+            </ul>
+            <p><strong>Superficially Similar Variations (To Be Discarded or Repurposed):</strong></p>
+            <ul>
+            <li><em>Millennial pink bakery branding:</em> While &quot;millennial pink&quot; was a dominant trend in the 2010s, design fatigue has rendered it an outdated exact-match keyword. It should be referenced only in the context of evolving trends or replaced with evergreen terms like &quot;blush,&quot; &quot;warm pastel,&quot; or &quot;dusty pink&quot;.</li>
+            <li><em>Bakery website templates:</em> This implies a search for a fully coded WordPress, Squarespace, or Shopify theme, not a branding or color palette resource. It falls outside the scope of visual identity creation.</li>
+            <li><em>Food photography tips:</em> While photography is a critical component of a moodboard, standalone photography queries dilute the focus on brand identity and graphic design. Photography should only be discussed in the context of styling a moodboard or ensuring text-over-image accessibility.</li>
+            </ul>
+            <h2>E. Article vs. Resource-Page Recommendations</h2>
+            <p>Matching the delivery mechanism to the search intent is critical for engagement and conversion. The topic of bakery visual identity cannot be effectively served by a single medium, as the intents range from deep academic curiosity regarding color psychology to the immediate need for a downloadable <code>.fig</code> file.</p>
+            <p><strong>1. The Hybrid Pillar Article (Educational + Downloadable Assets)</strong>
+            Queries like <em>bakery brand identity moodboard design</em> and <em>cake business color palette ideas for website</em> require deep educational context. A long-form pillar article is required to explain the psychology of color, the mechanics of web accessibility, and typography pairing rules. However, because the topic is inherently visual, the article must embed downloadable resource blocks (e.g., &quot;Download this layout in Figma&quot;) directly within the educational text to satisfy the user's ultimate goal of execution.</p>
+            <p><strong>2. The Visual Resource/Library Page (High-Fidelity Galleries)</strong>
+            Queries such as <em>bakery brand identity moodboard examples</em> and <em>cake business color palette ideas pinterest</em> are poorly served by text-heavy articles. These intents demand a category or library page featuring a masonry grid of high-quality, curated visual boards. Users should be able to filter by aesthetic (e.g., Rustic Artisan, Modern Minimalist, Parisian Patisserie) and view exact HEX, RGB, and CMYK codes upon interacting with the images.</p>
+            <p><strong>3. The Dedicated Landing Page (Transactional Intent)</strong>
+            Searches for <em>bakery visual identity presentation template</em> and <em>bakery brand identity moodboard template free</em> exhibit strong download intent. These should lead to optimized product landing pages showcasing the slide layouts, listing file compatibilities (Figma, Sketch, InDesign, Canva), detailing the included design tokens, and providing a frictionless download or purchase mechanism.</p>
+            <h2>F. SERP and Competitor Analysis</h2>
+            <p>An analysis of the current Search Engine Results Pages (SERPs) for bakery branding and color palettes reveals a landscape dominated by distinct platform types, each serving a narrow slice of the user journey.</p>
+            <ul>
+            <li><strong>Pinterest and Instagram:</strong> These platforms dominate the top-of-funnel inspirational queries. Results consist of highly aesthetic, disjointed images. They provide aesthetic direction but zero technical utility, color codes, or execution frameworks.</li>
+            <li><strong>Template Marketplaces (Canva, Envato, Creative Market):</strong> These rank highly for template and presentation queries. Canva dominates the entry-level DIY market with rigid, pre-formatted brand kits. Envato and Creative Market serve professionals but often lack industry-specific educational guidance, merely selling generic corporate decks rebranded with stock bakery photography.</li>
+            <li><strong>Design Portfolios (Behance, Dribbble):</strong> These platforms feature completed bakery branding projects. They provide excellent visual benchmarks and often display color palettes with HEX codes, but they showcase past work rather than offering usable templates or strategic instruction for new projects.</li>
+            <li><strong>Color Generators (Coolors, Adobe Color):</strong> Useful for generating palettes mathematically, but they lack contextual application. A user may find a beautiful five-color palette but lack the knowledge of how to distribute those colors across a website interface or print packaging.</li>
+            </ul>
+            <p>The SERP landscape forces users to bounce between platforms. They find inspiration on Pinterest, struggle to build a palette on Coolors, search for a template on Canva, and guess at web implementation. A dominant visual resource platform will aggregate these functions, providing the inspiration, the underlying psychological theory, the exact color codes, and the downloadable templates in one unified ecosystem.</p>
+            <h2>G. Content Gaps: The Technical and Psychological Deficits in Existing Resources</h2>
+            <p>The most significant opportunity lies in addressing the severe informational gaps within current design resources. Existing content focuses heavily on subjective aesthetics (&quot;what looks pretty&quot;) while ignoring the scientific, technical, and practical realities of brand execution.</p>
+            <h3>Gap 1: The Psychology of Appetite and Crossmodal Correspondences</h3>
+            <p>Current resources routinely advise designers to pick &quot;fun&quot; or &quot;sweet&quot; colors without explaining the psychological mechanisms that drive consumer behavior. Research in sensory science and crossmodal correspondences—specifically the extensive work of experimental psychologist Charles Spence—demonstrates that visual features (color and shape) directly manipulate taste expectations before food is ever consumed.</p>
+            <p>Color acts as a heuristic shortcut for flavor and quality. Warm tones (red, orange, yellow) are scientifically proven appetite stimulants; they increase the heart rate, evoke energy, and trigger urgency, making them highly effective for fast-casual bakeries, snack brands, and impulse purchases. Conversely, blue is a natural appetite suppressant. Because it is rarely found in natural foods, the human brain does not associate it with eating, making it generally avoided in bakery branding unless leveraging a specific novelty flavor (e.g., blueberry or artificial blue raspberry) or attempting to convey extreme clinical cleanliness.</p>
+            <p>Furthermore, crossmodal research reveals consistent consumer associations between geometric shapes and basic tastes. Round, curvilinear shapes are overwhelmingly associated with sweetness, while angular, pointed shapes (triangles, pyramids) are associated with sourness or saltiness. Therefore, an effective bakery visual identity should synergize these elements: a logo utilizing soft, rounded typography in a blush pink or warm terracotta hue will trigger a robust, subconscious expectation of sweetness, warmth, and comfort. Existing design templates fail to educate users on these psychological drivers, treating shape and color as arbitrary choices rather than strategic tools.</p>
+            <h3>Gap 2: The Print vs. Digital Translation (RGB to CMYK on Substrates)</h3>
+            <p>A critical failure point for bakery brands occurs when digital moodboards are translated into physical packaging. Web designers construct palettes in the RGB (Red, Green, Blue) color space, which utilizes light to create vibrant, luminous colors for screens. However, physical bakery boxes and greaseproof papers are printed using CMYK (Cyan, Magenta, Yellow, Key/Black) inks, which inherently possess a narrower color gamut. This renders many digital neon or highly saturated pastel colors mathematically impossible to reproduce accurately in standard commercial print.</p>
+            <p>This problem is severely compounded by the choice of packaging substrate. Artisan bakeries frequently favor unbleached kraft paper for its rustic, eco-friendly, and handcrafted aesthetic. However, kraft paper is highly absorbent and naturally brown. Because standard CMYK inks are not fully opaque, the brown substrate acts as a warm, dark filter, aggressively muting colors and causing unpredictable color shifts. For instance, a cyan logo printed on kraft will appear muddy green, and soft pastel pinks—a staple of modern bakery branding—will disappear entirely or look dirty.</p>
+            <p>Existing resources fail to educate designers on this physical limitation. A comprehensive resource must advise that if a bakery's brand relies on delicate pastels or crisp whites, they must utilize bleached White SBS (Solid Bleached Sulfate) paperboard, or the client must be prepared to invest in expensive opaque white ink underbases or Pantone (PMS) spot colors.</p>
+            <h3>Gap 3: Web Accessibility (WCAG) and UI Color Hierarchy</h3>
+            <p>Bakery brands lean heavily on low-contrast pastel palettes (e.g., soft mint, blush, cream, peach), which frequently fail Web Content Accessibility Guidelines (WCAG) when applied to website interfaces. WCAG 2.2 Level AA requires a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text (18pt+ or 14pt+ bold) against its background.</p>
+            <p>A major content gap is teaching designers how to apply a bakery color palette to a website using the standard 60-30-10 structural rule. This dictates using 60% neutral background colors (whites, creams, deep charcoals) to ensure readability, 30% secondary brand colors (pastels used for structural elements or section backgrounds), and 10% highly saturated accent colors reserved strictly for conversion elements like &quot;Order Now&quot; buttons.</p>
+            <p>Furthermore, modern bakery web design relies heavily on full-bleed food photography to trigger appetite. Placing text directly over uneven, high-contrast imagery routinely fails WCAG standards. Resources must instruct designers on implementing CSS gradient overlays (e.g., <code>background: linear-gradient(transparent, rgba(0,0,0,0.6))</code>) or utilizing a semi-transparent scrim to ensure a consistent, accessible contrast floor beneath text elements, allowing the food photography to shine without sacrificing legibility.</p>
+            <h3>Gap 4: Typography Performance and Core Web Vitals</h3>
+            <p>Typography is a foundational element of a bakery's visual identity. Brands often rely on a combination of expressive, hand-drawn script fonts to communicate artisan craftsmanship and highly legible, geometric sans-serif fonts for menus and ingredient lists. However, resources rarely discuss the performance implications of custom web fonts on a bakery's e-commerce platform.</p>
+            <p>Heavy, unoptimized font files delay the Largest Contentful Paint (LCP), a critical Core Web Vitals metric, causing the site to feel sluggish, delaying the rendering of hero images, and negatively impacting search rankings. Content must bridge the gap between aesthetic font pairings and technical execution. Designers must be instructed to serve fonts exclusively in the highly compressed WOFF2 format, which offers up to 30% better compression than standard WOFF. Furthermore, implementing font subsetting to strip unused glyphs can reduce file sizes by up to 90%. Finally, implementing the CSS property <code>font-display: swap</code> ensures that fallback text is rendered immediately, preventing the Flash of Invisible Text (FOIT) while custom bakery fonts load.</p>
+            <h3>Gap 5: The Workflow Divide (Figma vs. Canva) and Design Tokens</h3>
+            <p>The presentation of visual identity varies wildly based on the target audience's technical proficiency. DIY bakery owners require Canva templates due to its flat learning curve, drag-and-drop interface, and integrated brand kits ideal for rapid social media asset generation without requiring an understanding of vector graphics.</p>
+            <p>Conversely, professional product teams and web developers require Figma. Figma operates on a &quot;canvas-first&quot; architecture built for precision, component systems, and auto-layout. More importantly, a professional visual identity presentation in Figma allows for the creation of Design Tokens. Design tokens are semantic, named entities that store visual values (colors, spacing, typography, radii, shadows) and export directly as W3C-shaped JSON or CSS variables to the development team, establishing a single source of truth from design to code. Existing resources rarely cater to this developer handoff, leaving a lucrative gap for high-end, Figma-native brand presentation templates that are ready for production environments.</p>
+            <h2>H. Recommended Pillar Topic &amp; Resource Gallery Structure</h2>
+            <p>To dominate this search landscape, a hybrid approach is required: a comprehensive, educational Pillar Article that serves as a central hub, seamlessly linking out to dedicated Visual Resource Galleries and Template Landing Pages.</p>
+            <p><strong>Proposed Pillar Title:</strong> <em>The Complete Guide to Bakery Brand Identity: Moodboards, Color Psychology, and Web Design</em></p>
+            <p><strong>Search Intent Served:</strong> Informational, Educational, and Commercial Investigation.</p>
+            <p><strong>Ideal Structure:</strong></p>
+            <ol>
+            <li><strong>Introduction:</strong> The multisensory nature of bakery branding and why visual identity dictates flavor perception before the first bite.</li>
+            <li><strong>The Psychology of Bakery Colors (Data-Driven):</strong> Deep dive into crossmodal correspondences, appetite stimulation (warm tones), and flavor expectations based on Charles Spence's research.</li>
+            <li><strong>Building the Bakery Moodboard:</strong> Visual hierarchy, balancing texture (e.g., crumb structures, glossy glazes) with typography, and the role of lifestyle imagery in conveying brand positioning.</li>
+            <li><strong>Selecting the Color Palette (Digital vs. Print):</strong> Exploring HEX codes for web vs. the harsh realities of CMYK printing on highly absorbent kraft paper substrates.</li>
+            <li><strong>Typography Pairings for Bakeries:</strong> Balancing rustic scripts with accessible sans-serifs, including technical WOFF2 web performance guidelines and Core Web Vitals implications.</li>
+            <li><strong>Web UI and Accessibility:</strong> Applying the palette using the 60-30-10 rule and ensuring WCAG 4.5:1 contrast compliance over dynamic food photography.</li>
+            <li><strong>Presenting the Brand:</strong> The difference between an internal moodboard, a client-facing pitch deck, and developer handoff using design tokens.</li>
+            </ol>
+            <p><strong>The Visual Resource Gallery (Spoke Page):</strong></p>
+            <p>A highly visual, filterable directory serving queries like <em>cake business color palette ideas pinterest</em>.</p>
+            <ul>
+            <li><em>Format:</em> Masonry grid layout designed for visual browsing.</li>
+            <li><em>Features:</em> Users can filter by aesthetic (Minimalist, Vintage, Playful, Luxury). Clicking an image reveals the full moodboard, specific typography used, and exact HEX, RGB, and CMYK values.</li>
+            <li><em>Action:</em> Direct links to download the layout as a Canva template for owners or a Figma file for designers.</li>
+            </ul>
+            <h2>I. Recommended Supporting Topics</h2>
+            <p>To establish absolute topical authority, the following supporting articles should be created to capture long-tail technical and design-specific queries identified in the content gap analysis:</p>
+            <div class="table-responsive">
+            <table>
+            <thead>
+            <tr>
+            <th><strong>Proposed Article Title</strong></th>
+            <th><strong>Target Audience</strong></th>
+            <th><strong>Core Focus / Search Intent</strong></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Accessible UI Design for Food Brands: Mastering Contrast and CSS Gradients</strong></td>
+            <td>Web Designers</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <p>WCAG 2.2 compliance, text-over-image CSS techniques, and calculating luminance for pastel palettes.</p>
+            <div class="table-responsive">
+            <table>
+            <thead>
+            <tr>
+            <th><strong>From Screen to Box: How to Prevent Color Shifts in Custom Bakery Packaging</strong></th>
+            <th>Graphic/Print Designers</th>
+            <th></th>
+            </tr>
+            </thead>
+            </table>
+            </div>
+            <p>The physics of ink absorption, RGB vs. CMYK gamuts, and the limitations of printing on unbleached kraft paper.</p>
+            <div class="table-responsive">
+            <table>
+            <thead>
+            <tr>
+            <th><strong>Optimizing Web Fonts for Bakery E-commerce: Core Web Vitals and LCP</strong></th>
+            <th>Web Developers</th>
+            <th></th>
+            </tr>
+            </thead>
+            </table>
+            </div>
+            <p>Technical guide on WOFF2 formatting, font subsetting, and <code>font-display: swap</code> for maximum page speed.</p>
+            <div class="table-responsive">
+            <table>
+            <thead>
+            <tr>
+            <th><strong>Figma to Code: Structuring Design Tokens for Brand Identity Handoffs</strong></th>
+            <th>UI/UX Designers</th>
+            <th></th>
+            </tr>
+            </thead>
+            </table>
+            </div>
+            <p>Aimed at senior designers, explaining how to map a bakery's color palette into CSS variables using Figma.</p>
+            <h2>J. Suggested Structure (Focusing on Presentations)</h2>
+            <p>When targeting the highly commercial keyword <em>bakery visual identity presentation template</em>, the resulting landing page and the template product itself must follow a rigorous, professional structure. A professional presentation is not merely a collection of aesthetic colors; it is a strategic document meant to secure client approval and guide development.</p>
+            <p><strong>Essential Slides / Sections within the Presentation Template:</strong></p>
+            <ul>
+            <li><strong>Brand Strategy &amp; Positioning:</strong> Mission statement, target audience definition, and core emotional triggers (e.g., nostalgia, luxury indulgence, health-conscious organic).</li>
+            <li><strong>The Moodboard (Visual Direction):</strong> A carefully composed grid balancing hero food photography (emphasizing texture and cross-sections), lifestyle elements, and initial color swatches.</li>
+            <li><strong>Logo System:</strong> Primary logo, secondary marks, and responsive variations (e.g., simplified icons designed specifically for small-scale Instagram profile pictures).</li>
+            <li><strong>Typography Hierarchy:</strong> Specification of hero fonts (scripts/display) and supporting fonts, explicitly detailing web-safe fallbacks, LCP performance considerations, and licensing details.</li>
+            <li><strong>Color Palette &amp; Usage:</strong> Primary, secondary, and accent colors presented with exact HEX (web), RGB (digital display), and CMYK/Pantone (print) codes. Crucially, this section must include WCAG contrast pairings to demonstrate digital viability.</li>
+            <li><strong>Digital Application (UI):</strong> High-fidelity mockups demonstrating how the colors and fonts translate to website buttons, navigation bars, and mobile interfaces.</li>
+            <li><strong>Physical Application (Packaging):</strong> Mockups showing logo placement on cake boxes, greaseproof paper, and coffee cups, properly accounting for substrate materials like kraft or white SBS.</li>
+            <li><strong>Developer Handoff / Design Tokens:</strong> (If providing a Figma template) A structured page mapping visual properties to semantic CSS variables to facilitate seamless developer integration.</li>
+            </ul>
+            <h2>K. Internal-Linking Opportunities</h2>
+            <p>A robust internal linking strategy ensures that link equity flows through the content cluster and successfully guides users down the funnel from initial inspiration to technical execution.</p>
+            <ul>
+            <li><strong>From the Inspirational Gallery:</strong> Link specific pastel color palettes directly to the &quot;Accessible UI Design&quot; article to educate users on how to apply these low-contrast colors legally and functionally on the web.</li>
+            <li><strong>From the Pillar Article:</strong> Provide contextual links to the Downloadable Presentation Templates whenever discussing &quot;client handoff,&quot; &quot;pitch decks,&quot; or &quot;brand guidelines.&quot;</li>
+            <li><strong>From the Typography Section:</strong> Deep link to the &quot;Optimizing Web Fonts&quot; technical guide for developers seeking performance optimization.</li>
+            <li><strong>From the Moodboard Section:</strong> Link to Canva and Figma blank grid templates, capturing the highly transactional <em>bakery brand identity moodboard template free</em> intent.</li>
+            <li><strong>From the Packaging Section:</strong> Link to the &quot;From Screen to Box&quot; print translation guide to warn designers about CMYK and kraft paper limitations.</li>
+            </ul>
+            <h2>L. Keyword Prioritization</h2>
+            <p>Based on search volume potential, alignment with a visual-resource platform, and the ability to satisfy user intent with high-value digital assets, the keywords are prioritized as follows:</p>
+            <p><strong>TIER 1 — Highly Aligned (Primary Focus for Product/Resource Creation):</strong></p>
+            <ul>
+            <li>bakery visual identity presentation template</li>
+            <li>bakery brand identity moodboard template free</li>
+            <li>bakery brand identity moodboard design</li>
+            <li>cake business color palette ideas for website</li>
+            <li><em>Strategic Action:</em> These require dedicated landing pages with downloadable files (Figma, Canva) and comprehensive technical guides to satisfy the professional intent.</li>
+            </ul>
+            <p><strong>TIER 2 — Relevant Supporting Keywords (Traffic Drivers):</strong></p>
+            <ul>
+            <li>bakery brand identity moodboard examples</li>
+            <li>bakery logo and color inspiration</li>
+            <li>pastel color palette for bakery</li>
+            <li><em>Strategic Action:</em> Serve these via highly visual, curated gallery pages that inspire users and funnel them toward Tier 1 downloads.</li>
+            </ul>
+            <p><strong>TIER 3 — Relevant but Platform-Specific (Top of Funnel):</strong></p>
+            <ul>
+            <li>cake business color palette ideas pinterest</li>
+            <li>cake business color palette ideas canva</li>
+            <li><em>Strategic Action:</em> Create content that acknowledges these platforms (e.g., &quot;How to move your Pinterest inspiration into a professional Figma deck&quot;). Provide Canva-specific templates to capture the entry-level DIY market.</li>
+            </ul>
+            <p><strong>TIER 4 — Poorly Aligned (Discard or De-prioritize):</strong></p>
+            <ul>
+            <li>millennial pink bakery branding (outdated, fatiguing trend).</li>
+            <li>bakery website templates (implies coded themes rather than visual branding design).</li>
+            <li><em>Strategic Action:</em> Exclude from primary targeting to maintain strict topical focus on brand identity and graphic design resources.</li>
+            </ul>
+            <h2>M. Final Recommendation</h2>
+            <p>The research clearly dictates that a visual resource platform aiming to dominate the &quot;bakery branding&quot; landscape must transcend the superficial provision of aesthetically pleasing images. Web designers, brand strategists, and bakery owners are indeed searching for visual inspiration, but what they ultimately require are comprehensive systems that solve technical, psychological, and strategic problems.</p>
+            <p>The ultimate resource will serve as an educational and functional bridge. For the bakery owner, it must provide the psychological rationale—explaining why a rounded, blush-pink brand identity will drive sweeter flavor expectations and higher sales than a sharp, blue aesthetic based on established crossmodal correspondence research. For the professional designer, it must provide technical rigor—supplying WOFF2 typography specifications, WCAG 4.5:1 contrast overlays, CMYK packaging translation warnings for kraft paper, and Figma design tokens ready for immediate CSS implementation.</p>
+            <p>By creating a unified ecosystem consisting of an authoritative educational pillar, a highly filterable visual inspiration gallery, and technically flawless, multi-format (Figma, Canva, InDesign) presentation templates, the platform will satisfy every stage of search intent. It will successfully elevate the user journey from mere aesthetic curation to professional, compliant, and highly converting brand execution, establishing absolute authority in the market.</p>
+
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2026 Cake & Filling</div>
+        <div>Free bakery images for creative and commercial use.</div>
+    </div>
+</footer>
+
+<script>
+    /*
+    ============================================================
+    MOBILE MENU
+    ============================================================
+    */
+
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
+
+    function openMobileMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenuButton.classList.add("active");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenuButton.classList.remove("active");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
+        mobileCategoryButton.classList.remove("active");
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
+        mobileCategoryMenu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+    }
+
+    if (mobileCategoryButton) {
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+        }
+    });
+</script>
+</body>
+</html>
