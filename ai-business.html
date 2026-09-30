@@ -699,77 +699,131 @@
 <!-- =========================================================
      SITE HEADER
 ========================================================= -->
+<!-- =========================================================
+     SITE HEADER
+========================================================= -->
 
 <header class="site-header">
+
     <div class="header-inner">
 
-```
-    <!-- BRAND -->
-    <div class="brand-area">
+        <!-- BRAND -->
+        <div class="brand-area">
 
-        <a href="index.html" class="logo">
-            Cake <span>&</span> Filling
-        </a>
+            <a href="index.html" class="logo">
+                Cake <span>&</span> Filling
+            </a>
 
-    </div>
+        </div>
 
-    <!-- Desktop Navigation -->
-    <nav>
 
-        <a href="index.html#library">
-            Browse Images
-        </a>
+        <!-- =====================================================
+             DESKTOP NAVIGATION
+        ====================================================== -->
 
-        <div class="nav-dropdown">
+        <nav aria-label="Main navigation">
 
-            <button
-                class="nav-dropdown-trigger"
-                type="button"
-                aria-haspopup="true">
-                Explore
-            </button>
+            <!-- Browse Images -->
+            <a href="index.html#library">
+                Browse Images
+            </a>
 
-            <div class="nav-dropdown-menu">
 
-                <div>
+            <!-- Explore Dropdown -->
+            <div class="nav-dropdown">
 
-                    <div class="dropdown-heading">
-                        Marketing Images
-                    </div>
+                <button
+                    class="nav-dropdown-trigger"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
 
-                    <p class="dropdown-description">
-                        Visuals for menus, websites, social media and bakery marketing.
-                    </p>
+                    Explore
 
-                    <div class="dropdown-links">
+                </button>
 
-                        <a href="index.html#library">
-                            Menus &amp; Catalogs
-                        </a>
 
-                        <a href="https://cakeandfilling.pro/banners.html">
-                            Banners
-                        </a>
+                <div
+                    class="nav-dropdown-menu"
+                    role="menu">
 
-                        <a href="index.html#library">
-                            Social Media
-                        </a>
+                    <div>
 
-                        <a href="index.html#library">
-                            Promotions &amp; Offers
-                        </a>
+                        <div class="dropdown-heading">
+                            Marketing Images
+                        </div>
 
-                        <a href="index.html#library">
-                            Pinterest
-                        </a>
 
-                        <a href="index.html#library">
-                            Brand &amp; Lifestyle
-                        </a>
+                        <p class="dropdown-description">
+                            Visuals for menus, websites, social media and bakery marketing.
+                        </p>
 
-                        <a href="index.html#library">
-                            Seasonal
-                        </a>
+
+                        <div class="dropdown-links">
+
+                            <a
+                                href="index.html#library"
+                                role="menuitem">
+
+                                Menus &amp; Catalogs
+
+                            </a>
+
+
+                            <a
+                                href="https://cakeandfilling.pro/banners.html"
+                                role="menuitem">
+
+                                Banners
+
+                            </a>
+
+
+                            <a
+                                href="index.html#library"
+                                role="menuitem">
+
+                                Social Media
+
+                            </a>
+
+
+                            <a
+                                href="index.html#library"
+                                role="menuitem">
+
+                                Promotions &amp; Offers
+
+                            </a>
+
+
+                            <a
+                                href="index.html#library"
+                                role="menuitem">
+
+                                Pinterest
+
+                            </a>
+
+
+                            <a
+                                href="index.html#library"
+                                role="menuitem">
+
+                                Brand &amp; Lifestyle
+
+                            </a>
+
+
+                            <a
+                                href="index.html#library"
+                                role="menuitem">
+
+                                Seasonal
+
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -777,128 +831,184 @@
 
             </div>
 
+
+            <!-- Blog -->
+            <a href="https://cakeandfilling.pro/blog.html">
+                Blog
+            </a>
+
+
+            <!-- About -->
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- =====================================================
+             HEADER ACTIONS
+        ====================================================== -->
+
+        <div class="header-actions">
+
+            <!-- Mobile Menu Button -->
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
         </div>
-
-        <a href="https://cakeandfilling.pro/blog.html">
-            Blog
-        </a>
-        <a href="blog.html">
-        <a href="about.html">
-            About
-        </a>
-
-    </nav>
-
-    <!-- Header Actions -->
-    <div class="header-actions">
-
-        <!-- Mobile Menu Button -->
-        <button
-            class="mobile-menu-button"
-            id="mobileMenuButton"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobileMenu">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
 
     </div>
 
-</div>
 
-<!-- =====================================================
-     MOBILE NAVIGATION
-====================================================== -->
+    <!-- =====================================================
+         MOBILE NAVIGATION
+    ====================================================== -->
 
-<div class="mobile-menu" id="mobileMenu">
+    <div
+        class="mobile-menu"
+        id="mobileMenu">
 
-    <div class="mobile-menu-inner">
+        <div class="mobile-menu-inner">
 
-        <a
-            href="index.html#library"
-            class="mobile-menu-link mobile-close-link">
-            Browse Images
-        </a>
 
-        <button
-            type="button"
-            class="mobile-category-button"
-            id="mobileCategoryButton"
-            aria-expanded="false">
-            Explore
-        </button>
+            <!-- Browse Images -->
+            <a
+                href="index.html#library"
+                class="mobile-menu-link mobile-close-link">
 
-        <div
-            class="mobile-category-menu"
-            id="mobileCategoryMenu">
+                Browse Images
 
-            <div class="mobile-category-heading">
-                Marketing Images
+            </a>
+
+
+            <!-- Explore -->
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false"
+                aria-controls="mobileCategoryMenu">
+
+                <span>Explore</span>
+
+            </button>
+
+
+            <!-- Explore Mobile Submenu -->
+            <div
+                class="mobile-category-menu"
+                id="mobileCategoryMenu">
+
+
+                <div class="mobile-category-heading">
+                    Marketing Images
+                </div>
+
+
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+
+
+                <a
+                    href="index.html#library"
+                    class="mobile-category-link mobile-close-link">
+
+                    Menus &amp; Catalogs
+
+                </a>
+
+
+                <a
+                    href="https://cakeandfilling.pro/banners.html"
+                    class="mobile-category-link mobile-close-link">
+
+                    Banners
+
+                </a>
+
+
+                <a
+                    href="index.html#library"
+                    class="mobile-category-link mobile-close-link">
+
+                    Social Media
+
+                </a>
+
+
+                <a
+                    href="index.html#library"
+                    class="mobile-category-link mobile-close-link">
+
+                    Promotions &amp; Offers
+
+                </a>
+
+
+                <a
+                    href="index.html#library"
+                    class="mobile-category-link mobile-close-link">
+
+                    Pinterest
+
+                </a>
+
+
+                <a
+                    href="index.html#library"
+                    class="mobile-category-link mobile-close-link">
+
+                    Brand &amp; Lifestyle
+
+                </a>
+
+
+                <a
+                    href="index.html#library"
+                    class="mobile-category-link mobile-close-link">
+
+                    Seasonal
+
+                </a>
+
             </div>
 
-            <p class="mobile-category-description">
-                Visuals for menus, websites, social media and bakery marketing.
-            </p>
 
+            <!-- Blog -->
             <a
-                href="index.html#library"
-                class="mobile-category-link mobile-close-link">
-                Menus &amp; Catalogs
+                href="https://cakeandfilling.pro/blog.html"
+                class="mobile-menu-link mobile-close-link">
+
+                Blog
+
             </a>
 
-            <a
-                href="https://cakeandfilling.pro/banners.html"
-                class="mobile-category-link mobile-close-link">
-                Banners
-            </a>
 
+            <!-- About -->
             <a
-                href="index.html#library"
-                class="mobile-category-link mobile-close-link">
-                Social Media
-            </a>
+                href="about.html"
+                class="mobile-menu-link mobile-close-link">
 
-            <a
-                href="index.html#library"
-                class="mobile-category-link mobile-close-link">
-                Promotions &amp; Offers
-            </a>
+                About
 
-            <a
-                href="index.html#library"
-                class="mobile-category-link mobile-close-link">
-                Pinterest
-            </a>
-
-            <a
-                href="index.html#library"
-                class="mobile-category-link mobile-close-link">
-                Brand &amp; Lifestyle
-            </a>
-
-            <a
-                href="index.html#library"
-                class="mobile-category-link mobile-close-link">
-                Seasonal
             </a>
 
         </div>
 
-        <a
-            href="about.html"
-            class="mobile-menu-link mobile-close-link">
-            About
-        </a>
-
     </div>
-
-</div>
-```
 
 </header>
 
