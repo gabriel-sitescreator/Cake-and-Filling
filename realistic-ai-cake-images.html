@@ -209,24 +209,6 @@
             gap: 10px;
         }
 
-        .support-button {
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--text);
-            padding: 10px 20px;
-            border-radius: 999px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all .2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .support-button:hover {
-            background: var(--soft);
-            border-color: #d9cfc5;
-        }
-
         /* MOBILE MENU BUTTON */
         .mobile-menu-button {
             display: none;
@@ -431,7 +413,9 @@
                 left: 0;
                 right: 0;
                 display: none;
-                background: var(--bg);
+                background: rgba(250, 249, 247, 0.98);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
                 border-bottom: 1px solid var(--border);
                 box-shadow: 0 18px 40px rgba(50,35,25,.10);
                 opacity: 0;
@@ -568,7 +552,6 @@
         </nav>
 
         <div class="header-actions">
-        
             <!-- MOBILE MENU BUTTON -->
             <button
                 class="mobile-menu-button"
@@ -620,7 +603,6 @@
             <a href="about.html" class="mobile-menu-link mobile-close-link">
                 About
             </a>
-
         </div>
     </div>
 </header>
@@ -820,7 +802,6 @@
     MOBILE MENU
     ============================================================
     */
-
     const mobileMenuButton = document.getElementById("mobileMenuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileCategoryButton = document.getElementById("mobileCategoryButton");
