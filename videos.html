@@ -1138,7 +1138,7 @@ function renderImages(){
         const liked= localStorage.getItem(key)==="true";
 
         // PASTA E ARQUIVO EXATOS CONFORME SOLICITADO
-        let activeFolder = "videos-09:16/";
+        let activeFolder = "./videos-09:16/";
         let activeFile = file;
 
         const path = activeFolder + encodeURIComponent(activeFile);
@@ -1189,7 +1189,7 @@ document.querySelectorAll(".filter-button").forEach(b=>
 function downloadImage(i){
     const x = mediaList[i];
     let activeFile = x[1];
-    let activeFolder = "videos-09:16/";
+    let activeFolder = "./videos-09:16/";
 
     const a=document.createElement("a");
     a.href= activeFolder + encodeURIComponent(activeFile);
