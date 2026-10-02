@@ -43,7 +43,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.5;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -56,7 +56,7 @@
             text-decoration: none;
         }
 
-        button {
+        button, input {
             font-family: inherit;
             outline: none;
         }
@@ -557,7 +557,6 @@
 
 <header>
     <div class="header-inner">
-
         <!-- Back to index link -->
         <a href="index.html" class="logo">
             Cake <span>&</span> Filling
@@ -565,20 +564,12 @@
 
         <nav>
             <a href="index.html#library">Browse Images</a>
-
             <div class="nav-dropdown">
-                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">
-                    Explore
-                </button>
-
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
                 <div class="nav-dropdown-menu">
                     <div>
                         <div class="dropdown-heading">Marketing Images</div>
-
-                        <p class="dropdown-description">
-                            Visuals for menus, websites, social media and bakery marketing.
-                        </p>
-
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
                         <div class="dropdown-links">
                             <a href="menus.html#library">Menus</a>
                             <a href="https://cakeandfilling.pro/banners.html">Banners</a>
@@ -591,16 +582,11 @@
                     </div>
                 </div>
             </div>
-
-            <!-- LINK BLOG ADICIONADO AQUI -->
             <a href="https://cakeandfilling.pro/blog.html">Blog</a>
-
             <a href="about.html">About</a>
         </nav>
 
         <div class="header-actions">
-
-            
             <!-- MOBILE MENU BUTTON -->
             <button
                 class="mobile-menu-button"
@@ -609,23 +595,17 @@
                 aria-label="Open menu"
                 aria-expanded="false"
                 aria-controls="mobileMenu">
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
         </div>
     </div>
 
     <!-- MOBILE NAVIGATION -->
     <div class="mobile-menu" id="mobileMenu">
-
         <div class="mobile-menu-inner">
-
-            <a
-                href="index.html#library"
-                class="mobile-menu-link mobile-close-link">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
                 Browse Images
             </a>
 
@@ -637,74 +617,27 @@
                 Explore
             </button>
 
-            <div
-                class="mobile-category-menu"
-                id="mobileCategoryMenu">
-
-                <div class="mobile-category-heading">
-                    Marketing Images
-                </div>
-
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
                 <p class="mobile-category-description">
                     Visuals for menus, websites, social media and bakery marketing.
                 </p>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Menus &amp; Catalogs
-                </a>
-
-                <a
-                    href="https://cakeandfilling.pro/banners.html"
-                    class="mobile-category-link mobile-close-link">
-                    Banners
-                </a>
-
-                <a
-                    href="videos.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Videos for reels
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Promotions &amp; Offers
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Pinterest
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Brand &amp; Lifestyle
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Seasonal
-                </a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="videos.html#library" class="mobile-category-link mobile-close-link">Videos for reels</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
             </div>
 
-            <!-- LINK BLOG MOBILE ADICIONADO AQUI -->
-            <a
-                href="https://cakeandfilling.pro/blog.html"
-                class="mobile-menu-link mobile-close-link">
+            <a href="https://cakeandfilling.pro/blog.html" class="mobile-menu-link mobile-close-link">
                 Blog
             </a>
 
-            <a
-                href="about.html"
-                class="mobile-menu-link mobile-close-link">
+            <a href="about.html" class="mobile-menu-link mobile-close-link">
                 About
             </a>
-
         </div>
     </div>
 </header>
@@ -713,7 +646,6 @@
 
     <section class="blog-hero">
         <h1>Articles &amp; Inspiration</h1>
-
         <p>
             Guides, ideas, and free visual resources to help you market your bakery,
             design your website, and grow your cake business.
@@ -725,198 +657,75 @@
         <div class="blog-grid">
 
             <!-- Card 1 -->
-            <a
-                href="https://cakeandfilling.pro/realistic-ai-cake-images.html"
-                class="blog-card">
-
-                <div class="blog-category">
-                    AI Cake Images
-                </div>
-
-                <h3 class="blog-title">
-                    How to Create Realistic AI Cake Images and Avoid the Artificial Look
-                </h3>
-
-                <p class="blog-excerpt">
-                    Learn how to create convincing AI-generated cake images with realistic
-                    textures, lighting, proportions, materials, and natural visual details.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/realistic-ai-cake-images.html" class="blog-card">
+                <div class="blog-category">AI Cake Images</div>
+                <h3 class="blog-title">How to Create Realistic AI Cake Images and Avoid the Artificial Look</h3>
+                <p class="blog-excerpt">Learn how to create convincing AI-generated cake images with realistic textures, lighting, proportions, materials, and natural visual details.</p>
+                <span class="read-more">Read Article</span>
             </a>
-
 
             <!-- Card 2 -->
-            <a
-                href="https://cakeandfilling.pro/ai-vs-photography.html"
-                class="blog-card">
-
-                <div class="blog-category">
-                    AI vs. Photography
-                </div>
-
-                <h3 class="blog-title">
-                    AI-Generated Cake Images vs. Real Cake Photography: What’s the Difference and When Should Each Be Used?
-                </h3>
-
-                <p class="blog-excerpt">
-                    Understand the practical differences between AI-generated cake images
-                    and real photography, and learn how each can serve different visual purposes.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/ai-vs-photography.html" class="blog-card">
+                <div class="blog-category">AI vs. Photography</div>
+                <h3 class="blog-title">AI-Generated Cake Images vs. Real Cake Photography: What’s the Difference and When Should Each Be Used?</h3>
+                <p class="blog-excerpt">Understand the practical differences between AI-generated cake images and real photography, and learn how each can serve different visual purposes.</p>
+                <span class="read-more">Read Article</span>
             </a>
-
 
             <!-- Card 3 -->
-            <a
-                href="https://cakeandfilling.pro/best-cake-images.html"
-                class="blog-card">
-
-                <div class="blog-category">
-                    Bakery Website Images
-                </div>
-
-                <h3 class="blog-title">
-                    Best Cake Images for Bakery Websites: How to Create, Find, and Use Beautiful Cake &amp; Dessert Images
-                </h3>
-
-                <p class="blog-excerpt">
-                    Discover how to choose, create, and use beautiful cake and dessert
-                    images for bakery websites, from homepage visuals to product pages and promotions.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/best-cake-images.html" class="blog-card">
+                <div class="blog-category">Bakery Website Images</div>
+                <h3 class="blog-title">Best Cake Images for Bakery Websites: How to Create, Find, and Use Beautiful Cake &amp; Dessert Images</h3>
+                <p class="blog-excerpt">Discover how to choose, create, and use beautiful cake and dessert images for bakery websites, from homepage visuals to product pages and promotions.</p>
+                <span class="read-more">Read Article</span>
             </a>
-
 
             <!-- Card 4 -->
-            <a
-                href="https://cakeandfilling.pro/socialmedia.html"
-                class="blog-card">
-
-                <div class="blog-category">
-                    Food Visuals
-                </div>
-
-                <h3 class="blog-title">
-                    The Art of Bakery Visuals: Creating Masterpiece Imagery for Social Media and Digital Platforms
-                </h3>
-
-                <p class="blog-excerpt">
-                    Explore how composition, lighting, color, texture, backgrounds, and
-                    visual storytelling can turn cakes, desserts, and bakery products into compelling digital imagery.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/socialmedia.html" class="blog-card">
+                <div class="blog-category">Food Visuals</div>
+                <h3 class="blog-title">The Art of Bakery Visuals: Creating Masterpiece Imagery for Social Media and Digital Platforms</h3>
+                <p class="blog-excerpt">Explore how composition, lighting, color, texture, backgrounds, and visual storytelling can turn cakes, desserts, and bakery products into compelling digital imagery.</p>
+                <span class="read-more">Read Article</span>
             </a>
-
 
             <!-- Card 5 -->
-            <a
-                href="https://cakeandfilling.pro/ai-food-commercials.html"
-                class="blog-card">
-
-                <div class="blog-category">
-                    AI Food Advertising
-                </div>
-
-                <h3 class="blog-title">
-                    AI-Generated Food Commercials: How AI Is Changing Advertising for Restaurants, Fast Food, Bakeries, Pizzerias, Burger Shops, Dessert Brands and Food Businesses
-                </h3>
-
-                <p class="blog-excerpt">
-                    Explore how AI-generated food commercials are changing advertising
-                    for restaurants, bakeries, pizzerias, burger shops, dessert brands,
-                    fast food businesses, and other food companies.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/ai-food-commercials.html" class="blog-card">
+                <div class="blog-category">AI Food Advertising</div>
+                <h3 class="blog-title">AI-Generated Food Commercials: How AI Is Changing Advertising for Restaurants, Fast Food, Bakeries, Pizzerias, Burger Shops, Dessert Brands and Food Businesses</h3>
+                <p class="blog-excerpt">Explore how AI-generated food commercials are changing advertising for restaurants, bakeries, pizzerias, burger shops, dessert brands, fast food businesses, and other food companies.</p>
+                <span class="read-more">Read Article</span>
             </a>
 
-
             <!-- Card 6 -->
-            <a
-                href="https://cakeandfilling.pro/ai-business"
-                class="blog-card">
-
-                <div class="blog-category">
-                    Business &amp; AI Strategy
-                </div>
-
-                <h3 class="blog-title">
-                    How to Build a Food Business From Scratch Using AI: The Complete Guide
-                </h3>
-
-                <p class="blog-excerpt">
-                    Discover how aspiring entrepreneurs can use AI to build a food business from scratch. Explore AI applications for strategy, branding, operations, and marketing.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/ai-business" class="blog-card">
+                <div class="blog-category">Business &amp; AI Strategy</div>
+                <h3 class="blog-title">How to Build a Food Business From Scratch Using AI: The Complete Guide</h3>
+                <p class="blog-excerpt">Discover how aspiring entrepreneurs can use AI to build a food business from scratch. Explore AI applications for strategy, branding, operations, and marketing.</p>
+                <span class="read-more">Read Article</span>
             </a>
 
             <!-- Card 7 -->
-            <a
-                href="https://cakeandfilling.pro/beautiful-menu.html"
-                class="blog-card">
-
-                <div class="blog-category">
-                    Design &amp; Visual Strategy
-                </div>
-
-                <h3 class="blog-title">
-                    Bakery Menu Design: How to Create a Beautiful Menu for a Cake or Dessert Business
-                </h3>
-
-                <p class="blog-excerpt">
-                    Learn how to create a functional and beautiful bakery menu that drives sales, elevates brand perception, and provides a seamless customer experience.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <a href="https://cakeandfilling.pro/beautiful-menu.html" class="blog-card">
+                <div class="blog-category">Design &amp; Visual Strategy</div>
+                <h3 class="blog-title">Bakery Menu Design: How to Create a Beautiful Menu for a Cake or Dessert Business</h3>
+                <p class="blog-excerpt">Learn how to create a functional and beautiful bakery menu that drives sales, elevates brand perception, and provides a seamless customer experience.</p>
+                <span class="read-more">Read Article</span>
             </a>
 
             <!-- Card 8 -->
-            <a
-                href="https://cakeandfilling.pro/small-bakery-businesses.html"
-                class="blog-card">
+            <a href="https://cakeandfilling.pro/small-bakery-businesses.html" class="blog-card">
+                <div class="blog-category">Strategy &amp; Marketing</div>
+                <h3 class="blog-title">Introduction: Why AI Can Be Useful for Small Bakery Businesses</h3>
+                <p class="blog-excerpt">Discover how small cake businesses, home bakers, and custom cake studios can use artificial intelligence to save time on marketing and content creation.</p>
+                <span class="read-more">Read Article</span>
+            </a>
 
-                <div class="blog-category">
-                    Strategy &amp; Marketing
-                </div>
-
-                <h3 class="blog-title">
-                    Introduction: Why AI Can Be Useful for Small Bakery Businesses
-                </h3>
-
-                <p class="blog-excerpt">
-                    Discover how small cake businesses, home bakers, and custom cake studios can use artificial intelligence to save time on marketing and content creation.
-                </p>
-
-                <span class="read-more">
-                    Read Article
-                </span>
-
+            <!-- Card 9 -->
+            <a href="https://cakeandfilling.pro/feed-professional.html" class="blog-card">
+                <div class="blog-category">Social Media Strategy</div>
+                <h3 class="blog-title">Cake Shop Social Media Images: How to Make Your Feed Look More Professional</h3>
+                <p class="blog-excerpt">Learn how to make your bakery and cake shop social media feed look more professional with visual consistency.</p>
+                <span class="read-more">Read Article</span>
             </a>
 
         </div>
@@ -925,19 +734,14 @@
 </main>
 
 <footer>
-
     <div class="footer-inner">
-
         <div>
             © 2026 Cake &amp; Filling
         </div>
-
         <div>
             Free bakery images for creative and commercial use.
         </div>
-
     </div>
-
 </footer>
 
 <script>
@@ -947,196 +751,78 @@
     ============================================================
     */
 
-    const mobileMenuButton =
-        document.getElementById("mobileMenuButton");
-
-    const mobileMenu =
-        document.getElementById("mobileMenu");
-
-    const mobileCategoryButton =
-        document.getElementById("mobileCategoryButton");
-
-    const mobileCategoryMenu =
-        document.getElementById("mobileCategoryMenu");
-
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
 
     function openMobileMenu() {
-
         mobileMenu.classList.add("active");
-
         mobileMenuButton.classList.add("active");
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-label",
-            "Close menu"
-        );
-
-        document.body.classList.add(
-            "mobile-menu-open"
-        );
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
     }
-
 
     function closeMobileMenu() {
-
         mobileMenu.classList.remove("active");
-
         mobileMenuButton.classList.remove("active");
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-label",
-            "Open menu"
-        );
-
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
         mobileCategoryButton.classList.remove("active");
-
-        mobileCategoryButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
         mobileCategoryMenu.classList.remove("active");
-
-        document.body.classList.remove(
-            "mobile-menu-open"
-        );
+        document.body.classList.remove("mobile-menu-open");
     }
-
 
     function toggleMobileMenu() {
-
-        if (
-            mobileMenu.classList.contains("active")
-        ) {
-
+        if (mobileMenu.classList.contains("active")) {
             closeMobileMenu();
-
         } else {
-
             openMobileMenu();
-
         }
     }
-
 
     if (mobileMenuButton) {
-
-        mobileMenuButton.addEventListener(
-            "click",
-            toggleMobileMenu
-        );
-
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
     }
-
 
     if (mobileCategoryButton) {
-
-        mobileCategoryButton.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    mobileCategoryMenu.classList.contains(
-                        "active"
-                    );
-
-                if (isOpen) {
-
-                    mobileCategoryMenu.classList.remove(
-                        "active"
-                    );
-
-                    mobileCategoryButton.classList.remove(
-                        "active"
-                    );
-
-                    mobileCategoryButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                } else {
-
-                    mobileCategoryMenu.classList.add(
-                        "active"
-                    );
-
-                    mobileCategoryButton.classList.add(
-                        "active"
-                    );
-
-                    mobileCategoryButton.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
-
-                }
-
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
             }
-        );
-
+        });
     }
 
-
-    document
-        .querySelectorAll(".mobile-close-link")
-        .forEach(function(link) {
-
-            link.addEventListener(
-                "click",
-                function() {
-
-                    closeMobileMenu();
-
-                }
-            );
-
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
         });
+    });
 
-
-    document.addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                mobileMenu &&
-                mobileMenuButton &&
-                !mobileMenu.contains(event.target) &&
-                !mobileMenuButton.contains(event.target)
-            ) {
-
-                closeMobileMenu();
-
-            }
-
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
         }
-    );
+    });
 
-
-    window.addEventListener(
-        "resize",
-        function() {
-
-            if (window.innerWidth > 900) {
-
-                closeMobileMenu();
-
-            }
-
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
         }
-    );
+    });
 
 </script>
-
 </body>
 </html>
