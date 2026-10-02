@@ -14,7 +14,6 @@
     </script>
 
     <title>The Art of Bakery Visuals: Creating Masterpiece Imagery - Cake & Filling</title>
-
     <meta name="description" content="Learn how to create beautiful bakery and dessert visuals for social media, websites and digital platforms through composition, lighting, color, styling and AI.">
 
     <style>
@@ -57,8 +56,7 @@
             text-decoration: none;
         }
 
-        button,
-        input {
+        button, input {
             font-family: inherit;
             outline: none;
         }
@@ -211,26 +209,7 @@
             gap: 10px;
         }
 
-        .support-button {
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--text);
-            padding: 10px 20px;
-            border-radius: 999px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all .2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .support-button:hover {
-            background: var(--soft);
-            border-color: #d9cfc5;
-        }
-
         /* MOBILE MENU BUTTON */
-
         .mobile-menu-button {
             display: none;
             width: 44px;
@@ -439,25 +418,20 @@
         ========================================================= */
 
         @media (max-width: 900px) {
-
             nav {
                 display: none;
             }
-
             .mobile-menu-button {
                 display: flex;
             }
-
             .header-inner {
                 min-height: 70px;
                 padding: 0 20px;
                 gap: 12px;
             }
-
             .header-actions {
                 margin-left: auto;
             }
-
             .mobile-menu {
                 position: absolute;
                 top: 100%;
@@ -471,11 +445,8 @@
                 visibility: hidden;
                 transform: translateY(-8px);
                 pointer-events: none;
-                transition: opacity .2s ease,
-                            transform .2s ease,
-                            visibility .2s ease;
+                transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
             }
-
             .mobile-menu.active {
                 display: block;
                 opacity: 1;
@@ -483,13 +454,11 @@
                 transform: translateY(0);
                 pointer-events: auto;
             }
-
             .mobile-menu-inner {
                 padding: 12px 20px 20px;
                 max-height: calc(100vh - 70px);
                 overflow-y: auto;
             }
-
             .mobile-menu-link {
                 display: block;
                 width: 100%;
@@ -499,11 +468,9 @@
                 font-size: 15px;
                 font-weight: 600;
             }
-
             .mobile-menu-link:hover {
                 color: var(--accent);
             }
-
             .mobile-category-button {
                 width: 100%;
                 border: 0;
@@ -519,27 +486,22 @@
                 justify-content: space-between;
                 align-items: center;
             }
-
             .mobile-category-button::after {
                 content: "⌄";
                 font-size: 16px;
                 transition: transform .2s ease;
             }
-
             .mobile-category-button.active::after {
                 transform: rotate(180deg);
             }
-
             .mobile-category-menu {
                 display: none;
                 padding: 8px 0 10px 12px;
                 border-bottom: 1px solid var(--border);
             }
-
             .mobile-category-menu.active {
                 display: block;
             }
-
             .mobile-category-heading {
                 padding: 10px 4px 5px;
                 color: var(--muted);
@@ -548,56 +510,46 @@
                 letter-spacing: .08em;
                 text-transform: uppercase;
             }
-
             .mobile-category-description {
                 padding: 0 4px 8px;
                 color: var(--muted);
                 font-size: 13px;
                 line-height: 1.5;
             }
-
             .mobile-category-link {
                 display: block;
                 padding: 9px 4px;
                 color: #514c47;
                 font-size: 14px;
             }
-
             .mobile-category-link:hover {
                 color: var(--accent);
             }
         }
 
         @media (max-width: 600px) {
-
             .article-container {
                 padding: 0 20px;
                 margin-top: 40px;
             }
-
             .article-content {
                 font-size: 17px;
             }
-
             .article-content h2 {
                 font-size: 28px;
             }
-
             .article-content h3 {
                 font-size: 22px;
             }
-
             .article-content th,
             .article-content td {
                 padding: 14px;
                 font-size: 14px;
             }
-
             .article-content blockquote {
                 padding: 20px;
                 font-size: 17px;
             }
-
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
@@ -606,96 +558,41 @@
         }
     </style>
 </head>
-
 <body>
 
 <header>
-
     <div class="header-inner">
-
+        <!-- Back to index link -->
         <a href="index.html" class="logo">
             Cake <span>&</span> Filling
         </a>
 
         <nav>
-
-            <a href="index.html#library">
-                Browse Images
-            </a>
-
+            <a href="index.html#library">Browse Images</a>
             <div class="nav-dropdown">
-
-                <button
-                    class="nav-dropdown-trigger"
-                    type="button"
-                    aria-haspopup="true">
-                    Explore
-                </button>
-
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
                 <div class="nav-dropdown-menu">
-
                     <div>
-
-                        <div class="dropdown-heading">
-                            Marketing Images
-                        </div>
-
-                        <p class="dropdown-description">
-                            Visuals for menus, websites, social media and bakery marketing.
-                        </p>
-
+                        <div class="dropdown-heading">Marketing Images</div>
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
                         <div class="dropdown-links">
-
-                            <a href="index.html#library">
-                                Menus &amp; Catalogs
-                            </a>
-
-                            <a href="https://cakeandfilling.pro/banners.html">
-                                Banners
-                            </a>
-
-                            <a href="index.html#library">
-                                Social Media
-                            </a>
-
-                            <a href="index.html#library">
-                                Promotions &amp; Offers
-                            </a>
-
-                            <a href="index.html#library">
-                                Pinterest
-                            </a>
-
-                            <a href="index.html#library">
-                                Brand &amp; Lifestyle
-                            </a>
-
-                            <a href="index.html#library">
-                                Seasonal
-                            </a>
-
+                            <a href="menus.html#library">Menus &amp; Catalogs</a>
+                            <a href="https://cakeandfilling.pro/banners.html">Banners</a>
+                            <a href="index.html#library">Social Media</a>
+                            <a href="index.html#library">Promotions &amp; Offers</a>
+                            <a href="index.html#library">Pinterest</a>
+                            <a href="index.html#library">Brand &amp; Lifestyle</a>
+                            <a href="index.html#library">Seasonal</a>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
-            <a href="https://cakeandfilling.pro/blog.html">
-                Blog
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
+            <a href="https://cakeandfilling.pro/blog.html">Blog</a>
+            <a href="about.html">About</a>
         </nav>
 
         <div class="header-actions">
-
             <!-- MOBILE MENU BUTTON -->
-
             <button
                 class="mobile-menu-button"
                 id="mobileMenuButton"
@@ -703,26 +600,17 @@
                 aria-label="Open menu"
                 aria-expanded="false"
                 aria-controls="mobileMenu">
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
-
         </div>
-
     </div>
 
     <!-- MOBILE NAVIGATION -->
-
     <div class="mobile-menu" id="mobileMenu">
-
         <div class="mobile-menu-inner">
-
-            <a
-                href="index.html#library"
-                class="mobile-menu-link mobile-close-link">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
                 Browse Images
             </a>
 
@@ -731,109 +619,50 @@
                 class="mobile-category-button"
                 id="mobileCategoryButton"
                 aria-expanded="false">
-
                 Explore
-
             </button>
 
-            <div
-                class="mobile-category-menu"
-                id="mobileCategoryMenu">
-
-                <div class="mobile-category-heading">
-                    Marketing Images
-                </div>
-
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
                 <p class="mobile-category-description">
                     Visuals for menus, websites, social media and bakery marketing.
                 </p>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Menus &amp; Catalogs
-                </a>
-
-                <a
-                    href="https://cakeandfilling.pro/banners.html"
-                    class="mobile-category-link mobile-close-link">
-                    Banners
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Social Media
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Promotions &amp; Offers
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Pinterest
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Brand &amp; Lifestyle
-                </a>
-
-                <a
-                    href="index.html#library"
-                    class="mobile-category-link mobile-close-link">
-                    Seasonal
-                </a>
-
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Social Media</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
             </div>
 
-            <a
-                href="https://cakeandfilling.pro/blog.html"
-                class="mobile-menu-link mobile-close-link">
+            <a href="https://cakeandfilling.pro/blog.html" class="mobile-menu-link mobile-close-link">
                 Blog
             </a>
 
-            <a
-                href="about.html"
-                class="mobile-menu-link mobile-close-link">
+            <a href="about.html" class="mobile-menu-link mobile-close-link">
                 About
             </a>
-
         </div>
-
     </div>
-
 </header>
 
-
 <main>
-
     <article class="article-container">
 
         <header class="article-header">
-
             <span class="article-category">
                 Cake &amp; Bakery Visuals
             </span>
-
             <h1 class="article-title">
                 The Art of Bakery Visuals: Creating Masterpiece Imagery for Social Media and Digital Platforms
             </h1>
-
             <div class="article-meta">
                 Creating beautiful cake, dessert, pastry and food visuals for websites, social media and digital experiences.
             </div>
-
         </header>
 
-
         <div class="article-content">
-
             <p>
                 The transition of the bakery and pastry industry from physical storefronts to digital showcases has fundamentally altered how consumers interact with culinary art. In the contemporary digital ecosystem, a consumer's first experience with a cake, artisan loaf, or delicate pastry does not occur through scent or taste, but entirely through visual perception on a screen.
             </p>
@@ -845,7 +674,6 @@
             <p>
                 This comprehensive guide explores the disciplines behind strong bakery imagery, including lighting, composition, color, physical styling, artificial intelligence, and digital presentation. The goal is not simply to make food look attractive, but to understand why certain images feel more convincing, appetizing, elegant, useful, and appropriate for a particular digital context.
             </p>
-
 
             <h2>The Visual Experience of Food</h2>
 
@@ -869,7 +697,6 @@
                 The practical lesson is important: a beautiful food image is not simply a picture of food. It is a visual interpretation of texture, freshness, atmosphere, quality, and desire.
             </p>
 
-
             <h2>The Physics and Application of Light in Bakery Photography</h2>
 
             <p>
@@ -879,7 +706,6 @@
             <p>
                 The same cake photographed under several different lighting arrangements can appear completely different.
             </p>
-
 
             <h3>Directionality and the Hero Angle</h3>
 
@@ -894,7 +720,6 @@
             <p>
                 Backlighting and side-back lighting can also be effective when working with glossy surfaces, translucent fruit, sauces, glazes, or delicate pastries. These arrangements can create bright edges and controlled highlights while keeping the subject dimensional.
             </p>
-
 
             <h3>The Mastery of Specular Highlights</h3>
 
@@ -914,7 +739,6 @@
                 Too little reflection can make a glaze appear dull. Too much can obscure decoration and texture. The strongest images usually balance highlights with controlled shadow and visible surface detail.
             </p>
 
-
             <h3>Light Falloff and Environmental Atmosphere</h3>
 
             <p>
@@ -925,65 +749,50 @@
                 Moving the subject away from the background, changing the direction of the light, or controlling reflected light can produce gradients that add depth without requiring a complicated set.
             </p>
 
-
             <div class="table-responsive">
-
                 <table>
-
                     <thead>
-
                         <tr>
                             <th>Frosting / Texture</th>
                             <th>Useful Lighting Direction</th>
                             <th>Possible Modification</th>
                             <th>Visual Effect</th>
                         </tr>
-
                     </thead>
-
                     <tbody>
-
                         <tr>
                             <td><strong>Mirror Glaze / Ganache</strong></td>
                             <td>Backlight / Side-Back</td>
                             <td>Controlled directional light and negative fill</td>
                             <td>Defined reflections and deeper gloss</td>
                         </tr>
-
                         <tr>
                             <td><strong>Matte Fondant</strong></td>
                             <td>Soft Side Light</td>
                             <td>Large diffuser or softbox</td>
                             <td>Even illumination and gentle transitions</td>
                         </tr>
-
                         <tr>
                             <td><strong>Piped Buttercream</strong></td>
                             <td>Side Light</td>
                             <td>Moderately directional illumination</td>
                             <td>Visible piping ridges and dimensional texture</td>
                         </tr>
-
                         <tr>
                             <td><strong>Naked Sponge Cake</strong></td>
                             <td>Side-Back Light</td>
                             <td>Reflector for shadow control</td>
                             <td>Visible crumb and layered structure</td>
                         </tr>
-
                         <tr>
                             <td><strong>Fresh Fruit</strong></td>
                             <td>Backlight</td>
                             <td>Diffusion and exposure control</td>
                             <td>Edge highlights and a fresh appearance</td>
                         </tr>
-
                     </tbody>
-
                 </table>
-
             </div>
-
 
             <h2>Compositional Architecture and Spatial Dynamics</h2>
 
@@ -995,60 +804,47 @@
                 A successful food composition does not necessarily contain more objects. In many cases, it works because the photographer or creator knows what to remove.
             </p>
 
-
             <h3>The Camera Angle Paradigm</h3>
 
             <ol>
-
                 <li>
                     <strong>The 45-Degree Hero Angle:</strong>
                     This perspective shows both the top decoration and vertical structure of a cake. It is particularly versatile for celebration cakes, layered desserts, pastries, and plated desserts.
                 </li>
-
                 <li>
                     <strong>The 90-Degree Overhead:</strong>
                     An overhead composition turns the food into a graphic arrangement. It is especially useful for repeating patterns, ingredient layouts, dessert collections, flat lays, menus, and images requiring generous negative space.
                 </li>
-
                 <li>
                     <strong>The Straight-On Angle:</strong>
                     A lower viewpoint emphasizes height and structure. It can work particularly well for tiered wedding cakes, tall cakes, stacks of pancakes, layered desserts, and dramatic cake slices.
                 </li>
-
             </ol>
-
 
             <h3>The Five Essential Bakery Compositions</h3>
 
             <ol>
-
                 <li>
                     <strong>The Hero Portrait:</strong>
                     The complete cake or dessert presented as the main visual subject.
                 </li>
-
                 <li>
                     <strong>The Single Slice Cross-Section:</strong>
                     A cut slice reveals the interior layers, filling, crumb, and structure.
                 </li>
-
                 <li>
                     <strong>The Cake-Cutting Moment:</strong>
                     Human interaction introduces movement and context into the image.
                 </li>
-
                 <li>
                     <strong>The Eye-Level Tier:</strong>
                     Especially useful for tall celebration and wedding cakes.
                 </li>
-
                 <li>
                     <strong>The Decorated Top-Down:</strong>
                     An overhead view that emphasizes decoration, patterns, fruit arrangements, and surface details.
                 </li>
-
             </ol>
-
 
             <h3>Leading Lines, Diagonals, and the Power of Negative Space</h3>
 
@@ -1068,7 +864,6 @@
                 A cake positioned on one side of a wide horizontal frame, for example, can leave enough room for a website headline on the opposite side.
             </p>
 
-
             <h3>The Art of Layering and Framing</h3>
 
             <p>
@@ -1083,13 +878,11 @@
                 The important principle is hierarchy. Secondary objects should support the story without becoming competing subjects.
             </p>
 
-
             <h2>The Chromatic Bakery: Color Theory in Food Art</h2>
 
             <p>
                 Color is one of the fastest ways to establish mood in a food image. The cake itself, the plate, the background, the props, and even the clothing or hands visible in the frame can contribute to the overall palette.
             </p>
-
 
             <h3>Monochromatic Schemes</h3>
 
@@ -1101,7 +894,6 @@
                 This approach works especially well when the goal is to make texture and shape more important than strong color contrast.
             </p>
 
-
             <h3>Analogous Schemes</h3>
 
             <p>
@@ -1111,7 +903,6 @@
             <p>
                 These palettes can work beautifully with breakfast pastries, fruit desserts, caramel, cinnamon rolls, croissants, and golden-brown baked goods.
             </p>
-
 
             <h3>Complementary Schemes</h3>
 
@@ -1123,65 +914,50 @@
                 Complementary color does not have to dominate the entire image. Sometimes a small contrasting element is enough to create visual tension.
             </p>
 
-
             <div class="table-responsive">
-
                 <table>
-
                     <thead>
-
                         <tr>
                             <th>Hero Subject</th>
                             <th>Possible Color Direction</th>
                             <th>Example Pairing</th>
                             <th>Visual Effect</th>
                         </tr>
-
                     </thead>
-
                     <tbody>
-
                         <tr>
                             <td><strong>Golden Brown</strong></td>
                             <td>Complementary</td>
                             <td>Slate blue, navy or teal</td>
                             <td>Strong contrast and emphasis on warmth</td>
                         </tr>
-
                         <tr>
                             <td><strong>Pink / Red</strong></td>
                             <td>Complementary</td>
                             <td>Sage, mint or deep green</td>
                             <td>Fresh and visually energetic</td>
                         </tr>
-
                         <tr>
                             <td><strong>Yellow</strong></td>
                             <td>Analogous</td>
                             <td>Peach, orange and warm white</td>
                             <td>Soft, cheerful and warm</td>
                         </tr>
-
                         <tr>
                             <td><strong>Dark Chocolate</strong></td>
                             <td>Monochromatic</td>
                             <td>Espresso, beige and dark wood</td>
                             <td>Rich, deep and sophisticated</td>
                         </tr>
-
                         <tr>
                             <td><strong>White Desserts</strong></td>
                             <td>Neutral + Accent</td>
                             <td>Charcoal with berries</td>
                             <td>Clean with a strong focal accent</td>
                         </tr>
-
                     </tbody>
-
                 </table>
-
             </div>
-
 
             <h2>Tactical Food Styling and Environmental Control</h2>
 
@@ -1197,7 +973,6 @@
                 For this reason, professional food photography often begins before the final food reaches the set.
             </p>
 
-
             <h3>Temperature as a Major Variable</h3>
 
             <p>
@@ -1212,7 +987,6 @@
                 This preparation is particularly useful when photographing products whose appearance changes quickly.
             </p>
 
-
             <h3>Textural Contrast</h3>
 
             <p>
@@ -1226,7 +1000,6 @@
             <p>
                 These contrasts give the viewer more information about the physical character of the dessert.
             </p>
-
 
             <h2>The Digital Aesthetic: Bright &amp; Airy vs. Dark &amp; Moody</h2>
 
@@ -1248,7 +1021,6 @@
                 White surfaces, pale marble, cream linen, soft wood, and diffused window light are common visual ingredients.
             </p>
 
-
             <h3>The Dark and Moody Aesthetic</h3>
 
             <p>
@@ -1267,7 +1039,6 @@
                 Neither aesthetic is universally better. The appropriate choice depends on the food, the brand, the intended audience, and where the image will appear.
             </p>
 
-
             <h2>The Artificial Intelligence Paradigm in Dessert Imagery</h2>
 
             <p>
@@ -1277,7 +1048,6 @@
             <p>
                 This can be particularly useful for concept development, moodboards, seasonal imagery, website backgrounds, Pinterest-style visuals, creative experimentation, and situations where a specific physical product does not yet exist.
             </p>
-
 
             <h3>Building a More Useful AI Food Prompt</h3>
 
@@ -1296,7 +1066,6 @@
             <p>
                 AI can also make it easier to explore variations. The same visual concept can be transformed into different color palettes, seasonal themes, compositions, or presentation formats without physically rebuilding an entire photography setup.
             </p>
-
 
             <h3>AI-Generated Food Still Requires Visual Judgment</h3>
 
@@ -1317,66 +1086,46 @@
             </p>
 
             <ul>
-
                 <li>Does the cake structure make visual sense?</li>
-
                 <li>Do the textures look believable?</li>
-
                 <li>Are the shadows consistent with the light source?</li>
-
                 <li>Do the ingredients behave naturally?</li>
-
                 <li>Does the composition have a clear focal point?</li>
-
                 <li>Would the image still look convincing when viewed at a smaller size?</li>
-
             </ul>
 
-
             <div class="table-responsive">
-
                 <table>
-
                     <thead>
-
                         <tr>
                             <th>AI Usage</th>
                             <th>Potential Benefit</th>
                             <th>Potential Limitation</th>
                             <th>Useful Approach</th>
                         </tr>
-
                     </thead>
-
                     <tbody>
-
                         <tr>
                             <td><strong>Concept Ideation</strong></td>
                             <td>Fast exploration of visual ideas</td>
                             <td>Some concepts may not be physically practical</td>
                             <td>Use AI to explore possibilities before production</td>
                         </tr>
-
                         <tr>
                             <td><strong>Social Media Visuals</strong></td>
                             <td>Rapid creation of varied compositions</td>
                             <td>Images may not represent an actual product</td>
                             <td>Use appropriate imagery for the intended communication</td>
                         </tr>
-
                         <tr>
                             <td><strong>Website Hero Assets</strong></td>
                             <td>Flexible composition and negative space</td>
                             <td>Generated details may require review</td>
                             <td>Check composition, realism and text placement carefully</td>
                         </tr>
-
                     </tbody>
-
                 </table>
-
             </div>
-
 
             <h2>Real Photography Still Matters</h2>
 
@@ -1396,13 +1145,11 @@
                 AI and photography therefore do not have to compete. They can serve different purposes within the same visual system.
             </p>
 
-
             <h2>Translating Visuals to Web Interfaces and Digital Platforms</h2>
 
             <p>
                 Creating a beautiful image is only the first stage. The final result depends heavily on how that image is integrated into the website or digital platform.
             </p>
-
 
             <h3>The Anatomy of the Digital Hero Section</h3>
 
@@ -1421,7 +1168,6 @@
             <p>
                 This is one reason negative space is so valuable in digital food imagery.
             </p>
-
 
             <h3>Typography, Visual Contrast, and Accessibility</h3>
 
@@ -1449,7 +1195,6 @@
                 In practical terms, the lesson is simple: if a bakery image is bright and detailed everywhere, placing white text directly on top of it may create an unreadable interface. Composition and design should work together.
             </p>
 
-
             <h3>Cognitive Load, Spatial Harmony, and Negative Space</h3>
 
             <p>
@@ -1463,7 +1208,6 @@
             <p>
                 The same principle applies to the food image itself. A cake surrounded by intentional empty space can feel more refined than a cake surrounded by unrelated props.
             </p>
-
 
             <h2>Choosing the Right Format for Social Media and Websites</h2>
 
@@ -1487,7 +1231,6 @@
                 The best approach is to consider the final destination before creating the image.
             </p>
 
-
             <h2>Beautiful Does Not Mean Overly Perfect</h2>
 
             <p>
@@ -1506,7 +1249,6 @@
                 The objective is not to make the image messy. It is to avoid confusing visual perfection with realism.
             </p>
 
-
             <h2>Different Foods Require Different Visual Treatment</h2>
 
             <p>
@@ -1514,25 +1256,15 @@
             </p>
 
             <ul>
-
                 <li><strong>Cakes:</strong> benefit from visible structure, decoration, layers, and an intentional hero angle.</li>
-
                 <li><strong>Pastries:</strong> often benefit from texture, flaky layers, crumbs, and warm directional light.</li>
-
                 <li><strong>Bread:</strong> can emphasize crust, crumb, flour, and rustic environments.</li>
-
                 <li><strong>Chocolate desserts:</strong> often benefit from controlled highlights and darker, richer surroundings.</li>
-
                 <li><strong>Fruit:</strong> can use color contrast, translucency, freshness, and vibrant backgrounds.</li>
-
                 <li><strong>Ice cream:</strong> depends strongly on texture, shape, temperature cues, and timing.</li>
-
                 <li><strong>Coffee and beverages:</strong> can emphasize reflections, steam, liquid movement, glassware, and environmental context.</li>
-
                 <li><strong>Savory foods:</strong> may use many of the same principles while relying on different color, texture, and styling choices.</li>
-
             </ul>
-
 
             <h2>From One Image to Many Digital Uses</h2>
 
@@ -1556,7 +1288,6 @@
                 “Where could this image go, and how will it be seen?”
             </blockquote>
 
-
             <h2>A Practical Food Visual Checklist</h2>
 
             <p>
@@ -1564,33 +1295,19 @@
             </p>
 
             <ul>
-
                 <li>Is there a clear visual focal point?</li>
-
                 <li>Does the food look believable and appealing?</li>
-
                 <li>Is the lighting consistent with the intended mood?</li>
-
                 <li>Can the viewer understand the texture?</li>
-
                 <li>Are the colors working together?</li>
-
                 <li>Do the props support rather than compete with the food?</li>
-
                 <li>Is there enough negative space where needed?</li>
-
                 <li>Will the image work when cropped?</li>
-
                 <li>Is the format appropriate for the destination?</li>
-
                 <li>If AI was used, have the details been carefully reviewed?</li>
-
                 <li>If the image represents a real product, does it accurately represent what is actually offered?</li>
-
                 <li>Would the image still communicate effectively on a small screen?</li>
-
             </ul>
-
 
             <h2>Where to Find and Explore Food Visuals</h2>
 
@@ -1611,7 +1328,6 @@
                     Explore the Cake &amp; Filling image library to discover cake, dessert, pastry, and bakery visuals for your next project.
                 </strong>
             </p>
-
 
             <h2>Conclusion: Create the Image for How It Will Be Seen</h2>
 
@@ -1648,231 +1364,93 @@
             </p>
 
         </div>
-
     </article>
-
 </main>
 
-
 <footer>
-
     <div class="footer-inner">
-
-        <div>
-            © 2026 Cake &amp; Filling
-        </div>
-
-        <div>
-            Free bakery images for creative and commercial use.
-        </div>
-
+        <div>© 2026 Cake &amp; Filling</div>
+        <div>Free bakery images for creative and commercial use.</div>
     </div>
-
 </footer>
 
-
 <script>
-
     /*
     ============================================================
     MOBILE MENU
     ============================================================
     */
-
-    const mobileMenuButton =
-        document.getElementById("mobileMenuButton");
-
-    const mobileMenu =
-        document.getElementById("mobileMenu");
-
-    const mobileCategoryButton =
-        document.getElementById("mobileCategoryButton");
-
-    const mobileCategoryMenu =
-        document.getElementById("mobileCategoryMenu");
-
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
 
     function openMobileMenu() {
-
         mobileMenu.classList.add("active");
-
         mobileMenuButton.classList.add("active");
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-label",
-            "Close menu"
-        );
-
-        document.body.classList.add(
-            "mobile-menu-open"
-        );
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
     }
-
 
     function closeMobileMenu() {
-
         mobileMenu.classList.remove("active");
-
         mobileMenuButton.classList.remove("active");
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-label",
-            "Open menu"
-        );
-
-        mobileCategoryButton.classList.remove(
-            "active"
-        );
-
-        mobileCategoryButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        mobileCategoryMenu.classList.remove(
-            "active"
-        );
-
-        document.body.classList.remove(
-            "mobile-menu-open"
-        );
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
+        mobileCategoryButton.classList.remove("active");
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
+        mobileCategoryMenu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
     }
-
 
     function toggleMobileMenu() {
-
-        if (
-            mobileMenu.classList.contains("active")
-        ) {
-
+        if (mobileMenu.classList.contains("active")) {
             closeMobileMenu();
-
         } else {
-
             openMobileMenu();
-
         }
-
     }
-
 
     if (mobileMenuButton) {
-
-        mobileMenuButton.addEventListener(
-            "click",
-            toggleMobileMenu
-        );
-
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
     }
-
 
     if (mobileCategoryButton) {
-
-        mobileCategoryButton.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    mobileCategoryMenu.classList.contains(
-                        "active"
-                    );
-
-                if (isOpen) {
-
-                    mobileCategoryMenu.classList.remove(
-                        "active"
-                    );
-
-                    mobileCategoryButton.classList.remove(
-                        "active"
-                    );
-
-                    mobileCategoryButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                } else {
-
-                    mobileCategoryMenu.classList.add(
-                        "active"
-                    );
-
-                    mobileCategoryButton.classList.add(
-                        "active"
-                    );
-
-                    mobileCategoryButton.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
-
-                }
-
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
             }
-        );
-
+        });
     }
 
-
-    document
-        .querySelectorAll(".mobile-close-link")
-        .forEach(function(link) {
-
-            link.addEventListener(
-                "click",
-                function() {
-
-                    closeMobileMenu();
-
-                }
-            );
-
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
         });
+    });
 
-
-    document.addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                mobileMenu &&
-                mobileMenuButton &&
-                !mobileMenu.contains(event.target) &&
-                !mobileMenuButton.contains(event.target)
-            ) {
-
-                closeMobileMenu();
-
-            }
-
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
         }
-    );
+    });
 
-
-    window.addEventListener(
-        "resize",
-        function() {
-
-            if (window.innerWidth > 900) {
-
-                closeMobileMenu();
-
-            }
-
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
         }
-    );
-
+    });
 </script>
 
 </body>
