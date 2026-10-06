@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGVV6YSNBW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EGVV6YSNBW');
+    </script>
+
+    <title>The Anatomy of a Perfect Bakery Website Homepage: Visuals That Sell</title>
+    <meta name="description" content="Discover what a bakery website homepage should visually contain. Learn how to strategically organize hero images, product grids, and banners to create a professional site.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #faf9f7;
+            --white: #ffffff;
+            --text: #252321;
+            --muted: #77716b;
+            --border: #e8e3dd;
+            --accent: #8b5e3c;
+            --accent-dark: #68442b;
+            --soft: #f2ece5;
+            --like: #b34a4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, input {
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        body > header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 76px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        nav a,
+        .nav-dropdown-trigger {
+            font-size: 14px;
+            color: #514c47;
+            transition: color .2s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        .nav-dropdown:hover .nav-dropdown-trigger,
+        .nav-dropdown-trigger:focus {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            padding: 28px 0;
+        }
+
+        .nav-dropdown-trigger {
+            border: 0;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-dropdown-trigger::after {
+            content: "⌄";
+            font-size: 13px;
+            transform: translateY(-2px);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 7px);
+            left: -18px;
+            width: 430px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(50,35,25,.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(7px);
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            pointer-events: none;
+            z-index: 101;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-heading {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .dropdown-description {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 11px;
+        }
+
+        .dropdown-links {
+            display: grid;
+            gap: 2px;
+        }
+
+        .dropdown-links a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-left: -10px;
+            transition: all .15s ease;
+        }
+
+        .dropdown-links a:hover {
+            background: var(--soft);
+            color: var(--accent);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 18px 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .support-button {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all .2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .support-button:hover {
+            background: var(--soft);
+            border-color: #d9cfc5;
+        }
+
+        /* MOBILE MENU BUTTON */
+        .mobile-menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 12px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* =========================================================
+           ARTICLE SPECIFIC STYLES
+        ========================================================= */
+
+        .article-container {
+            max-width: 840px;
+            margin: 60px auto 100px;
+            padding: 0 28px;
+        }
+
+        .article-header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        .article-category {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .article-title {
+            font-family: Georgia, serif;
+            font-size: clamp(36px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .article-meta {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .article-content {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #3b3734;
+        }
+
+        .article-content h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            color: var(--text);
+            margin: 50px 0 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-content h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: var(--text);
+            margin: 40px 0 16px;
+        }
+
+        .article-content h4 {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: var(--text);
+            margin: 30px 0 12px;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .article-content a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: var(--border);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            transition: all .2s ease;
+        }
+        
+        .article-content a:hover {
+            text-decoration-color: var(--accent);
+        }
+
+        /* Imagens e Box do Artigo */
+        .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .info-box {
+            background-color: var(--soft);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Tabela Responsiva Elegante para o Artigo */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 16px;
+            background: var(--white);
+        }
+
+        .article-content th, .article-content td {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .article-content th {
+            background: var(--soft);
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .article-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-top: 60px;
+            border-top: 2px solid var(--border);
+            padding-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+        }
+
+        .faq-question {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu-button {
+                display: flex;
+            }
+            .header-inner {
+                min-height: 70px;
+                padding: 0 20px;
+                gap: 12px;
+            }
+            .header-actions {
+                margin-left: auto;
+            }
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 18px 40px rgba(50,35,25,.10);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                pointer-events: none;
+                transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            }
+            .mobile-menu.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .mobile-menu-inner {
+                padding: 12px 20px 20px;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            .mobile-menu-link {
+                display: block;
+                width: 100%;
+                padding: 14px 4px;
+                border-bottom: 1px solid var(--border);
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .mobile-menu-link:hover {
+                color: var(--accent);
+            }
+            .mobile-category-button {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid var(--border);
+                background: transparent;
+                padding: 14px 4px;
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+                text-align: left;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mobile-category-button::after {
+                content: "⌄";
+                font-size: 16px;
+                transition: transform .2s ease;
+            }
+            .mobile-category-button.active::after {
+                transform: rotate(180deg);
+            }
+            .mobile-category-menu {
+                display: none;
+                padding: 8px 0 10px 12px;
+                border-bottom: 1px solid var(--border);
+            }
+            .mobile-category-menu.active {
+                display: block;
+            }
+            .mobile-category-heading {
+                padding: 10px 4px 5px;
+                color: var(--muted);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+            }
+            .mobile-category-link {
+                display: block;
+                padding: 9px 4px;
+                color: #514c47;
+                font-size: 14px;
+            }
+            .mobile-category-link:hover {
+                color: var(--accent);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 0 20px;
+                margin-top: 40px;
+            }
+            .article-content {
+                font-size: 17px;
+            }
+            .article-content th, .article-content td {
+                padding: 14px;
+                font-size: 14px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            Cake <span>&</span> Filling
+        </a>
+
+        <nav>
+            <a href="index.html#library">Browse Images</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
+                <div class="nav-dropdown-menu">
+                    <div>
+                        <div class="dropdown-heading">Marketing Images</div>
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+                        <div class="dropdown-links">
+                            <a href="menus.html#library">Menus</a>
+                            <a href="https://cakeandfilling.pro/banners.html">Banners</a>
+                            <a href="videos.html">Videos for Reels</a>
+                            <a href="index.html#library">Promotions &amp; Offers</a>
+                            <a href="index.html#library">Pinterest</a>
+                            <a href="index.html#library">Brand &amp; Lifestyle</a>
+                            <a href="index.html#library">Seasonal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://cakeandfilling.pro/blog.html">Blog</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="header-actions">
+            
+        
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
+                Browse Images
+            </a>
+
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false">
+                Explore
+            </button>
+
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="videos.html#library" class="mobile-category-link mobile-close-link">Videos for reels</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
+            </div>
+
+            <a href="https://cakeandfilling.pro/blog.html" class="mobile-menu-link mobile-close-link">
+                Blog
+            </a>
+
+            <a href="about.html" class="mobile-menu-link mobile-close-link">
+                About
+            </a>
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <article class="article-container">
+        
+        <header class="article-header">
+            <span class="article-category">Design & Visual Strategy</span>
+            <h1 class="article-title">The Anatomy of a Perfect Bakery Website Homepage: Visuals That Sell</h1>
+            <div class="article-meta">A guide for bakery owners, marketers, and web designers.</div>
+        </header>
+
+        <div class="article-content">
+            
+            <h2>Introduction: The Homepage Is a Bakery's First Visual Impression</h2>
+            <p>For any bakery, cake shop, pastry business, or dessert brand, the website homepage serves as the primary digital storefront. Visitors arrive with a specific intent—often driven by appetite and visual appeal—and within moments, they form a judgment about the business based entirely on its aesthetic presentation. A well-structured homepage dictates whether a brand feels professional, appealing, trustworthy, premium, artisanal, modern, playful, or memorable.</p>
+            <p>Because food businesses operate in a highly visual medium, the digital experience must compensate for the lack of taste and smell through exceptional photography, composition, color, and spacing. Buyers decide with their eyes before they decide with anything else. A strong bakery homepage is not simply a random collection of beautiful cake photos; it is a deliberate visual sequence in which different elements perform specific jobs to guide the visitor from initial interest to final purchase.</p>
+
+            <h2>Start With the Hero Section</h2>
+            <p>The hero section represents the first major visual area of the homepage and carries the responsibility of establishing the brand's atmosphere. Analysis of modern bakery websites reveals that over 91% rely on a photography-led hero section, proving that authentic or highly realistic imagery is a baseline expectation rather than a stylistic flourish.</p>
+            <p>An effective hero image must balance the presentation of large bakery imagery with functional website design. The most spectacular, tightly cropped photograph of a cake is not always the best choice for this section. Instead, the ideal hero image possesses intentional negative space—often referred to as copy space. This quiet area allows headlines, supporting text, and call-to-action (CTA) buttons to sit cleanly over the image without competing with the dessert itself.</p>
+            
+            <p>Different visual compositions serve different layout needs:</p>
+            <ul>
+                <li><strong>Subject on the right, text on the left:</strong> A wide image of an elegant chocolate cake positioned toward the right side of the frame leaves the left side relatively calm. This accommodates a headline such as “Handcrafted Cakes for Every Celebration” without covering the cake.</li>
+                <li><strong>Centered composition:</strong> A beautiful overhead shot of a pastry spread where the center remains relatively clear, allowing a logo and headline to rest directly in the middle.</li>
+                <li><strong>Wider lifestyle scene:</strong> An image showing a baker's hands dusting flour over a sourdough loaf, providing atmospheric depth while leaving the top half of the image dark or blurred enough for light text.</li>
+            </ul>
+
+            <p>The best image is the one that works with the content placed around it. For businesses planning this critical top section, sourcing imagery engineered for this exact purpose is vital. The Cake & Filling platform offers a diverse collection of <a href="https://cakeandfilling.pro/banners.html">website hero images and banners</a> designed with the precise visual hierarchy needed for homepage layouts.</p>
+
+            <h2>What Should Go Immediately After the Hero?</h2>
+            <p>Once the hero section establishes the mood, the immediate next section must help visitors understand exactly what the business offers. A homepage does not need to display the entire menu. The goal is to provide enough visual information to guide the visitor toward the next logical step.</p>
+            <p>Effective approaches for this secondary section include:</p>
+            <ul>
+                <li><strong>Featured Products:</strong> Highlighting three to four best-selling cakes or signature desserts.</li>
+                <li><strong>Product Categories:</strong> Visual navigation tiles directing users to specific offerings like “Custom Cakes,” “Daily Pastries,” or “Wedding Catering.”</li>
+                <li><strong>Brand Introduction:</strong> A short, visually supported story about the bakery's origins, such as a neighborhood shop focusing on the craft and ritual of baking.</li>
+                <li><strong>Special Offers:</strong> A clear section outlining ordering information, such as a weekly sourdough subscription or a holiday cake pre-order.</li>
+            </ul>
+
+            <h2>Product Photography: Show the Desserts Clearly</h2>
+            <p>As visitors scroll deeper into the homepage, the visual strategy must shift from atmospheric to descriptive. A successful bakery website relies on a clear distinction between hero imagery and product imagery.</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Visual Category</th>
+                            <th>Primary Purpose</th>
+                            <th>Key Characteristics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hero & Lifestyle Imagery</strong></td>
+                            <td>Establishes atmosphere, brand identity, and emotional connection.</td>
+                            <td>Wide compositions, ample negative space, environmental context, soft mood lighting.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product Imagery</strong></td>
+                            <td>Communicates exactly what the customer will receive and drives conversion.</td>
+                            <td>Clear focal points, clean backgrounds, consistent lighting, high detail to appreciate texture and decoration.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Product imagery helps visitors understand the tangible details of the baked goods. These images must feature a clear subject, realistic-looking textures, appropriate lighting, and an uncluttered background. Using completely unrelated image styles across a single homepage—such as mixing dark, rustic photos with bright, sterile, flash-lit images—creates visual dissonance and makes a brand feel inconsistent.</p>
+            
+            <p>Understanding how to source and implement these specific types of photos is a distinct process. To explore this further, readers should reference the existing Cake & Filling guide: <a href="#">"Best Cake Images for Bakery Websites: How to Create, Find, and Use Beautiful Cake & Dessert Images."</a> While that article focuses primarily on choosing and formatting the specific dessert images, this report dictates where those carefully chosen images belong within the broader homepage structure. Once the placement is determined, the <a href="index.html#library">Cake & Filling cake and dessert image library</a> serves as the ideal resource for filling those grids.</p>
+
+            <h2>Use Negative Space Intentionally</h2>
+            <p>Negative space is a critical visual concept for any effective homepage. Empty or quieter areas within a design do not imply that an image is lacking; rather, they provide the necessary room for typography, pricing, and promotional messages to be easily digested.</p>
+            <p>For example, a centered dessert image may work better in a product grid when the text is placed above or below the frame, rather than directly over the product. If a background image features a subtle gradient or a muted texture, it separates the text from the visual noise, ensuring accessibility and legibility. Negative space simply means the composition gives important content enough room to breathe. Finding suitable <a href="index.html#library">background imagery</a> that leaves ample room for text is a common challenge that can be solved by browsing dedicated background resources on platforms like Cake & Filling.</p>
+
+            <h2>Build a Visual Rhythm Through the Homepage</h2>
+            <p>A homepage should never feel like one giant, uninterrupted gallery of photos. To maintain visitor engagement, the layout must establish a visual rhythm through alternating patterns.</p>
+            <p>Changes in scale, spacing, and image size make the page significantly easier to explore. A successful sequence might alternate in the following manner: a large full-width image, followed by a quiet text section, transitioning into a structured product grid, moving down to a promotional banner, and ending with a smaller supporting lifestyle image beside a final CTA. By alternating between image-heavy sections and text-heavy sections, the design gives the viewer's eyes a chance to rest, processing the visual information piece by piece without experiencing fatigue.</p>
+
+            <h2>Promotional Sections and Seasonal Visuals</h2>
+            <p>Bakeries operate in a highly seasonal industry, making promotional imagery a vital component of the homepage. These visuals fit naturally when announcing campaigns for Valentine's Day, Mother's Day, the summer wedding season, winter holidays, or limited-time dessert drops.</p>
+            <p>A dedicated promotional banner midway down the homepage visually separates a seasonal campaign from the standard, everyday menu. Because these banners often require bold colors or festive motifs that differ slightly from the bakery's daily branding, placing them in a full-width container helps isolate them, ensuring they draw attention without disrupting the overall aesthetic. Businesses can seamlessly integrate these campaigns by utilizing <a href="index.html#library">promotional visuals tailored for seasonal baking events</a>.</p>
+
+            <h2>Choose a Consistent Visual Style</h2>
+            <p>A bakery homepage becomes exponentially stronger when its images feel as though they belong to the same visual universe. Consistency in color palettes, lighting, backgrounds, photography styles, and typography ensures the digital storefront feels cohesive.</p>
+            <p>Different bakeries require entirely different visual directions. The following are practical examples of how visual styling sets the brand tone:</p>
+            
+            <h3>Luxury Patisserie</h3>
+            <p>A high-end pastry brand often benefits from palettes of cream, ivory, and champagne, accented by subtle gold typography. The imagery leans toward refined, elegant compositions that treat a macaron or entremet like a piece of fine jewelry, utilizing pastel backgrounds to make the styling read as a luxury gift.</p>
+            
+            <h3>Rustic Artisan Bakery</h3>
+            <p>A sourdough or artisanal bread focus pairs best with warm neutrals, charcoal text, and natural textures. The imagery should highlight handcrafted presentations, flour-dusted surfaces, and softer, directional lighting that emphasizes the crust, bringing process transparency to the forefront.</p>
+            
+            <h3>Modern Cake Studio</h3>
+            <p>Contemporary cake designers often favor clean, near-white backgrounds, strong geometric shapes, and minimal external decoration. Pastry photography often requires a pale stage to read as clean and appetizing, allowing the vibrant colors of the cake designs to command the viewer's full attention.</p>
+            
+            <h3>Playful Dessert Brand</h3>
+            <p>A bakery specializing in colorful cupcakes, donuts, or loaded cookies can leverage brighter accent colors, energetic compositions, and expressive visuals. Vibrant amber, pink, or red hues can create appetite appeal and energetic marketing designs.</p>
+            <p>These directions represent deliberate aesthetic choices that frame the product perfectly, rather than rigid psychological laws.</p>
+
+            <h2>A Homepage Does Not Need Dozens of Different Images</h2>
+            <p>A common misconception in web design is that more images automatically create a better website. In reality, a massive influx of unrelated visuals generates severe visual clutter, an inconsistent brand identity, and a confusing visual hierarchy.</p>
+            <p>A smaller number of carefully chosen, high-quality images creates a much stronger identity. A well-designed homepage might feature only one strong hero image, a unified product grid of four items, one promotional banner, and one atmospheric brand image. This curated approach prevents the page from feeling like a crowded catalog and elevates the perceived value of the baked goods.</p>
+
+            <h2>Common Bakery Homepage Visual Mistakes</h2>
+            <p>When assembling a bakery homepage, certain visual errors consistently undermine the professional presentation of the brand. Practical mistakes to avoid include:</p>
+            <ul>
+                <li><strong>Using generic imagery:</strong> Selecting images that do not match the actual atmosphere or offerings of the bakery creates a disconnect for the customer.</li>
+                <li><strong>Overcrowding the hero section:</strong> Forcing too many buttons, social icons, and lengthy paragraphs into the very first visual area overwhelms the visitor.</li>
+                <li><strong>Ignoring typography placement:</strong> Choosing an image without considering where the text will go, resulting in headlines placed over the busiest part of a photo.</li>
+                <li><strong>Inconsistent backgrounds:</strong> Displaying product images shot in wildly different environments—one on a dark table, one with a flash against a white wall—breaks visual harmony.</li>
+                <li><strong>Failing to show the actual product:</strong> Utilizing beautiful, moody images of ingredients while failing to communicate what finished desserts the business actually sells.</li>
+            </ul>
+
+            <h2>A Simple Visual Blueprint for a Bakery Homepage</h2>
+            <p>While there is no mandatory template for a bakery website, a standard visual blueprint provides a highly effective starting point. This framework ensures all visual assets are organized logically:</p>
+            <ul>
+                <li><strong>Hero:</strong> A large bakery or cake image featuring ample copy space + a clear headline + a primary CTA.</li>
+                <li><strong>Featured Products:</strong> A clean, spacious grid featuring 3 to 6 strong product images of signature desserts.</li>
+                <li><strong>About the Bakery:</strong> A smaller brand or lifestyle image accompanied by a short narrative.</li>
+                <li><strong>Special Collection:</strong> A wide promotional or banner image highlighting a seasonal event.</li>
+                <li><strong>Popular Categories:</strong> Distinct visual tiles separating cakes, cupcakes, pastries, or bread.</li>
+                <li><strong>Brand Atmosphere:</strong> A final lifestyle or bakery interior image that reinforces the aesthetic.</li>
+                <li><strong>Final CTA:</strong> A clean, bold section prompting the user to order, contact, visit, or explore products.</li>
+            </ul>
+
+            <h2>Sourcing the Right Visual Resources</h2>
+            <p>Once a business understands the visual structure of its homepage—recognizing exactly where hero images, product grids, and promotional banners fit—the next challenge is finding imagery designed to fulfill those specific roles.</p>
+            <p>Because small bakeries often face budget constraints for continuous professional photoshoots, AI-generated imagery provides a highly useful solution for specific digital assets. AI-generated visuals excel at producing concept imagery, website hero visuals with perfect negative space, decorative backgrounds, visual inspiration, and seasonal promotional concepts. However, a clear distinction must be maintained: conceptual and marketing imagery should not be used to misleadingly represent an authentic, physical product that customers will receive. Authentic product photography remains crucial for the menu items themselves.</p>
+            <p>If the visual blueprint is clear, the next step is locating high-quality assets tailored for these homepage sections. Resources perfectly suited for these layout requirements—including bakery website hero images, website banners, cake and dessert images, background imagery, and promotional visuals—are readily accessible within the Cake & Filling visual resource platform. By pairing a strategic homepage structure with the right visual assets, any small food business can create a highly professional digital presence that converts visitors into customers.</p>
+
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2026 Cake & Filling</div>
+        <div>Free bakery images for creative and commercial use.</div>
+    </div>
+</footer>
+
+<script>
+    /*
+    ============================================================
+    MOBILE MENU
+    ============================================================
+    */
+
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
+
+    function openMobileMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenuButton.classList.add("active");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenuButton.classList.remove("active");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
+        mobileCategoryButton.classList.remove("active");
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
+        mobileCategoryMenu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+    }
+
+    if (mobileCategoryButton) {
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+        }
+    });
+</script>
+</body>
+</html>
