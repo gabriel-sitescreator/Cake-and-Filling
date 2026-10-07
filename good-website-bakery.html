@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGVV6YSNBW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EGVV6YSNBW');
+    </script>
+
+    <title>Master Research Command: How to Create a Good Website for a Bakery - Cake & Filling</title>
+    <meta name="description" content="Architectural and Editorial Directives for 'How to Create a Good Website for a Bakery'. A strategic foundation for digital platforms in the baking industry.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #faf9f7;
+            --white: #ffffff;
+            --text: #252321;
+            --muted: #77716b;
+            --border: #e8e3dd;
+            --accent: #8b5e3c;
+            --accent-dark: #68442b;
+            --soft: #f2ece5;
+            --like: #b34a4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, input {
+            font-family: inherit;
+            outline: none;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        body > header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 76px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        nav a,
+        .nav-dropdown-trigger {
+            font-size: 14px;
+            color: #514c47;
+            transition: color .2s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        .nav-dropdown:hover .nav-dropdown-trigger,
+        .nav-dropdown-trigger:focus {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            padding: 28px 0;
+        }
+
+        .nav-dropdown-trigger {
+            border: 0;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-dropdown-trigger::after {
+            content: "⌄";
+            font-size: 13px;
+            transform: translateY(-2px);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 7px);
+            left: -18px;
+            width: 430px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(50,35,25,.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(7px);
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            pointer-events: none;
+            z-index: 101;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-heading {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .dropdown-description {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 11px;
+        }
+
+        .dropdown-links {
+            display: grid;
+            gap: 2px;
+        }
+
+        .dropdown-links a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-left: -10px;
+            transition: all .15s ease;
+        }
+
+        .dropdown-links a:hover {
+            background: var(--soft);
+            color: var(--accent);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 18px 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .support-button {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all .2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .support-button:hover {
+            background: var(--soft);
+            border-color: #d9cfc5;
+        }
+
+        /* MOBILE MENU BUTTON */
+        .mobile-menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 12px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* =========================================================
+           ARTICLE SPECIFIC STYLES
+        ========================================================= */
+
+        .article-container {
+            max-width: 840px;
+            margin: 60px auto 100px;
+            padding: 0 28px;
+        }
+
+        .article-header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        .article-category {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .article-title {
+            font-family: Georgia, serif;
+            font-size: clamp(36px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .article-meta {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .article-content {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #3b3734;
+        }
+
+        .article-content h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            color: var(--text);
+            margin: 50px 0 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-content h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: var(--text);
+            margin: 40px 0 16px;
+        }
+
+        .article-content h4 {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: var(--text);
+            margin: 30px 0 12px;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Imagens e Box do Artigo */
+        .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .info-box {
+            background-color: var(--soft);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Tabela Responsiva Elegante para o Artigo */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 16px;
+            background: var(--white);
+        }
+
+        .article-content th, .article-content td {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .article-content th {
+            background: var(--soft);
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .article-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-top: 60px;
+            border-top: 2px solid var(--border);
+            padding-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+        }
+
+        .faq-question {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu-button {
+                display: flex;
+            }
+            .header-inner {
+                min-height: 70px;
+                padding: 0 20px;
+                gap: 12px;
+            }
+            .header-actions {
+                margin-left: auto;
+            }
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 18px 40px rgba(50,35,25,.10);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-8px);
+                pointer-events: none;
+                transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            }
+            .mobile-menu.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .mobile-menu-inner {
+                padding: 12px 20px 20px;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            .mobile-menu-link {
+                display: block;
+                width: 100%;
+                padding: 14px 4px;
+                border-bottom: 1px solid var(--border);
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .mobile-menu-link:hover {
+                color: var(--accent);
+            }
+            .mobile-category-button {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid var(--border);
+                background: transparent;
+                padding: 14px 4px;
+                color: var(--text);
+                font-size: 15px;
+                font-weight: 600;
+                text-align: left;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .mobile-category-button::after {
+                content: "⌄";
+                font-size: 16px;
+                transition: transform .2s ease;
+            }
+            .mobile-category-button.active::after {
+                transform: rotate(180deg);
+            }
+            .mobile-category-menu {
+                display: none;
+                padding: 8px 0 10px 12px;
+                border-bottom: 1px solid var(--border);
+            }
+            .mobile-category-menu.active {
+                display: block;
+            }
+            .mobile-category-heading {
+                padding: 10px 4px 5px;
+                color: var(--muted);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+            }
+            .mobile-category-link {
+                display: block;
+                padding: 9px 4px;
+                color: #514c47;
+                font-size: 14px;
+            }
+            .mobile-category-link:hover {
+                color: var(--accent);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 0 20px;
+                margin-top: 40px;
+            }
+            .article-content {
+                font-size: 17px;
+            }
+            .article-content th, .article-content td {
+                padding: 14px;
+                font-size: 14px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            Cake <span>&</span> Filling
+        </a>
+
+        <nav>
+            <a href="index.html#library">Browse Images</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger" type="button" aria-haspopup="true">Explore</button>
+                <div class="nav-dropdown-menu">
+                    <div>
+                        <div class="dropdown-heading">Marketing Images</div>
+                        <p class="dropdown-description">Visuals for menus, websites, social media and bakery marketing.</p>
+                        <div class="dropdown-links">
+                            <a href="menus.html#library">Menus</a>
+                            <a href="https://cakeandfilling.pro/banners.html">Banners</a>
+                            <a href="videos.html">Videos for Reels</a>
+                            <a href="index.html#library">Promotions &amp; Offers</a>
+                            <a href="index.html#library">Pinterest</a>
+                            <a href="index.html#library">Brand &amp; Lifestyle</a>
+                            <a href="index.html#library">Seasonal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="https://cakeandfilling.pro/blog.html">Blog</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="header-actions">
+            
+        
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html#library" class="mobile-menu-link mobile-close-link">
+                Browse Images
+            </a>
+
+            <button
+                type="button"
+                class="mobile-category-button"
+                id="mobileCategoryButton"
+                aria-expanded="false">
+                Explore
+            </button>
+
+            <div class="mobile-category-menu" id="mobileCategoryMenu">
+                <div class="mobile-category-heading">Marketing Images</div>
+                <p class="mobile-category-description">
+                    Visuals for menus, websites, social media and bakery marketing.
+                </p>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Menus &amp; Catalogs</a>
+                <a href="https://cakeandfilling.pro/banners.html" class="mobile-category-link mobile-close-link">Banners</a>
+                <a href="videos.html#library" class="mobile-category-link mobile-close-link">Videos for reels</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Promotions &amp; Offers</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Pinterest</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Brand &amp; Lifestyle</a>
+                <a href="index.html#library" class="mobile-category-link mobile-close-link">Seasonal</a>
+            </div>
+
+            <a href="https://cakeandfilling.pro/blog.html" class="mobile-menu-link mobile-close-link">
+                Blog
+            </a>
+
+            <a href="about.html" class="mobile-menu-link mobile-close-link">
+                About
+            </a>
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <article class="article-container">
+        
+        <header class="article-header">
+            <span class="article-category">Editorial & Strategy</span>
+            <h1 class="article-title">Master Research Command: Architectural and Editorial Directives for "How to Create a Good Website for a Bakery"</h1>
+            <div class="article-meta">A strategic foundation and blueprint designed for the Cake & Filling digital ecosystem.</div>
+        </header>
+
+        <div class="article-content">
+            
+            <h2>Strategic Foundation and Editorial Philosophy</h2>
+            <p>The present document serves as an exhaustive editorial and research command engineered to guide the creation of a definitive English-language article titled "How to Create a Good Website for a Bakery." This content is specifically architected for the Cake & Filling digital ecosystem. The paramount objective is to produce a highly practical, commercially valuable resource that assists bakery and confectionery entrepreneurs in establishing a robust digital footprint.</p>
+            <p>The final manuscript must solve authentic operational challenges, mapping a logical progression from foundational digital architecture to visual merchandising, and ultimately converging on a natural, frictionless integration of Cake & Filling's visual asset library.</p>
+            <p>The fundamental editorial principle driving this manuscript is a linear progression of commercial value. The narrative must address a real business necessity, provide actionable solutions, identify the ensuing visual requirements, and subsequently position Cake & Filling as the premier repository for those visual resources. The discourse must remain deeply rooted in the operational realities of the baking industry, avoiding generic web development tutorials, overly technical jargon, or overt promotional rhetoric.</p>
+
+            <h2>Readership Demographics and Psychological Profiles</h2>
+            <p>The content must directly address individuals engaged in starting, operating, or scaling bakery and confectionery enterprises. This demographic spans a broad spectrum of operational models, including home-based custom cake decorators, specialized online dessert brands, established retail pastry shops, and wedding cake specialists. The overarching psychological profile indicates that these practitioners are primarily culinary artists and small business owners, not technical developers or digital marketers.</p>
+            <p>A thorough evaluation of search behavior reveals distinct psychological and operational intents. The data suggests that a bakery owner searching for website guidance is typically trying to solve one of the following operational crises:</p>
+            <ul>
+                <li><strong>The Lead Qualification Bottleneck:</strong> Home bakers and custom cake studios are frequently overwhelmed by unstructured direct messages on social media platforms. They require systematic lead capture and qualification mechanisms.</li>
+                <li><strong>The Foot Traffic Imperative:</strong> Retail bakeries seek local search visibility to capture "near me" navigational queries, driving physical store visits.</li>
+                <li><strong>The E-commerce Transition:</strong> Confectionery brands require robust infrastructure to transition from manual invoicing to automated online ordering.</li>
+            </ul>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Primary Search Query</th>
+                            <th>Underlying Business Intent</th>
+                            <th>Required Article Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"how to create a bakery website"</td>
+                            <td>Overwhelm regarding digital setup; seeking a step-by-step roadmap.</td>
+                            <td>Clear progression from domain selection to platform choice and visual design.</td>
+                        </tr>
+                        <tr>
+                            <td>"bakery website layout"</td>
+                            <td>Confusion regarding user experience and information architecture.</td>
+                            <td>The 3-click rule, mobile navigation strategies, and essential page structures.</td>
+                        </tr>
+                        <tr>
+                            <td>"cake shop website design"</td>
+                            <td>Need to showcase high-end custom work and capture qualified leads.</td>
+                            <td>Focus on portfolio presentation, custom order forms, and deposit policies.</td>
+                        </tr>
+                        <tr>
+                            <td>"bakery website for small business"</td>
+                            <td>Budget constraints and fear of technical complexity.</td>
+                            <td>Guidance on cost-effective platforms, essential features, and avoiding expensive rebuilds.</td>
+                        </tr>
+                        <tr>
+                            <td>"bakery website hero image"</td>
+                            <td>Desire to make a strong first impression and reduce bounce rates.</td>
+                            <td>Directives on lighting, texture, and immediate visual impact, naturally linking to Cake & Filling.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Competitor Content and SERP Gap Analysis</h2>
+            <p>An analysis of current high-ranking search engine results reveals a distinct pattern: the landscape is dominated by software providers and digital agencies. Articles from website builders frequently bias their advice toward their proprietary software, rushing the reader through the vital planning phases. Conversely, digital agency blogs often focus heavily on advanced SEO schemas that alienate the beginner.</p>
+            <p>The critical gap in the current literature—and the precise opportunity for Cake & Filling—is the underrepresentation of visual strategy. Current results briefly mention that "good photos are important" but fail to explain how visual hierarchy, negative space, and thematic banners actually construct the brand's perceived value.</p>
+
+            <h2>Business Logic and Strategic Website Architecture</h2>
+            <p>The digital architecture of a bakery website must be dictated by customer behavior and mobile usability. If a website features confusing navigation or excessive dropdown menus, the bounce rate on mobile devices can surge to 67%. The writer must instruct the audience to adhere to the three-click rule.</p>
+
+            <h3>The Homepage Architecture</h3>
+            <p>The homepage operates as the primary digital display window and must immediately communicate value, location, and capability. It must possess:</p>
+            <ul>
+                <li><strong>The Hero Section:</strong> A high-definition, visually arresting image of a flagship product utilizing natural light.</li>
+                <li><strong>Value Proposition and Specialization:</strong> Immediate text clarifying the bakery's specialty to align with niche search intent.</li>
+                <li><strong>Operational Fundamentals:</strong> Store hours, physical address, and contact information prominently displayed.</li>
+            </ul>
+
+            <h3>Topographical Requirements by Bakery Model</h3>
+            <p>The writer must segment the architectural advice to prove industry expertise. The following table outlines the differing page requirements for distinct bakery models:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bakery Model</th>
+                            <th>Primary Website Function</th>
+                            <th>Critical Architectural Elements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Retail / Local Physical Bakery</td>
+                            <td>Drive foot traffic and daily pre-orders.</td>
+                            <td>Menu page with clear categories; easily updated daily specials banner; embedded Google Maps; structured opening hours.</td>
+                        </tr>
+                        <tr>
+                            <td>Home-Based Custom Cake Business</td>
+                            <td>Lead qualification and schedule protection.</td>
+                            <td>Style portfolio; detailed custom order form; availability calendar; clear deposit and cancellation policies.</td>
+                        </tr>
+                        <tr>
+                            <td>Online Dessert Brand (E-commerce)</td>
+                            <td>Frictionless online checkout and shipping.</td>
+                            <td>Streamlined cart functionality; precise allergen transparency; shipping radii and temperature considerations; customer reviews.</td>
+                        </tr>
+                        <tr>
+                            <td>Wedding Cake Specialist</td>
+                            <td>High-ticket consultation and trust building.</td>
+                            <td>Venue familiarity indicators; tasting logistics and booking; open pricing structure explanations; deep-dive "About the Baker" storytelling.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>The Custom Order Intake Engine</h2>
+            <p>For home bakers and custom cake studios, the website's primary function is sophisticated lead generation and capacity management. Utilizing direct messages on social media for custom orders invariably leads to communication breakdowns.</p>
+
+            <h3>Architecting the Lead Capture Form</h3>
+            <p>A standardized custom cake order form is a mandatory feature. Required fields must include:</p>
+            <ul>
+                <li>Precise event date and preferred pickup or delivery time.</li>
+                <li>Accurate serving requirements.</li>
+                <li>Flavor profiles, filling preferences, and frosting types.</li>
+                <li>Budget ranges to immediately filter out unrealistic expectations.</li>
+                <li>An upload field limited to a maximum of three reference or inspiration images.</li>
+            </ul>
+
+            <h3>Conditional Logic and Capacity Caps</h3>
+            <p>The system must incorporate order caps per date and minimum lead times to automatically close out dates when production capacity is reached. The website must also establish firm commercial boundaries, such as a 50% non-refundable deposit standard.</p>
+
+            <h2>Digital Platform and Hosting Topography</h2>
+            <p>The choice of content management system (CMS) or website builder is a foundational decision. The research evaluates four primary platforms:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Primary Differentiator</th>
+                            <th>Ideal Bakery Profile</th>
+                            <th>E-commerce Capability</th>
+                            <th>Financial Consideration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wix</strong></td>
+                            <td>Unmatched visual flexibility and drag-and-drop customization.</td>
+                            <td>Aesthetic-driven small bakeries and creators prioritizing design control over heavy logic.</td>
+                            <td>Adequate for standard menus; offers local delivery features.</td>
+                            <td>Highly competitive; basic plans begin at approximately $17/month.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shopify</strong></td>
+                            <td>Scalability, deep inventory management, and POS integration.</td>
+                            <td>High-volume retail bakeries, storefronts, and national shippers.</td>
+                            <td>Industry-leading; handles vast inventories, POS hardware, and complex shipping variants.</td>
+                            <td>Premium pricing; higher monthly fees but justified by superior backend capabilities.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Squarespace</strong></td>
+                            <td>Elegant, pre-built aesthetic templates requiring minimal design skill.</td>
+                            <td>Service-based bakeries, wedding cake designers seeking portfolio style.</td>
+                            <td>Robust out-of-the-box features without transaction fees on standard ecommerce plans.</td>
+                            <td>Excellent middle-ground; predictable scaling costs with built-in marketing tools.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Square Online</strong></td>
+                            <td>No-cost barrier to entry with seamless offline POS synchronization.</td>
+                            <td>Brick-and-mortar bakeries testing online ordering on a strict budget.</td>
+                            <td>Functional for local pickup and basic orders; lacks advanced SEO and customization capabilities.</td>
+                            <td>Highest initial efficiency due to a fully free e-commerce tier (paying only transaction fees).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Visual Merchandising and the Cake & Filling Integration</h2>
+            <p>Because culinary consumption is inherently visual—operating on the principle that "people eat with their eyes first"—the aesthetic quality of a bakery's website directly dictates its perceived value and pricing power.</p>
+
+            <h3>Principles of Digital Food Presentation</h3>
+            <p>The final text must educate the reader on staging and composition, emphasizing consistency, the "in-use" aesthetic, scale, and proper typography.</p>
+
+            <h3>Seamless Asset Integration: The Cake & Filling Connection</h3>
+            <p>The narrative must guide the reader to the realization that while authentic product photos of their specific cakes are mandatory, a professional website requires a vast array of supporting visual architecture. The writer must map website needs directly to Cake & Filling resources:</p>
+            <ul>
+                <li><strong>Hero Images and Seasonal Banners:</strong> Suggest utilizing Cake & Filling's premium website banners and hero images.</li>
+                <li><strong>Menu Infrastructure:</strong> Highlight Cake & Filling's menu visuals as elegant backdrops and formatting assets.</li>
+                <li><strong>Promotional Visuals:</strong> Direct readers to Cake & Filling's promotional visuals for newsletter signups or discounts.</li>
+                <li><strong>Social and Omnichannel Cohesion:</strong> Recommend Cake & Filling's social media visuals and food videos to maintain cross-platform brand integrity.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Critical Editorial Warning:</strong> The writer must strictly adhere to mentioning only the specific asset classes Cake & Filling actually provides (cake and dessert images, bakery product images, website hero images, banners, promotional visuals, menu visuals, social media visuals, AI-generated food imagery, and food videos).</p>
+            </div>
+
+            <h2>Omnichannel Connectivity and Search Engine Optimization (SEO)</h2>
+            <p>The article must translate technical SEO concepts into practical, localized strategies for bakery owners.</p>
+
+            <h3>Capturing Local Search Intent & Schema Markup</h3>
+            <p>Prioritize geographic relevance over broad keyword targeting. Instruct users to optimize their Google Business Profile and deploy <code>schema.org/LocalBusiness</code> or <code>schema.org/Bakery</code> markup.</p>
+
+            <h3>Strategic Content Architecture and Speed</h3>
+            <p>Publishing weekly updates on seasonal specials creates a continuous stream of indexable content. Furthermore, mobile UX requires modern image compression formats (AVIF or WebP), targeting under 200KB for massive hero images.</p>
+
+            <h2>Artificial Intelligence in Food Imagery: Legal and Ethical Directives</h2>
+            <p>As of 2026, the integration of Artificial Intelligence in visual content generation requires strict compliance with federal and state regulations.</p>
+
+            <h3>The FTC Compliance Framework</h3>
+            <p>The Federal Trade Commission (FTC) Truth in Advertising Laws mandate that images must accurately represent the product being sold. Utilizing AI to generate a synthetic image of a cake with more layers or distinct textures than the physical product is legally classified as deceptive advertising.</p>
+
+            <h3>Ethical Application vs. Deceptive Practices</h3>
+            <ul>
+                <li><strong>Prohibited Uses:</strong> Generating a synthetic image of a specific menu item the bakery has never produced and passing it off as portfolio work. Fake reviews are strictly forbidden.</li>
+                <li><strong>Permissible Uses:</strong> Utilizing AI to generate thematic backgrounds, atmospheric elements, abstract conceptual banners for seasonal promotions, or mood boards.</li>
+            </ul>
+            <p>Cake & Filling's repository of AI-generated food imagery should be recommended explicitly for these permissible, thematic, and atmospheric use cases.</p>
+
+            <h2>Comprehensive Structural Outline (The Blueprint)</h2>
+            <p>The writer must utilize the following structural outline for the final output:</p>
+            <ul>
+                <li><strong>H1: How to Create a Good Website for a Bakery: The Complete Guide</strong></li>
+                <li><strong>H2: Why Your Bakery Needs More Than Just Social Media</strong></li>
+                <li><strong>H2: The Essential Pages Every Bakery Website Must Have</strong>
+                    <ul>
+                        <li>H3: The Homepage (Your Digital Display Window)</li>
+                        <li>H3: The Visual Menu & Product Catalog</li>
+                        <li>H3: The Custom Order & Consultation Page</li>
+                        <li>H3: The Story (About Us)</li>
+                    </ul>
+                </li>
+                <li><strong>H2: Building the Perfect Custom Cake Order Form</strong></li>
+                <li><strong>H2: Choosing the Right Platform for Your Baking Business</strong></li>
+                <li><strong>H2: Visual Merchandising: Why People Eat With Their Eyes First</strong>
+                    <ul>
+                        <li>H3: Elevating Your Brand with Professional Assets (The Cake & Filling Connection)</li>
+                    </ul>
+                </li>
+                <li><strong>H2: Artificial Intelligence in Food Imagery: What You Need to Know</strong></li>
+                <li><strong>H2: Technical Basics: Getting Found and Getting Fast</strong>
+                    <ul>
+                        <li>H3: Local SEO and Schema</li>
+                        <li>H3: Mobile Navigation and Speed</li>
+                    </ul>
+                </li>
+                <li><strong>H2: Conclusion: Launching Your Digital Storefront</strong></li>
+            </ul>
+
+            <h2>Final Validation Directives for Output Generation</h2>
+            <p>The generated manuscript must be evaluated against this strategic command document to ensure it maps from an operational problem to a digital solution, distinguishes business models, correctly frames AI legalities, and delivers undeniable, standalone value to the bakery owner.</p>
+
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2026 Cake & Filling</div>
+        <div>Free bakery images for creative and commercial use.</div>
+    </div>
+</footer>
+
+<script>
+    /*
+    ============================================================
+    MOBILE MENU
+    ============================================================
+    */
+
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileCategoryButton = document.getElementById("mobileCategoryButton");
+    const mobileCategoryMenu = document.getElementById("mobileCategoryMenu");
+
+    function openMobileMenu() {
+        mobileMenu.classList.add("active");
+        mobileMenuButton.classList.add("active");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close menu");
+        document.body.classList.add("mobile-menu-open");
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove("active");
+        mobileMenuButton.classList.remove("active");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open menu");
+        mobileCategoryButton.classList.remove("active");
+        mobileCategoryButton.setAttribute("aria-expanded", "false");
+        mobileCategoryMenu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+    }
+
+    if (mobileCategoryButton) {
+        mobileCategoryButton.addEventListener("click", function () {
+            const isOpen = mobileCategoryMenu.classList.contains("active");
+            if (isOpen) {
+                mobileCategoryMenu.classList.remove("active");
+                mobileCategoryButton.classList.remove("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "false");
+            } else {
+                mobileCategoryMenu.classList.add("active");
+                mobileCategoryButton.classList.add("active");
+                mobileCategoryButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.querySelectorAll(".mobile-close-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMobileMenu();
+        });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (mobileMenu && mobileMenuButton && 
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+        }
+    });
+</script>
+</body>
+</html>
